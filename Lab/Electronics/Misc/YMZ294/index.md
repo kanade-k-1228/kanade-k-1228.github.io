@@ -84,9 +84,11 @@ title: ヤマハ製の音源 IC YMZ294 を使ってみた
    - `cd`
    - `git clone https://github.com/kanade-k-1228/midifile.git`
    - `cd midifile`
+   - `make library`
+   - `make programs`
    - `make midi2ymz`
    - して、プログラムをビルドしてください
-   - `~/midifile ???.mid > ???.h` で変換します（`???` は自分で作った midi ファイル名を入れる）
+   - `bin/midi2ymz ???.mid > ???.h` で変換します（`???` は自分で作った midi ファイル名を入れる）
 3. include して書き込む
    - `???.h` を `sample/07_play_music` 内に移動します
    - `07_play_music.ino` の先頭の `#include "XXX.h"` を `#include "???.h"` に書き換えます
