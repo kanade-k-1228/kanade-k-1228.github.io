@@ -1,8 +1,12 @@
-name: Convert and Deploy
+name: Deploy
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  merge:
+    branches:
+      - main
 
 jobs:
   convert_via_pandoc:
@@ -19,8 +23,8 @@ jobs:
         run: pandoc feed.yml --template .common/template.rss >> feed.rss
       - name: Convert MD to HTML
         run: find . -name "*index.md" | while read i; do pandoc -f markdown -t html --template=.common/template.html --toc --no-highlight --mathjax "${i}" >> "${i%.md}.html"; done
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          path: ./
+
