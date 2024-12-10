@@ -6,34 +6,19 @@ on:
       - main
 
 jobs:
-  # Build job
   build:
-    # Specify runner +  build & upload the static files as an artifact
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pandoc
-        run: |
-          sudo apt-get update
-          sudo apt-get -y install pandoc
-          pandoc --version
-      - name: Generate RSS
-        run: pandoc feed.yml --template .common/template.rss >> feed.rss
-      - name: Convert MD to HTML
-        run: |
-          find . -name "*index.md" | \
-          while read i; do \
-            pandoc -f markdown -t html --template=.common/template.html \
-              --toc --no-highlight --mathjax "${i}" >> "${i%.md}.html"; \
-          done
+      - name: Build
+        run: ./build.sh
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
