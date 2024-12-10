@@ -1,0 +1,29 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="222px" height="332px" viewBox="-0.5 -0.5 222 332" content="&lt;mxfile&gt;&lt;diagram id=&quot;qozVb4-xeW_MRLMsuyy5&quot; name=&quot;ページ1&quot;&gt;7VnLctowFP0alslYEs9lQ0O7aGcyk0WXjGIrWBPZl5FFgH59JfzAkrExGJqSKQtGuj6+epxzJV25R6bR5puky/AnBEz0sBdseuRrD+M+IvrfGLapYYhHqWEheZCa0N7wzH+zzOhl1hUPWGIBFYBQfGkbfYhj5ivLRqWEtQ17BWG3uqQLVjE8+1RUrb94oMLUOs5HYezfGV+EectoOEmfRDQHZyNJQhrAumQijz0ylQAqLUWbKRNm7vJ5Sd+b1TwtOiZZrNq8kPfjnYpVNrisY2qbj5bFwRczaboWQ6yND6GKhK4hXUyUhLdiFjSx5OGVCzEFAXL3OqHY8/CggJaezGYT/dNPdAsz/ZK2erqWdoAFFQ72g0LFVGmJMYiYklsNWe/JGGQDC0s85DbJBFX83XZPM00sCndFC0/AdcPYy+SLSOYnUy+aeLaLBFbSZ9lb5cl3HU2OOFJULpiqONJs0G0JtjSApIzQhdLE7E079mukMzlJCS8C/LcmKYw6KgHdghKwTWB/cKYQho4Qxl2FUNPO+GB/a7vlwIdeI1yza48CnYjvN+Mrs2TjdSGdj3MjAB8PgN0EM/n4zsw8pyJ9Z1JxvTf8oC9MPEHCFYfYRAgoBZFRe77Gm8UtoEnIgqxCBV8YqM+MVzuacrdfMoyCZeprafoSbRZmZ71nQu9v0uDuJUt4okAmRWmOTYNcakjaJa1HExUPNWGkx64bZZteU2TlTwc2GTgjoxx5+EDkIc+RdjnKrOWrgSnyn6n2TGHygUz1b5spHgcrf8dUXpqTKzLVP7zAlZkaX4mo4W0T5dMl9fmOqaI4R1dc/twz4AGqhtcKqtFxri7Ji3OK83a/VnzZuUEzgxFPfD1MGjNYJfcRxGCq8xeqdC+2DpMxyEsx6exjxSHjbxA5vu2gS4twFzE/pPHOhO/WdDtP1lz54RWjbzSySMvP3eUdbVjlbDToTtlpWVI1X64dvZPlfFhK4xyySd/Reducxt3MKo5qcppzUteulxi3Rgq6FCkVRxckBX1yUurS19NJcR3h65HSIsdtJEXCKg6K3eRfp2hcs7effD9z+N7k0tczjbczna83UIus+fNyj8/l3o3OtvtYR/LJiZdtDr67WlokGVW1FGdNdNtrObmUWK6jFTw62Extrxw4PnLRWhyozsSjI9p17w5PxZNOUtfV/fe1FL7/SEke/wA=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <path d="M 80 160 L 140 160" fill="none" stroke="#ff9999" stroke-width="13" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 70 15 L 120 15 Q 130 15 130 22.5 L 130 26.25 Q 130 30 133.71 39.28 L 146.29 70.72 Q 150 80 150 90 L 150 100 Q 150 110 140 110 L 120 110 Q 110 110 110 119.59 L 110 129.17" fill="none" stroke="#ff9999" stroke-width="7" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 110 142.17 L 103.5 129.17 L 116.5 129.17 Z" fill="#ff9999" stroke="#ff9999" stroke-width="7" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="100" y="210" width="20" height="100" fill="none" stroke="none" transform="rotate(90,110,260)" pointer-events="all"/>
+        <path d="M 60 260 L 78 260 L 82 250 L 90 270 L 98 250 L 106 270 L 114 250 L 122 270 L 130 250 L 138 270 L 142 260 L 160 260" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(90,110,260)" pointer-events="all"/>
+        <rect x="180" y="210" width="20" height="100" fill="none" stroke="none" transform="rotate(90,190,260)" pointer-events="all"/>
+        <path d="M 140 260 L 158 260 L 162 250 L 170 270 L 178 250 L 186 270 L 194 250 L 202 270 L 210 250 L 218 270 L 222 260 L 240 260" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(90,190,260)" pointer-events="all"/>
+        <rect x="190" y="110" width="8" height="100" fill="none" stroke="none" transform="rotate(90,194,160)" pointer-events="all"/>
+        <path d="M 144 164 L 162 164 C 162 159.58 165.58 156 170 156 C 174.42 156 178 159.58 178 164 C 178 159.58 181.58 156 186 156 C 190.42 156 194 159.58 194 164 C 194 159.58 197.58 156 202 156 C 206.42 156 210 159.58 210 164 C 210 159.58 213.58 156 218 156 C 222.42 156 226 159.58 226 164 L 244 164" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" transform="rotate(90,194,160)" pointer-events="all"/>
+        <rect x="80" y="110" width="60" height="100" fill="none" stroke="none" transform="rotate(90,110,160)" pointer-events="all"/>
+        <path d="M 60 160 L 105 160 M 115 130 L 115 190 M 105 130 L 105 190 M 115 160 L 160 160" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(90,110,160)" pointer-events="all"/>
+        <path d="M -20 180 L 25 180 M 35 150 L 35 210 M 35 180 L 80 180" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(270,30,180)" pointer-events="all"/>
+        <rect x="21" y="165" width="4" height="30" fill="#000000" stroke="#000000" transform="rotate(270,30,180)" pointer-events="all"/>
+        <rect x="127" y="15" width="26" height="75" fill="none" stroke="none" transform="rotate(90,140,52.5)" pointer-events="all"/>
+        <path d="M 102.5 62.5 L 117.5 62.5 M 162.5 62.5 L 177.5 62.5 M 123.5 61.5 L 159.5 46.5 M 162.5 42.5 L 177.5 42.5" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" transform="rotate(90,140,52.5)" pointer-events="all"/>
+        <ellipse cx="159.5" cy="62.5" rx="3" ry="2.9999999999999996" fill="#ffffff" stroke="#000000" transform="rotate(90,140,52.5)" pointer-events="all"/>
+        <ellipse cx="120.5" cy="62.5" rx="3" ry="2.9999999999999996" fill="#ffffff" stroke="#000000" transform="rotate(90,140,52.5)" pointer-events="all"/>
+        <ellipse cx="159.5" cy="42.5" rx="3" ry="2.9999999999999996" fill="#ffffff" stroke="#000000" transform="rotate(90,140,52.5)" pointer-events="all"/>
+        <path d="M 110 310 L 190 310" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 110 110 L 190 110" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 150 110 L 150 90" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 30 130 L 30 15 L 130 15" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 30 230 L 30 330 L 150 330 L 150 310" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 150 0 L 210 0 Q 220 0 220 10 L 220 200 Q 220 210 210 210 L 170 210 Q 160 210 160 200 L 160 140 Q 160 130 150 130 L 110 130 Q 100 130 100 120 L 100 10 Q 100 0 110 0 L 150 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+    </g>
+</svg>

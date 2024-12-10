@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- 背景色 -->
+    <rect x="0" y="0" width="1200" height="630" fill="hsl(159, 91%, 25%)" />
+
+    <!-- タイトルエリア -->
+    <rect x="250" y="30" width="700" height="450" fill="#46CC8E" rx=" 20" ry="20" />
+
+    <!-- タイトル -->
+    <!-- <text x="600" y="120" fill="#2b2121" font-size="60" text-anchor="middle">Welcome to</text>
+    <text x="600" y="220" fill="black" font-size="60" text-anchor="middle">Kanade's</text>
+    <text x="600" y="320" fill="black" font-size="60" text-anchor="middle">Homepage</text>
+    <text x="600" y="420" fill="black" font-size="60" text-anchor="middle"></text> -->
+
+    <!-- 電解コン -->
+    <circle cx="120" cy="120" r="55" fill="#e9ece9" />
+    <line x1="80" y1="80" x2="160" y2="160" stroke="#abaeab" stroke-width="5" />
+    <line x1="80" y1="160" x2="160" y2="80" stroke="#abaeab" stroke-width="5" />
+    <circle cx="120" cy="120" r="60" stroke="black" stroke-width="20" fill="none" />
+    <clipPath id="cap-clip">
+        <path d="M 120 120, L 200 90, V 150, z" />
+    </clipPath>
+    <circle cx="120" cy="120" r="60" stroke="#abaeab" stroke-width="20" fill="none"
+        clip-path="url(#cap-clip)" />
+
+    <!-- トランジスタ -->
+    <circle cx="70" cy="260" r="7" fill="#fec002" />
+    <circle cx="170" cy="260" r="7" fill="#fec002" />
+    <line x1="70" y1="260" x2="170" y2="260" stroke="#D2D4D2" stroke-width="6"
+        stroke-linecap="round" />
+    <clipPath id="tr-1-clip">
+        <rect x="80" y="200" width="80" height="80" />
+    </clipPath>
+    <circle cx="120" cy="260" r="40" clip-path="url(#tr-1-clip)" />
+
+    <!-- コイル -->
+    <!-- <rect x="70" y="320" width="100" height="50" fill="#2f2f30" rx="10" ry="10" />
+    <line x1="70" y1="320" x2="75" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round" />
+    <line x1="80" y1="320" x2="85" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round" />
+    <line x1="90" y1="320" x2="95" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round" />
+    <line x1="100" y1="320" x2="105" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    />
+    <line x1="110" y1="320" x2="115" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    />
+    <line x1="120" y1="320" x2="125" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    />
+    <line x1="130" y1="320" x2="135" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    />
+    <line x1="140" y1="320" x2="145" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    />
+    <line x1="150" y1="320" x2="155" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    />
+    <line x1="160" y1="320" x2="165" y2="370" stroke="#ed8e3b" stroke-width="6" stroke-linecap="round"
+    /> -->
+
+    <!-- 抵抗 -->
+    <circle cx="70" cy="350" r="7" fill="#fec002" />
+    <circle cx="170" cy="350" r="7" fill="#fec002" />
+    <line x1="70" y1="350" x2="170" y2="350" stroke="#D2D4D2" stroke-width="6"
+        stroke-linecap="round" />
+    <clipPath id="r-clip">
+        <circle cx="100" cy="350" r="14" />
+        <circle cx="140" cy="350" r="14" />
+        <rect x="100" y="340" width="40" height="20" />
+    </clipPath>
+    <rect x="70" y="300" width="100" height="100" fill="#e0ad53" clip-path="url(#r-clip)" />
+    <rect x="102" y="330" width="6" height="40" fill="#754a1c" clip-path="url(#r-clip)" />
+    <rect x="112" y="330" width="6" height="40" fill="#000000" clip-path="url(#r-clip)" />
+    <rect x="122" y="330" width="6" height="40" fill="#ff0000" clip-path="url(#r-clip)" />
+    <rect x="132" y="330" width="6" height="40" fill="#eeb71f" clip-path="url(#r-clip)" />
+
+    <!-- 配線 -->
+    <path fill="none" stroke-width="15" stroke="#46CC8E" stroke-linejoin="round"
+        d="
+        M 120 500,
+        l 110 110,
+        H 920,
+        L 950 580" />
+    <circle cx="950" cy="580" r="20" stroke="#fec002" stroke-width="10" fill="#f5f5f5" />
+
+    <!-- 名前 -->
+    <text x="600" y="580" fill="#FFFFFF" font-size="90" text-anchor="middle">Kanade's Lab</text>
+
+    <!-- アイコン画像 -->
+    <clipPath id="icon-clip">
+        <circle cx="120" cy="500" r="90" />
+    </clipPath>
+    <image xlink:href="./icon.png" x="20" y="400" height="200" width="200"
+        clip-path="url(#icon-clip)" />
+    <circle cx="120" cy="500" r="90" stroke="#fec002" stroke-width="10" fill="none" />
+
+    <!-- パスコン -->
+    <circle cx="1030" cy="80" r="7" fill="#fec002" />
+    <circle cx="1110" cy="80" r="7" fill="#fec002" />
+    <line x1="1030" x2="1110" y1="80" y2="80" stroke="#D2D4D2" stroke-width="6"
+        stroke-linecap="round" />
+    <ellipse cx="1070" cy="80" rx="30" ry="15" fill="#00acee" />
+
+    <!-- DIP -->
+    <rect x="1020" y="120" width="100" height="430" fill="black" rx="4" ry="4" />
+    <circle cx="1070" cy="120" r="16" fill="hsl(159, 91%, 25%)" />
+    <clipPath id="gh-clip">
+        <circle cx="35" cy="35" r="30" />
+    </clipPath>
+    <image xlink:href="./github.png" height="70" width="70"
+        transform="translate(1105, 145) rotate(90)"
+        clip-path="url(#gh-clip)" />
+    <text fill="lightgray" font-size="40" transform="translate(1070, 230) rotate(90)"
+        alignment-baseline="central">kanade-k-1228</text>
+    <g fill="hsl(120, 2%, 83%)">
+        <rect x="1010" y="135" width="10" height="15" />
+        <rect x="1010" y="160" width="10" height="20" />
+        <rect x="1010" y="190" width="10" height="20" />
+        <rect x="1010" y="220" width="10" height="20" />
+        <rect x="1010" y="250" width="10" height="20" />
+        <rect x="1010" y="280" width="10" height="20" />
+        <rect x="1010" y="310" width="10" height="20" />
+        <rect x="1010" y="340" width="10" height="20" />
+        <rect x="1010" y="370" width="10" height="20" />
+        <rect x="1010" y="400" width="10" height="20" />
+        <rect x="1010" y="430" width="10" height="20" />
+        <rect x="1010" y="460" width="10" height="20" />
+        <rect x="1010" y="490" width="10" height="20" />
+        <rect x="1010" y="520" width="10" height="15" />
+
+        <rect x="1120" y="135" width="10" height="15" />
+        <rect x="1120" y="160" width="10" height="20" />
+        <rect x="1120" y="190" width="10" height="20" />
+        <rect x="1120" y="220" width="10" height="20" />
+        <rect x="1120" y="250" width="10" height="20" />
+        <rect x="1120" y="280" width="10" height="20" />
+        <rect x="1120" y="310" width="10" height="20" />
+        <rect x="1120" y="340" width="10" height="20" />
+        <rect x="1120" y="370" width="10" height="20" />
+        <rect x="1120" y="400" width="10" height="20" />
+        <rect x="1120" y="430" width="10" height="20" />
+        <rect x="1120" y="460" width="10" height="20" />
+        <rect x="1120" y="490" width="10" height="20" />
+        <rect x="1120" y="520" width="10" height="15" />
+    </g>
+
+</svg>

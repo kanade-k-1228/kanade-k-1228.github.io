@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2048 puzzle</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      td {
+        text-align: center;
+        vertical-align: middle;
+        height: 40px;
+        width: 40px;
+        background-color: yellow;
+      }
+      .No0 {
+        background-color: white;
+      }
+
+      .No2 {
+        background-color: rgb(130, 180, 238);
+      }
+      .No4 {
+        background-color: rgb(0, 255, 191);
+      }
+      .No8 {
+        background-color: rgb(149, 224, 64);
+      }
+      .No16 {
+        background-color: rgb(224, 195, 64);
+      }
+      .No32 {
+        background-color: rgb(224, 141, 64);
+      }
+      .No64 {
+        background-color: rgb(224, 64, 64);
+      }
+    </style>
+  </head>
+  <body onload="init();">
+    <button onclick="init();">INIT</button>
+    <button onclick="up();">↑</button>
+    <button onclick="down();">↓</button>
+    <button onclick="left();">←</button>
+    <button onclick="right();">→</button>
+    <table>
+      <tr>
+        <td id="11"></td>
+        <td id="12"></td>
+        <td id="13"></td>
+        <td id="14"></td>
+      </tr>
+      <tr>
+        <td id="21"></td>
+        <td id="22"></td>
+        <td id="23"></td>
+        <td id="24"></td>
+      </tr>
+      <tr>
+        <td id="31"></td>
+        <td id="32"></td>
+        <td id="33"></td>
+        <td id="34"></td>
+      </tr>
+      <tr>
+        <td id="41"></td>
+        <td id="42"></td>
+        <td id="43"></td>
+        <td id="44"></td>
+      </tr>
+    </table>
+    <script>
+      document.addEventListener("keyup", (e) => {
+        if (e.code === "ArrowUp") up();
+        if (e.code === "ArrowDown") down();
+        if (e.code === "ArrowLeft") left();
+        if (e.code === "ArrowRight") right();
+      });
+
+      function get(i, j) {
+        return parseInt(document.getElementById("" + i + "" + j).innerHTML);
+      }
+      function set(i, j, x) {
+        document.getElementById("" + i + "" + j).innerHTML = x;
+        document.getElementById("" + i + "" + j).classList = [`No${x}`];
+      }
+      function randomPut() {
+        let emptyList = [];
+        for (let i = 1; i <= 4; i++)
+          for (let j = 1; j <= 4; j++)
+            if (get(i, j) === 0) emptyList.push([i, j]);
+        const k = Math.floor(Math.random() * emptyList.length);
+        set(emptyList[k][0], emptyList[k][1], 2);
+      }
+
+      function init() {
+        console.log("init");
+        for (let i = 1; i <= 4; i++) for (let j = 1; j <= 4; j++) set(i, j, 0);
+        randomPut();
+      }
+
+      function slide(input) {
+        if (input[0] === 0) return [...input.slice(1), 0];
+        else return input;
+      }
+
+      function reduct(input) {
+        if (input[0] === input[1]) return [input[0] * 2, ...input.slice(2), 0];
+        else return input;
+      }
+
+      function reductLine(inp0) {
+        const out1 = [...inp0.slice(0, 2), ...slide(inp0.slice(2, 4))];
+        const out2 = [...out1.slice(0, 1), ...slide(out1.slice(1, 4))];
+        const out3 = slide(out2);
+        const out4 = reduct(out3);
+        const out5 = [...out4.slice(0, 1), ...reduct(out4.slice(1, 4))];
+        const out6 = [...out5.slice(0, 2), ...reduct(out5.slice(2, 4))];
+        console.log([inp0, out1, out2, out3, out4, out5, out6]);
+        return out6;
+      }
+
+      function up() {
+        console.log("up");
+        for (let i = 1; i <= 4; i++) {
+          const ret = reductLine([get(1, i), get(2, i), get(3, i), get(4, i)]);
+          for (let j = 1; j <= 4; j++) set(j, i, ret[j - 1]);
+        }
+        randomPut();
+      }
+
+      function down() {
+        console.log("down");
+        for (let i = 1; i <= 4; i++) {
+          const ret = reductLine([get(4, i), get(3, i), get(2, i), get(1, i)]);
+          for (let j = 1; j <= 4; j++) set(5 - j, i, ret[j - 1]);
+        }
+        randomPut();
+      }
+
+      function left() {
+        console.log("left");
+        for (let i = 1; i <= 4; i++) {
+          const ret = reductLine([get(i, 1), get(i, 2), get(i, 3), get(i, 4)]);
+          for (let j = 1; j <= 4; j++) set(i, j, ret[j - 1]);
+        }
+        randomPut();
+      }
+
+      function right() {
+        console.log("right");
+        for (let i = 1; i <= 4; i++) {
+          const ret = reductLine([get(i, 4), get(i, 3), get(i, 2), get(i, 1)]);
+          for (let j = 1; j <= 4; j++) set(i, 5 - j, ret[j - 1]);
+        }
+        randomPut();
+      }
+    </script>
+  </body>
+</html>

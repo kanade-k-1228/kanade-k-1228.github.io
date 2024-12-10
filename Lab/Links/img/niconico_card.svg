@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- 背景色 -->
+    <rect x="0" y="0" width="1024" height="576" fill="hsl(159, 91%, 25%)" />
+
+    <!-- 配線 -->
+    <path style="fill:none; stroke-width:5; stroke:hsl(152, 57%, 54%);" stroke-linejoin="round" d="
+        M 300 -10,
+        l 150 150,
+        H 580,
+        a 10 10 180 0 0 10 -10,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0,
+        a 10 10 180 0 1 10 -10,
+        H 1000,
+        l 60 60" />
+    <path style="fill:none; stroke-width:7; stroke:hsl(152, 57%, 54%);" stroke-linejoin="round" d="
+        M 250 280,
+        l 150 150,
+        v 25,
+        l 20 20,
+        h 30,
+        c 40 0 60 -30 60 -40,
+        a 10 10 180 0 0 -20 0,
+        a 10 10 180 0 0 -20 0,
+        c 0 10 20 40 60 40,
+        H 1100" />
+    <!-- <circle cx="860" cy="275" r="20" style="fill:#FFFFFF;" /> -->
+    <!-- <circle cx="740" cy="440" r="40" style="stroke:#fec002; stroke-width:10; fill:none;" /> -->
+
+    <!-- 名前テキスト -->
+    <text x="460" y="300" fill="#FFFFFF" font-size="140">Kanade</text>
+    <text x="490" y="370" fill="#FFFFFF" font-size="40">@kanade_k_1228</text>
+
+    <!-- アイコン画像 -->
+    <clipPath id="icon-clip">
+        <circle cx="250" cy="280" r="180" />
+    </clipPath>
+    <image xlink:href="icon.png" x="70" y="100" height="360" width="360" clip-path="url(#icon-clip)" />
+    <circle cx="250" cy="280" r="180" style="stroke:#fec002; stroke-width:20; fill:none;" />
+</svg>

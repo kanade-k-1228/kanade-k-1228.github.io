@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- 背景色 -->
+    <rect x="0" y="0" width="1000" height="200" fill="hsl(159, 91%, 25%)" />
+
+    <!-- 配線 -->
+    <path style="fill:none; stroke-width:5; stroke:hsl(152, 57%, 54%);" stroke-linejoin="round" d="
+        M 200 -10,
+        l 40 40,
+        H 300,
+        a 10 10 180 0 0 10 -10,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0, v -20,
+        a 10 10 180 0 1 20 0, v 20, a 10 10 180 0 0 20 0,
+        a 10 10 180 0 1 10 -10,
+        H 930,
+        l 30 30,
+        L 960 150" />
+    <path style="fill:none; stroke-width:15; stroke:hsl(152, 57%, 54%);" stroke-linejoin="round" d="
+        M 100 100,
+        l 80 80,
+        H 930,
+        L 960 150" />
+    <circle cx="960" cy="150" r="20" style="fill:#FFFFFF;" />
+    <circle cx="960" cy="150" r="20" style="stroke:#fec002; stroke-width:10; fill:none;" />
+
+    <!-- 名前テキスト -->
+    <text x="225" y="150" fill="#FFFFFF" font-size="110">Kanade's Lab</text>
+
+    <!-- アイコン画像 -->
+    <clipPath id="icon-clip">
+        <circle cx="100" cy="100" r="90" />
+    </clipPath>
+    <image xlink:href="./icon.png" x="0" y="0" height="200" width="200" clip-path="url(#icon-clip)" />
+    <circle cx="100" cy="100" r="90" style="stroke:#fec002; stroke-width:10; fill:none;" />
+</svg>

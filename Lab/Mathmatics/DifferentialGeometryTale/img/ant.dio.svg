@@ -1,0 +1,39 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="482px" height="202px" viewBox="-0.5 -0.5 482 202" content="&lt;mxfile&gt;&lt;diagram id=&quot;QwEsRoGV_jVlO_uDUARt&quot; name=&quot;ページ1&quot;&gt;5Zpdb5swFIZ/TW4RYEOSy4Z228UmVerFrl1wwZqJkXGaZL9+ppgvQ4qbkuZjUhThg23s5z2Y1yQzEKS77xxlyS8WYTpz7Wg3A/cz1/WcufwuAvsyABd+GYg5icqQ0wSeyF+sgraKbkiE805FwRgVJOsGQ7Ze41B0Yohztu1We2G0e9UMxbgXeAoR7Ud/k0gkZRQA225O/MAkTtSlob9QTVJU1VZV8wRFbNsKgYcZCDhjojxKdwGmBbwKTNnu24Gz9cg4XguTBlBJ8YroRs1ODUzsq+luEyLwU4bCoryVis7AKhEplSVHHqI8KyG/kB2W3a5Uj5gLvDs4LKeerMwSzFIs+F5WUQ2gwqMSxK3IbhvcToUwaZGug0hJHNddNxDkgeJwgIk/zqSYHZEZ8RM9Y/rIciIIW8tTz0wIlkoIVYU7SuLihGAaNql8VnSW7uLiJrGeUU5CK2N0Hxc9rYqjgDEevc3EW8mPZBbYM09eP/h4yZp7dUBCCpx3SrblvlWWn3IglKyLsdrTqOv4XXnrckve+ZC6/hTquheqrm1B2JHtTTJTjW3LByOqtkoWmFetT6QxHJfYWQ5oDCeQuFoE3pO4EmiT0rtQMN4S9XjV2UYUFIP6udPA7JEb4HsQ5lxbDmEf5tBqOAlL55JYciaQ6smD07B1wHimngyuwVp03XCXWua6XwgXXCjc5USrguOccVnwxuHidXRXuG1ZCinK5QOwyync8NfCMJYPTMHZn9pOu+8RwlHHnvf5tObvDcy/inFMpSSvXVM/BEVd4ZEROZIa/0KjDzSsOdvwEKtGbQuu9VN71moBWmodCcRjLHodSbZo36qWFRVy8/HanZ2BPCg7bOSviZplhIFrvvGM6PnaxZEpUe939GVz4pTQr1MNeLKcMNhd3npO6Ledd+wy4Wkd6ZuhiXLC0c2mP21OVMvk9G8cPvUwhfoqPPAwdeyBPKmDn3mcAgOXfQYo4LxQDNzxBUAZsl0nhHJRrnYKnPq7vnkf56lcLDBwsdcFU3cgXwnTwABeFUx4TpgGzumqN69A90VfCXcxDvfGbSkYc5OmtlRfcU61VekNGE5rS6u8+o9zAuq7Tt2vmOYEPPTz3dE50bmzPyisgbW+dWH1LZ1+jxoLq1vfE72q6g34c+8lZLH5Rb2s3vwvATz8Aw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="60" width="120" height="120" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <path d="M 190 20 L 190 20 L 190 20 L 190 20 L 190 140 L 120 180 L 120 180 L 120 60 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 83.6 20 L 142.5 20 L 190 20 L 190 20 L 119.7 60 L 0 60 L 0 60 L 70.3 20 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <ellipse cx="40" cy="105" rx="5" ry="5" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <path d="M 40 110 L 40 126.67 M 40 113.33 L 30 113.33 M 40 113.33 L 50 113.33 M 40 126.67 L 30 140 M 40 126.67 L 50 140" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <ellipse cx="100" cy="25" rx="5" ry="5" fill="#ffffff" stroke="#000000" transform="rotate(54,100,40)" pointer-events="all"/>
+        <path d="M 100 30 L 100 46.67 M 100 33.33 L 90 33.33 M 100 33.33 L 110 33.33 M 100 46.67 L 90 60 M 100 46.67 L 110 60" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(54,100,40)" pointer-events="all"/>
+        <ellipse cx="160" cy="85" rx="5" ry="5" fill="#ffffff" stroke="#000000" transform="rotate(54,160,100)" pointer-events="all"/>
+        <path d="M 160 90 L 160 106.67 M 160 93.33 L 150 93.33 M 160 93.33 L 170 93.33 M 160 106.67 L 150 120 M 160 106.67 L 170 120" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(54,160,100)" pointer-events="all"/>
+        <ellipse cx="80" cy="105" rx="5" ry="5" fill="#ffffff" stroke="#000000" transform="rotate(90,80,120)" pointer-events="all"/>
+        <path d="M 80 110 L 80 126.67 M 80 113.33 L 70 113.33 M 80 113.33 L 90 113.33 M 80 126.67 L 70 140 M 80 126.67 L 90 140" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(90,80,120)" pointer-events="all"/>
+        <path d="M 40 90 Q 40 60 72.01 52" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 77.83 50.54 L 71.04 56.36 L 72.01 52 L 69.1 48.6 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 120 40 Q 160 40 160 71.76" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 160 77.76 L 156 69.76 L 160 71.76 L 164 69.76 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 140 110 Q 130 120 118.24 120" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 112.24 120 L 120.24 116 L 118.24 120 L 120.24 124 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="380" y="0" width="100" height="100" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <rect x="280" y="0" width="100" height="100" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <rect x="280" y="100" width="100" height="100" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <ellipse cx="310" cy="135" rx="5" ry="5" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <path d="M 310 140 L 310 156.67 M 310 143.33 L 300 143.33 M 310 143.33 L 320 143.33 M 310 156.67 L 300 170 M 310 156.67 L 320 170" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <ellipse cx="330" cy="35" rx="5" ry="5" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <path d="M 330 40 L 330 56.67 M 330 43.33 L 320 43.33 M 330 43.33 L 340 43.33 M 330 56.67 L 320 70 M 330 56.67 L 340 70" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <ellipse cx="430" cy="35" rx="5" ry="5" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+        <path d="M 430 40 L 430 56.67 M 430 43.33 L 420 43.33 M 430 43.33 L 440 43.33 M 430 56.67 L 420 70 M 430 56.67 L 440 70" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <ellipse cx="350" cy="135" rx="5" ry="5" fill="#ffffff" stroke="#000000" transform="rotate(90,350,150)" pointer-events="all"/>
+        <path d="M 350 140 L 350 156.67 M 350 143.33 L 340 143.33 M 350 143.33 L 360 143.33 M 350 156.67 L 340 170 M 350 156.67 L 360 170" fill="none" stroke="#000000" stroke-miterlimit="10" transform="rotate(90,350,150)" pointer-events="all"/>
+        <path d="M 310 120 Q 310 100 316.32 87.37" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 319 82 L 319 90.94 L 316.32 87.37 L 311.84 87.37 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 360 60 Q 360 60 391.76 60" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 397.76 60 L 389.76 64 L 391.76 60 L 389.76 56 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 430 80 Q 430 140 388.08 148.38" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 382.19 149.56 L 389.25 144.07 L 388.08 148.38 L 390.82 151.91 Z" fill="#000000" stroke="#000000" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+    </g>
+</svg>

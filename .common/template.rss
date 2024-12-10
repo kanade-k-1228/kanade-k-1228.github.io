@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Kanade's Lab.</title>
+<link>https://kanade-k-1228.github.io/</link>
+<description>数学・物理から、半導体、Web技術まで。幅広く取り揃えております。</description>
+<language>ja</language>
+<copyright>kanade-k-1228</copyright>
+<docs>https://kanade-k-1228.github.io/feed.rss</docs>
+$if(pubDate)$<pubDate>$pubDate$</pubDate>$endif$
+$if(lastBuildDate)$<lastBuildDate>$lastBuildDate$</lastBuildDate>$endif$
+
+<image>
+<url>https://kanade-k-1228.github.io</url>
+<title>Welcome to Kanade's website!</title>
+<link>https://kanade-k-1228.github.io/img/ogp.png</link>
+<width>1200</width>
+<height>630</height>
+<description>ほげほげ</description>
+</image>
+
+$for(category)$
+<category$if(category.domain)$ domain="$category.domain$"$endif$>$category.category$</category>
+$endfor$
+
+$for(categories)$
+<category>$categories$</category>
+$endfor$
+
+$if(rating)$<rating>$rating$</rating>$endif$
+
+$if(textinput)$
+<textInput>
+<title>$textInput.title$</title>
+<description>$textInput.description$</description>
+<name>$textInput.name$</name>
+<link>$textInput.link$</link>
+</textInput>
+$endif$
+
+$for(item)$
+<item>
+$if(item.title)$
+<title>$item.title$</title>
+$endif$ $if(item.link)$
+<link>$item.link$</link>
+$endif$ $if(item.description)$
+<description>$item.description$</description>
+$endif$ $if(item.author)$
+<author>$item.author$</author>
+$endif$
+$for(item.category)$
+<category$if(item.category.domain)$ domain="$item.category.domain$"$endif$>$item.category.category$</category>
+$endfor$
+$for(item.categories)$
+<category>$item.categories$</category>
+$endfor$
+$if(item.comments)$
+<comments>$item.comments$</comments>
+$endif$ $if(item.enclosure)$
+<enclosure url="$item.enclosure.url$" length="$item.enclosure.length$" type="$item.enclosure.type$" />
+$endif$ $if(item.guid)$
+<guid$if(item.guid.isPermaLink)$ isPermaLink="$item.guid.isPermaLink$"$endif$>$item.guid.guid$</guid>
+$endif$ $if(item.pubDate)$
+<pubDate>$item.pubDate$</pubDate>
+$endif$ $if(item.source)$
+<source url="$item.source.url$">$item.source.source$</source>
+$endif$
+</item>
+$endfor$
+</channel>
+</rss>

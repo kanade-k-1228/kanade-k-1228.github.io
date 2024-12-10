@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  /* background-color: #fcfeff; */
+  /* background-color: #e4f0fc; */
+  background-color: hsl(210, 5%, 17%);
+  font-size: 16px;
+  font-family: "Kosugi Maru", "UD Digi Kyokasho NK-R", sans-serif;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+
+article {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 1220px) {
+  article {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1219px) {
+  article {
+    width: 100%;
+  }
+}
+
+h1 {
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+  padding: 8px;
+  color: hsl(303, 58%, 74%);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: hsl(300, 76%, 22%);
+}
+
+h2 {
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+  padding: 8px;
+  color: hsl(204, 46%, 71%);
+  font-size: 20px;
+  font-weight: bold;
+  background: hsl(210, 77%, 24%);
+}
+
+h3 {
+  font-weight: bold;
+  margin: 1em 0 0.5em 0.5em;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+h4 {
+  font-weight: bold;
+  margin: 0.5em 0 0.5em 0.7em;
+}
+
+p {
+  margin: 0.5em 0 0.5em 1em;
+}
+
+details {
+  margin: 0.5em 0 0.5em 1em;
+}
+
+small {
+  font-size: 10px;
+}
+
+table {
+  margin: 0.5em auto;
+  border-collapse: collapse;
+}
+
+th {
+  border: 1px solid;
+  padding: 0.3em;
+  text-align: center;
+  background-color: hsl(81, 100%, 87%);
+}
+
+td {
+  border: 1px solid;
+  padding: 0.3em;
+  text-align: center;
+  background-color: hsl(240, 100%, 97%);
+}
+
+ul,
+ol {
+  margin: 0.5em 0 0.5em 1em;
+  padding: 0 0 0 1.5em;
+}
+
+ul ul,
+ul ul ul,
+ol ol,
+ol ol ol {
+  margin: 0;
+}
+
+blockquote {
+  border: 1px solid;
+  border-radius: 2px;
+  background-color: hsl(0, 0%, 100%);
+  margin: 0.5em 1em 0.5em 1em;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  min-width: 50%;
+}
+
+header > ul {
+  margin: 0.5em 0 0.5em 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+header > ul > li {
+  width: 25%;
+  text-align: center;
+}
+
+header > ul > li > a {
+  display: block;
+}
+
+div#header-links {
+  height: 50px;
+  display: flex;
+  margin: 0.5em 0 0.5em 0;
+  justify-content: space-evenly;
+}
+
+div#header-links > a {
+  text-decoration: none;
+}
+
+nav {
+  border: 1px solid;
+  border-radius: 2px;
+  background-color: hsl(210, 5%, 17%);
+  margin: 0.5em 1em 0.5em 1em;
+}
+
+nav > ul {
+  margin: 0;
+}
+
+button {
+  display: block;
+  margin: 0.5em auto;
+}
+
+iframe {
+  display: block;
+  margin: 0.5em auto;
+}
+
+code {
+  display: inline-block;
+  padding: 1px;
+  border-width: 1px;
+  border-radius: 5px;
+  background: hsla(210, 13%, 72%, 0.2);
+  font-family: "Ricty Diminished", "Ricty", "Myrica M", "Migu 1M",
+    "Source Han Code JP", "SFMono-Regular", "Consolas", "Liberation Mono",
+    "Menlo", "Courier", monospace;
+}
