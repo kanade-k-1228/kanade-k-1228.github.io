@@ -103,7 +103,7 @@ L チカしました。
 
 [Project Ice Storm](https://clifford.at/icestorm)
 
-makeは-jで適宜並列化してね
+make は-j で適宜並列化してね
 
 ```
 sudo apt update
@@ -162,27 +162,27 @@ sudo apt-get install autoconf automake autotools-dev curl python3 python3-pip li
 ```
 
 ここでターゲットのアーキテクチャを指定します。
-multilib　にするといろいろなISA（IとかMとかC）に対応できる。
+multilib 　にするといろいろな ISA（I とか M とか C）に対応できる。
 
 ```
 ./configure --prefix=/opt/riscv --enable-multilib
 make newlib
 ```
 
-### RISC-VでLチカ
+### RISC-V で L チカ
 
 [TinyFPGA-BX](https://github.com/tinyfpga/TinyFPGA-BX)にあるサンプルを試します。
 
 #### 参考
 
-- [TinyFPGA BX で RISC-V を動かしてみる（その1）](https://flogics.com/wp/ja/2019/12/running-risc-v-on-tinyfpga-bx/)
+- [TinyFPGA BX で RISC-V を動かしてみる（その 1）](https://flogics.com/wp/ja/2019/12/running-risc-v-on-tinyfpga-bx/)
 - [TinyFPGA BX で RISC-V を動かしてみる（nextpnr 編）](https://flogics.com/wp/ja/2019/12/running-risc-v-on-tinyfpga-bx-part2/)
 
 ### WSL2 に USB を渡す
 
-WSL2でUSBを使うには、[USB デバイスを接続する](https://learn.microsoft.com/ja-jp/windows/wsl/connect-usb)
+WSL2 で USB を使うには、[USB デバイスを接続する](https://learn.microsoft.com/ja-jp/windows/wsl/connect-usb)
 
-PowerShellをadminで開き、
+PowerShell を admin で開き、
 
 ```
 usbipd wsl list
@@ -193,21 +193,21 @@ usbipd wsl attach --busid <BUS-ID>
 [WSL-support](https://github.com/dorssel/usbipd-win/wiki/WSL-support)
 に従ってコマンドをたたいたら、いけました。
 
-WSL2側で `lsusb` すれば認識されてるはず。
+WSL2 側で `lsusb` すれば認識されてるはず。
 
-※ attach でエラーが出る。FPGA側のUSBを書き換える必要がありそう。
+※ attach でエラーが出る。FPGA 側の USB を書き換える必要がありそう。
 
 ### Windows 側で書き込む
 
-WSL側からWindowsのプロセスを起動し書き込みを行う。
+WSL 側から Windows のプロセスを起動し書き込みを行う。
 
-Windowsの環境変数に `$env:WSLHome = \\wsl.localhost\Ubuntu\home\[user]` を追加し、PowerShellで、
+Windows の環境変数に `$env:WSLHome = \\wsl.localhost\Ubuntu\home\[user]` を追加し、PowerShell で、
 
 ```
 tinyprog -p $env:WSLHome\TinyFPGA-BX\examples\picosoc\hardware.bin -u $env:WSLHome\TinyFPGA-BX\examples\picosoc\hardware.bin
 ```
 
-すれば書き込めます。これをWSL側から起動します。Makefile参照。Windowsの環境変数 `$env:WSLHome` を使うには、Linuxの環境変数記号 `$` をエスケープして `\$env:WSLHome` とし、Makefileの変数記号 `$` をエスケープするために `\$$env:WSLHome` とする。
+すれば書き込めます。これを WSL 側から起動します。Makefile 参照。Windows の環境変数 `$env:WSLHome` を使うには、Linux の環境変数記号 `$` をエスケープして `\$env:WSLHome` とし、Makefile の変数記号 `$` をエスケープするために `\$$env:WSLHome` とする。
 
 ### Makefile
 
@@ -229,7 +229,7 @@ hardware.bin: hardware.asc
 	icepack hardware.asc hardware.bin
 
 
-firmware.elf: sections.lds start.S firmware.c 
+firmware.elf: sections.lds start.S firmware.c
 	$(CC) -march=rv32imc -mabi=ilp32 -nostartfiles -Wl,-Bstatic,-T,sections.lds,--strip-debug,-Map=firmware.map,--cref  -ffreestanding -nostdlib -o firmware.elf start.S firmware.c
 
 firmware.bin: firmware.elf

@@ -1,17 +1,16 @@
-
 ---
 title: 第２回自作CPUを語る会やるよ！
 date: 2023-12-01
 author: Kanade
 ---
 
-この記事は [自作CPU Advent Calendar 2023](https://adventar.org/calendars/8916) 1 日目の記事です。
+この記事は [自作 CPU Advent Calendar 2023](https://adventar.org/calendars/8916) 1 日目の記事です。
 
-こんにちは！Kanadeです。
+こんにちは！Kanade です。
 
 計算機、作ってますか？作りましょう！
 
-ということで、自作CPUを語る会の第２回を、12/3（日）にサイボウズ東京オフィス（日本橋）にて開催します！
+ということで、自作 CPU を語る会の第２回を、12/3（日）にサイボウズ東京オフィス（日本橋）にて開催します！
 
 参加登録はこちらから → [connpass](https://connpass.com/event/287012/)
 
@@ -22,7 +21,7 @@ author: Kanade
 第２回の前に、第１回のふりかえりをしていきましょう！
 ハッシュタグ [#make_cpu](https://twitter.com/search?q=%23make_cpu&src=typed_query) への投稿、ありがとうございました！
 
-### Kanadeの発表
+### Kanade の発表
 
 最初は Kanade から、この会を開くに至った経緯をお話しました。
 
@@ -32,7 +31,7 @@ author: Kanade
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">確かにMFTとかで展示されてて「わー、すごいですね」とか当たり障りない会話をしつつ「レジスタは何bitが何個ですか？命令セットは？クロックサイクルは？」とか聞きたくなったりしてたから聞けるの楽しい。<a href="https://twitter.com/hashtag/make_cpu?src=hash&amp;ref_src=twsrc%5Etfw">#make_cpu</a></p>&mdash; TEFSOM (@Si_SJ_MOSFET) <a href="https://twitter.com/Si_SJ_MOSFET/status/1667751061363503105?ref_src=twsrc%5Etfw">June 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-というわけで、自分のCPUのアーキテクチャについて語らせてもらいました。
+というわけで、自分の CPU のアーキテクチャについて語らせてもらいました。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ハードウェアの加算器の部分を減算器にしたり乗算器にすると、同じソフトで「一般化されたフィボナッチ数列」を計算できる。ハードとソフトの双対性。 <a href="https://twitter.com/hashtag/make_cpu?src=hash&amp;ref_src=twsrc%5Etfw">#make_cpu</a></p>&mdash; uchan (@uchan_nos) <a href="https://twitter.com/uchan_nos/status/1667751717474291712?ref_src=twsrc%5Etfw">June 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -54,11 +53,11 @@ author: Kanade
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">FORTH言語みたいなISAじゃな<a href="https://twitter.com/hashtag/make_cpu?src=hash&amp;ref_src=twsrc%5Etfw">#make_cpu</a></p>&mdash; みなぎ🌱 (@minagi_yu) <a href="https://twitter.com/minagi_yu/status/1667769804630147072?ref_src=twsrc%5Etfw">June 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-FORTH好き
+FORTH 好き
 
-### 交流会＆LT会
+### 交流会＆LT 会
 
-続いては後半戦、持ってきた自作CPUを囲んで交流会タイムです！
+続いては後半戦、持ってきた自作 CPU を囲んで交流会タイムです！
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">自作 CPU ブース，9 テーブル満員御礼なのやばいな <a href="https://twitter.com/hashtag/make_cpu?src=hash&amp;ref_src=twsrc%5Etfw">#make_cpu</a></p>&mdash; 旭川から小平市をはじめ各地に飛び立つ地方ITコミュニティ盛り上げ大臣とみお (@tomio2480) <a href="https://twitter.com/tomio2480/status/1667775413840650240?ref_src=twsrc%5Etfw">June 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -78,7 +77,7 @@ FORTH好き
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">おもろかったわ<br>第2回はもうちょっと高レイヤになることを期待()<a href="https://twitter.com/hashtag/make_cpu?src=hash&amp;ref_src=twsrc%5Etfw">#make_cpu</a></p>&mdash; Y.M.D オフライン (@YMD_Glasses) <a href="https://twitter.com/YMD_Glasses/status/1667849437245505542?ref_src=twsrc%5Etfw">June 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-第１回は超低レイヤな会でしたが高レイヤ（FPGAなど）の発表も大歓迎です！というかなんでこんなハードウェア寄りなんですか！普通自作CPUってFPGAじゃないんですか！？
+第１回は超低レイヤな会でしたが高レイヤ（FPGA など）の発表も大歓迎です！というかなんでこんなハードウェア寄りなんですか！普通自作 CPU って FPGA じゃないんですか！？
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/make_cpu?src=hash&amp;ref_src=twsrc%5Etfw">#make_cpu</a><br>さて……… <a href="https://t.co/5t3BwpxjNP">pic.twitter.com/5t3BwpxjNP</a></p>&mdash; せながおぢさん【大阪カンファ共同代表】 (@Seyanaga) <a href="https://twitter.com/Seyanaga/status/1667799531742990336?ref_src=twsrc%5Etfw">June 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

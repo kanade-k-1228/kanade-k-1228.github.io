@@ -4,15 +4,13 @@ date: 2023-07-01
 keywords: TangNano, tangnano, FPGA, gowin
 ---
 
-今さらですがTangNanoを触ります。
+今さらですが TangNano を触ります。
 
-Interfaceのおかげで全人類FPGAに入門しているので、この記事ではIDEを使わずに全てCLIだけで開発します。
-
-原発でも動かすのか？ってぐらい複雑なIDEが嫌いすぎて、、、（参考：[チェルノブイリ原発シミュ](https://www.nicovideo.jp/watch/sm38241694)）
+Interface のおかげで全人類 FPGA に入門しているので、この記事では IDE を使わずに全て CLI だけで開発します。
 
 ## [yosys](https://github.com/YosysHQ/yosys)
 
-なんでも合成してくれるyosys先生。
+なんでも合成してくれる yosys 先生。
 
 以下インストール手順です。`git checkout` で latest のリリースを選んでください。
 
@@ -38,9 +36,9 @@ yosys -p "synth_gowin -json top.json -top top" $^
 
 ## [apicula](https://github.com/YosysHQ/apicula)
 
-Gowin の FPGA をリバースエンジニアリングしてオープンソース化するプロジェクトみたいです。ありがたい話し❗️助かる❗️助かる❗️
+Gowin の FPGA をリバースエンジニアリングしてオープンソース化するプロジェクトみたいです。ありがたい話し ❗️ 助かる ❗️ 助かる ❗️
 
-pythonのpipでインストールします。
+python の pip でインストールします。
 
 ```
 pip install apycula
@@ -54,7 +52,7 @@ gowin_pack -d GW1N-1 -o top.fs top.pack
 
 ## [nextpnr](https://github.com/YosysHQ/nextpnr)
 
-これまたおなじみなんでも配置配線 (place and route) してくれるnextpnr先生。
+これまたおなじみなんでも配置配線 (place and route) してくれる nextpnr 先生。
 
 以下インストール手順です。
 
@@ -67,7 +65,7 @@ make
 sudo make install
 ```
 
-nextpnrはたくさんのFPGAを使ってるオタク君に優しいギャルなので、
+nextpnr はたくさんの FPGA を使ってるオタク君に優しいギャルなので、
 
 ```
 cmake . -DARCH="ice40;gowin"
@@ -75,11 +73,12 @@ cmake . -DARCH="ice40;gowin"
 
 というように、`;` 区切りにすれば複数のアーキテクチャに対応したビルドができます。
 
-また、cmakeでgowin_bbrが見つからないと言われたら、
+また、cmake で gowin_bbr が見つからないと言われたら、
 
 ```
 cmake . -DARCH=gowin -DGOWIN_BBA_EXECUTABLE=`which gowin_bba`
 ```
+
 してください。それでも怒られたら、たぶんパスが通ってないので、
 
 ```
@@ -88,7 +87,7 @@ export PATH=$HOME/.local/bin:$PATH
 
 してください。
 
-pnrのコマンドは、
+pnr のコマンドは、
 
 ```
 nextpnr --json top.json --write top.pack --device GW1N-LV1QN48C6/I5 --cst tangnano.cst
@@ -96,7 +95,7 @@ nextpnr --json top.json --write top.pack --device GW1N-LV1QN48C6/I5 --cst tangna
 
 ## [openFPGALoader](https://github.com/trabucayre/openFPGALoader)
 
-なんでも書き込みしてくれるopenFPGALoader先生。
+なんでも書き込みしてくれる openFPGALoader 先生。
 
 ```
 git clone https://github.com/trabucayre/openFPGALoader.git
@@ -104,7 +103,7 @@ cd openFPGALoader
 git checkout v0.10.0 # select latest release commit
 mkdir build
 cd build
-cmake ../ 
+cmake ../
 cmake --build .
 sudo make install
 ```
@@ -117,9 +116,9 @@ openFPGALoader -b tangnano top.fs
 
 ### WSL
 
-WSL2でUSBを使うには、[USB デバイスを接続する](https://learn.microsoft.com/ja-jp/windows/wsl/connect-usb)
+WSL2 で USB を使うには、[USB デバイスを接続する](https://learn.microsoft.com/ja-jp/windows/wsl/connect-usb)
 
-PowerShellをadminで開き、
+PowerShell を admin で開き、
 
 ```
 usbipd wsl list
@@ -130,15 +129,15 @@ usbipd wsl attach --busid <BUS-ID>
 [WSL-support](https://github.com/dorssel/usbipd-win/wiki/WSL-support)
 に従ってコマンドをたたいたら、いけました。
 
-WSL2側で `lsusb` すれば認識されてるはず。
+WSL2 側で `lsusb` すれば認識されてるはず。
 
 ### Windows
 
-MSYS2を使えば Windows で実行できるようです。
+MSYS2 を使えば Windows で実行できるようです。
 
 1. MSYS2 をインストール
 2. UCRT x64 環境（黄色のロゴ）を起動
-3. openFPGAloaderをインストール
+3. openFPGAloader をインストール
 
 ```
 pacman -S mingw-w64-ucrt-x86_64-openFPGALoader
@@ -150,9 +149,9 @@ pacman -S mingw-w64-ucrt-x86_64-openFPGALoader
 
 **! TODO**
 
-## Docker化
+## Docker 化
 
-というわけで、積み上げた開発環境を爆破し更地にして、Docker化します。
+というわけで、積み上げた開発環境を爆破し更地にして、Docker 化します。
 
 コマンドたちがさえずる綺麗な環境を守りたい。。。
 
