@@ -5,7 +5,7 @@ const articleSchema = ({ image }: { image: () => z.ZodType }) =>
   z.object({
     title: z.string(),
     date: z.coerce.date().optional(),
-    description: z.string().optional(),
+    abst: z.string().optional(),
     ogp: image().optional(),
     toc: z.boolean().default(true),
     draft: z.boolean().default(false),

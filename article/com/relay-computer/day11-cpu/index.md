@@ -1,7 +1,7 @@
 ---
 title: CPUになりきる
 date: 2021-12-11
-description: CPUが実行するプログラムを手で実行します。
+abst: CPUが実行するプログラムを手で実行します。
 keywords:
   - リレーコンピュータ
   - 自作CPU

@@ -21,7 +21,7 @@ export const getFeatured = async (): Promise<FeaturedItem[]> => {
     items.push({
       url,
       title: article.data.title,
-      description: article.data.description,
+      description: article.data.abst,
     });
   }
   return items;

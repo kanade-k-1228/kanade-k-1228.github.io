@@ -35,7 +35,7 @@ Node.js 20.18+ / pnpm 11+ を想定。
 ---
 title: 記事タイトル # 必須
 date: 2024-01-15 # 任意 (新着順に効く)
-description: 一行説明 # 任意 (OGP 用)
+abst: 一行説明 # 任意 (OGP 用)
 keywords: [tag1, tag2] # 任意
 ogp: ./img/cover.png # 任意 (colocated 画像も可)
 toc: true # 既定 true

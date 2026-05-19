@@ -1,7 +1,7 @@
 ---
 title: カウンタ回路
 date: 2021-12-06
-description: 数を数えるカウンタ回路をリレーで作ります。
+abst: 数を数えるカウンタ回路をリレーで作ります。
 ---
 
 これは [リレーから始める CPU 自作 Advent Calendar 2021](https://adventar.org/calendars/7052) 6 日目の記事です。[<<< 5 日目](../Day5_DFF/)
