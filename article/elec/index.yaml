@@ -1,0 +1,59 @@
+misc:
+  name: 電子工作
+  articles:
+    - misc/hotplate-reflow
+    - misc/logic-ic
+    - misc/parts-shop
+    - misc/pcb
+    - misc/select-micon
+    - misc/sound-keyholder
+    - misc/ymz294
+circuit:
+  name: 電子回路
+  articles:
+    - circuit/bjt
+    - circuit/cmos
+    - circuit/diode
+    - circuit/fet
+    - circuit/flip-flop
+    - circuit/opamp
+micon:
+  name: マイコン
+  articles:
+    - micon/micon
+    - micon/cpu
+    - micon/memory
+    - micon/interrupt
+    - micon/adc
+    - micon/dac
+    - micon/pwm
+    - micon/uart
+    - micon/i2-c
+    - micon/spi
+power:
+  name: 動力系
+  articles:
+    - power/moter
+    - power/encoder
+radio:
+  name: 電波
+  articles:
+    - radio/antenna
+    - radio/radio-wave
+    - radio/rectenna-led
+fpga:
+  name: FPGA
+  articles:
+    - fpga/verilog-introduction
+    - fpga/i-ce40
+    - fpga/tang-nano9k
+    - fpga/tiny-fpga
+    - fpga/fpgavga
+    - fpga/fpgasound
+    - fpga/my-so-c
+lsi:
+  name: LSI
+  articles:
+    - lsi/process
+    - lsi/vlsi
+    - lsi/my-alu

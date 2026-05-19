@@ -1,0 +1,12 @@
+"*":
+  name: 制御工学
+  articles:
+    - modern-control-theory
+    - spring-mass-system
+    - inverted-pendulum
+    - segway
+    - drone
+    - rotation
+    - imu-gnss-esekf
+    - gps
+    - relativistic-control-engineering

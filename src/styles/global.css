@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts: Noto Sans JP (sans) + Roboto Mono (mono). Loaded from Google Fonts in BaseLayout. */
+
+@layer base {
+  html {
+    @apply bg-sky-50 text-neutral-900;
+    scroll-behavior: smooth;
+  }
+  html.dark {
+    @apply bg-zinc-900 text-zinc-100;
+  }
+  body {
+    @apply font-sans;
+  }
+
+  /* Offset jump targets so the sticky header doesn't cover them. */
+  .prose :where(h1, h2, h3, h4, h5, h6)[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  a {
+    @apply text-sky-700 underline-offset-2 hover:underline dark:text-sky-400;
+  }
+
+  /* inline-svg figures rendered by remark-inline-svg */
+  figure.inline-svg {
+    @apply mx-auto my-4 text-center;
+  }
+  figure.inline-svg svg {
+    @apply mx-auto max-w-full h-auto;
+  }
+
+  /* Typst math rendered as SVG by rehype-typst-safe.
+     Tailwind preflight forces svg { display: block }, which breaks inline math. */
+  svg.typst-inline {
+    @apply inline-block;
+  }
+  svg.typst-display {
+    @apply block mx-auto my-2;
+  }
+  /* Dark mode: typst emits fill="#000" on glyph groups. Re-route to currentColor
+     so the math inherits the page text color (zinc-100). */
+  html.dark svg.typst-doc [fill="#000"] {
+    fill: currentColor;
+  }
+
+  /* Shiki dual-theme switch: Astro 5 emits both --shiki-light and --shiki-dark
+     CSS variables on each span. By default the *light* theme is inlined as
+     background-color / color, so dark mode needs an explicit override. */
+  html.dark .astro-code,
+  html.dark .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+
+  .toc-link.is-active {
+    @apply border-sky-500 font-bold !text-sky-700 dark:border-sky-400 dark:!text-sky-300;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom scrollbar                                                    */
+/* Firefox / modern browsers use scrollbar-* properties;               */
+/* WebKit (Chrome / Safari / Edge) uses ::-webkit-scrollbar.           */
+/* Track は透明にして body 背景を透かし、thumb のみ色を持たせる。       */
+/* ------------------------------------------------------------------ */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: theme("colors.sky.300") transparent;
+}
+html.dark {
+  scrollbar-color: theme("colors.zinc.700") transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: theme("colors.sky.300");
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme("colors.sky.500");
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: theme("colors.zinc.700");
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: theme("colors.zinc.600");
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

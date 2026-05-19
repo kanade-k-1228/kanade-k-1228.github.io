@@ -1,0 +1,27 @@
+"*":
+  name: 数学
+  articles:
+    - linear-algebra
+    - analysis
+    - complex-analysis
+    - measure-theory
+    - probability-theory
+    - manifold
+    - manifold-quick
+    - differential-geometry-tale
+    - exterior-algebra
+    - covariance-contravariance
+    - category-theory
+    - kangaekata
+    - fourier-transform
+    - laplace-transform
+    - orthogonal-functions
+    - green-function
+    - wave-equation
+    - kd-veq
+practical-math:
+  name: 応用数学
+  articles:
+    - practical-math/data-science
+    - practical-math/financial-engineering
+    - practical-math/optimization

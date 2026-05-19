@@ -1,0 +1,27 @@
+# build
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# env
+.env
+.env.production
+.env.development
+
+# editor
+.DS_Store
+.vscode/*.log
+
+# migration
+scripts/migration-report.json
+
+# legacy pandoc artefacts (kept in tree only while Phase 1–6 run; removed in Phase 7)
+feed.rss

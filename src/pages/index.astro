@@ -1,0 +1,82 @@
+---
+import Base from "./_base.astro";
+import { IndexList } from "../components/IndexList";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { news } from "../lib/news";
+import { getFeatured } from "../lib/articles/featured";
+import { buildIndex } from "../lib/articles/index-tree";
+
+const upcoming = news.filter((n) => n.status === "upcoming");
+const past = news.filter((n) => n.status === "past");
+const featured = await getFeatured();
+const sections = await buildIndex();
+
+// Markdown 風の [label](url) を <a> に展開する単純な変換。
+const inlineLinks = (s: string): string => s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+---
+
+<Base>
+  <section class="mb-12">
+    <h1 class="text-4xl font-bold">{SITE_TITLE}</h1>
+    <p class="mt-2 text-neutral-900/70 dark:text-zinc-100/70">{SITE_DESCRIPTION}</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold">新着記事</h2>
+    {
+      featured.length === 0 ? (
+        <p class="text-neutral-900/60 dark:text-zinc-100/60">
+          (<code>data/featured.yaml</code> に手書きで追記)
+        </p>
+      ) : (
+        <ul class="space-y-2">
+          {featured.map((item) => (
+            <li>
+              <a href={item.url} class="font-bold">
+                {item.title}
+              </a>
+              {item.description && (
+                <span class="ml-2 text-sm text-neutral-900/70 dark:text-zinc-100/70">{item.description}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+
+  {
+    upcoming.length > 0 && (
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-bold">おしらせ</h2>
+        <ul class="space-y-3">
+          {upcoming.map((item) => (
+            <li class="rounded-md border border-sky-200/60 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800">
+              <p class="font-bold">{item.title}</p>
+              <p class="mt-1 text-sm text-neutral-900/70 dark:text-zinc-100/70" set:html={inlineLinks(item.body)} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold">これまで</h2>
+    <ul class="space-y-3">
+      {
+        past.map((item) => (
+          <li class="rounded-md border border-sky-200/60 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800">
+            <p class="font-bold">{item.title}</p>
+            <p class="mt-1 text-sm text-neutral-900/70 dark:text-zinc-100/70" set:html={inlineLinks(item.body)} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-2xl font-bold">記事一覧</h2>
+    <IndexList sections={sections} />
+  </section>
+</Base>
