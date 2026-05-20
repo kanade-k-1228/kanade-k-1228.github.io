@@ -2,7 +2,7 @@ about: マイコンを作りたい！
 architecture: 自作マイコンのアーキテクチャ RK16
 assembler: アセンブラ
 compiler: 自作コンパイラ
-cyy: 自作言語:C--
+tasm: 自作言語:tasm
 emulator: エミュレータ
 hardware: ロジックICで組む
 parts: 使用する部品
