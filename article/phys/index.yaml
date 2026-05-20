@@ -1,38 +1,18 @@
 physics-mathmatics:
   name: 物理数学
-  articles:
-    - physics-mathmatics
+  articles: []
 mechanics:
   name: 力学
-  articles:
-    - continuum-mechanics
-    - material-mechanics
-    - fluid-mechanics
-    - analytical-mechanics
+  articles: []
 relativity:
   name: 相対論
-  articles:
-    - electromagnetism
-    - special-relativity
-    - relativistic-quantum-mechanics
-    - general-theory-of-relativity
+  articles: []
 quantum:
   name: 量子論
-  articles:
-    - quantum-mechanics
-    - condensed-matter
+  articles: []
 thermo:
   name: 熱・統計
-  articles:
-    - thermo-dynamics
-    - shimizu-thermo-dynamics
-    - statistical-mechanics
-    - soft-matter
-    - transport-phenomena
+  articles: []
 other:
   name: その他
-  articles:
-    - physics-theory
-    - cfd
-    - electro-optics
-    - spectroscopy
+  articles: []

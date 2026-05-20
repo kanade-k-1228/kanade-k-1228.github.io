@@ -1,16 +1,3 @@
 "*":
   name: 旅行記・日記
-  articles:
-    - 2023-12-31-comike
-    - 2023-12-25-advent-calendar
-    - 2023-12-01-advent-calendar
-    - 2023-05-06
-    - 2023-05-03-ontake
-    - 2023-03-tukubasan
-    - 2023-03-izu-ooshima
-    - 2022-09-20-hokkaido
-    - 2021-12-31-touhoku
-    - 2021-12-25-yamanote
-    - 2021-11-okutama
-    - 2021-09-touhoku
-    - 2019-06-shownan
+  articles: []

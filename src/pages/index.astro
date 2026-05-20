@@ -65,8 +65,9 @@ const inlineLinks = (s: string): string => s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,
     past.length > 0 && (
       <section class="mb-12">
         <details class="group">
-          <summary class="mb-4 cursor-pointer list-none text-2xl font-bold marker:hidden">
-            <span class="mr-2 inline-block align-middle text-xs transition-transform group-open:rotate-90">▶</span>これまで
+          <summary class="mb-4 flex cursor-pointer list-none items-center gap-2 text-2xl font-bold marker:hidden">
+            <span class="inline-block text-[0.5rem] leading-none text-neutral-900/60 transition-transform group-open:rotate-90 dark:text-zinc-100/60">▶</span>
+            <span>これまで</span>
           </summary>
           <ul class="space-y-3">
             {past.map((item) => (

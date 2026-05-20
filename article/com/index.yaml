@@ -1,94 +1,24 @@
 riscv:
   name: RISC-V
-  articles:
-    - riscv/isa
-    - riscv/rust
+  articles: []
 rk16:
   name: "自作マイコン: RK16"
-  articles:
-    - rk16/about
-    - rk16/architecture
-    - rk16/hardware
-    - rk16/parts
-    - rk16/pheripheral
-    - rk16/assembler
-    - rk16/rkasm
-    - rk16/compiler
-    - rk16/cyy
-    - rk16/emulator
-    - rk16/rtos
+  articles: []
 rk32:
   name: "自作マイコン: RK16"
-  articles:
-    - rk32/arch
-    - rk32/rv32
+  articles: []
 rk8:
   name: "自作 CPU: RK8"
-  articles:
-    - rk8
-    - rk8-r
-    - stack-machine
+  articles: []
 relay-computer:
   name: リレーコンピュータ
-  articles:
-    - relay-computer/cpuintroduction
-    - relay-computer/day-about-relay
-    - relay-computer/day1-introduction
-    - relay-computer/day2-switch-logic
-    - relay-computer/day3-relay-logic
-    - relay-computer/day4-latch
-    - relay-computer/day5-dff
-    - relay-computer/day6-counter
-    - relay-computer/day7-clock
-    - relay-computer/day8-illumination
-    - relay-computer/day9-rom
-    - relay-computer/day10-components
-    - relay-computer/day11-cpu
-    - relay-computer/day12-computer-system
-    - relay-computer/day13-relay-cpu
-    - relay-computer/day14-memory-map
-    - relay-computer/day15-mov
-    - relay-computer/day16-load
-    - relay-computer/day17-jmpif
-    - relay-computer/day18-alu
-    - relay-computer/day25-computer
-    - relay-computer/arithmetic-circuit
-    - relay-computer/moduler-architecture
-    - relay-computer/krpu
+  articles: []
 rtos:
   name: RTOS
-  articles:
-    - rtos/intro
-    - rtos/summmary
-    - rtos/task-scheduler
-    - rtos/task-priority
-    - rtos/timer
-    - rtos/interrupt
-    - rtos/watchdog
-    - rtos/arduino
+  articles: []
 web:
   name: Web
-  articles:
-    - full-stack
-    - web/intro
+  articles: []
 other:
   name: その他
-  articles:
-    - cpu/simd-alu
-    - reservoir
-    - 2048
-    - blog-site
-    - clang-processor
-    - coding
-    - docker
-    - famicon
-    - linux-device-driver
-    - longest-way
-    - lorentz-filter
-    - pc
-    - pcsetup
-    - reminder
-    - server-setup
-    - super-computer
-    - tla
-    - vpn
+  articles: []

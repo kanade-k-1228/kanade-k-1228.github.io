@@ -1,34 +1,9 @@
 misc:
   name: 雑記
-  articles:
-    - misc
-    - misc/diary
-    - misc/idea
-    - misc/mahjong
-    - misc/map-archaeology
-    - misc/music-theory
-    - misc/programing
-    - misc/room
-    - misc/study
-    - misc/the-witness
-    - misc/travel
-    - misc/travel/kisei
-    - misc/travel/plan
-    - misc/travel/ultimate-travel-otaku
-    - misc/video/0
-    - misc/video/playlist
+  articles: []
 kanameshi:
   name: 雑記
-  articles:
-    - kanameshi
+  articles: []
 plan:
   name: 計画
-  articles:
-    - plan
-    - plan/free-pass
-    - plan/kashiwa-tukubasan
-    - plan/kumotori
-    - plan/mitutouge
-    - plan/tokaido
-    - plan/toukai-trail
-    - plan/tsukuba
+  articles: []
