@@ -20,8 +20,4 @@ pnpm-debug.log*
 .DS_Store
 .vscode/*.log
 
-# migration
-scripts/migration-report.json
-
-# legacy pandoc artefacts (kept in tree only while Phase 1–6 run; removed in Phase 7)
-feed.rss
+.playwright-mcp/

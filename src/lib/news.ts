@@ -1,35 +1,16 @@
 import { parse } from "yaml";
-import yamlSource from "../../data/news.yaml?raw";
+import src from "../../data/news.yaml?raw";
 
-interface NewsItem {
+type NewsYaml = Record<string, { title: string; body: string }>;
+
+interface News {
   date: Date;
   title: string;
   body: string;
-  status: "upcoming" | "past";
 }
 
-interface RawEntry {
-  title: string;
-  body: string;
-}
+const raw = parse(src) as NewsYaml | null;
 
-const toDate = (key: unknown): Date => {
-  if (key instanceof Date) return key;
-  return new Date(String(key));
-};
-
-const raw = parse(yamlSource) as Record<string, RawEntry> | null;
-const today = new Date();
-today.setHours(0, 0, 0, 0);
-
-export const news: NewsItem[] = Object.entries(raw ?? {})
-  .map(([key, entry]) => {
-    const date = toDate(key);
-    return {
-      date,
-      title: entry.title,
-      body: entry.body,
-      status: date.getTime() >= today.getTime() ? ("upcoming" as const) : ("past" as const),
-    };
-  })
+export const news: News[] = Object.entries(raw ?? {})
+  .map(([key, { title, body }]) => ({ date: new Date(String(key)), title, body }))
   .sort((a, b) => b.date.getTime() - a.date.getTime());
