@@ -1,10 +1,12 @@
 ---
 import Base from "./_base.astro";
-import { IndexList } from "../components/IndexList";
+import { ArticleIndex } from "../components/ArticleIndex";
+import { FeaturedList } from "../components/FeaturedList";
 import { NewsBoard } from "../components/NewsBoard";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getFeatured } from "../lib/articles/featured";
 import { buildIndex } from "../lib/articles/index-tree";
+import { news } from "../lib/news";
 
 const featured = await getFeatured();
 const sections = await buildIndex();
@@ -20,42 +22,7 @@ const sections = await buildIndex();
     <p class="mt-3 px-1 text-neutral-900/70 dark:text-zinc-100/70">{SITE_DESCRIPTION}</p>
   </section>
 
-  <section class="mb-12">
-    <h2
-      class="mb-4 rounded bg-sky-200 px-3 py-2 text-2xl font-bold leading-tight text-sky-800 dark:bg-sky-950 dark:text-sky-200"
-    >
-      新着記事
-    </h2>
-    {
-      featured.length === 0 ? (
-        <p class="text-neutral-900/60 dark:text-zinc-100/60">
-          (<code>data/featured.yaml</code> に手書きで追記)
-        </p>
-      ) : (
-        <ul class="space-y-2">
-          {featured.map((item) => (
-            <li>
-              <a href={item.url} class="font-bold">
-                {item.title}
-              </a>
-              {item.description && (
-                <span class="ml-2 text-sm text-neutral-900/70 dark:text-zinc-100/70">{item.description}</span>
-              )}
-            </li>
-          ))}
-        </ul>
-      )
-    }
-  </section>
-
-  <NewsBoard client:load />
-
-  <section class="mb-12">
-    <h2
-      class="mb-4 rounded bg-sky-200 px-3 py-2 text-2xl font-bold leading-tight text-sky-800 dark:bg-sky-950 dark:text-sky-200"
-    >
-      記事一覧
-    </h2>
-    <IndexList sections={sections} />
-  </section>
+  <FeaturedList items={featured} />
+  <NewsBoard items={news} client:load />
+  <ArticleIndex sections={sections} />
 </Base>

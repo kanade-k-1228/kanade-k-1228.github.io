@@ -1,5 +1,12 @@
 import { useEffect, useState, type FC, type ReactNode } from "react";
-import { news } from "../lib/news";
+import type { NewsItem } from "../lib/news";
+
+export type { NewsItem };
+
+const todayLocal = (): string => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+};
 
 // Markdown 風の [label](url) を <a> 要素に展開する。
 const renderInlineLinks = (s: string): ReactNode[] => {
@@ -21,30 +28,25 @@ const renderInlineLinks = (s: string): ReactNode[] => {
   return out;
 };
 
-interface Item {
-  date: Date;
-  title: string;
-  body: string;
-}
-
-const NewsCard: FC<{ item: Item }> = ({ item }) => (
+const NewsCard: FC<{ item: NewsItem }> = ({ item }) => (
   <li className="rounded-md border border-sky-200/60 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800">
     <p className="font-bold">{item.title}</p>
     <p className="mt-1 text-sm text-neutral-900/70 dark:text-zinc-100/70">{renderInlineLinks(item.body)}</p>
   </li>
 );
 
-export const NewsBoard: FC = () => {
-  // SSR / 初期描画では now=null として全件を past 側に倒し、hydration mismatch を避ける。
-  // mount 後に Date.now() を入れて再分割する。
-  const [now, setNow] = useState<number | null>(null);
-  useEffect(() => setNow(Date.now()), []);
+export const NewsBoard: FC<{ items: NewsItem[] }> = ({ items }) => {
+  // SSR / 初期描画では today=null として全件を past 側に倒し、hydration mismatch を避ける。
+  // mount 後に今日の yyyy-mm-dd を入れて再分割する。
+  const [today, setToday] = useState<string | null>(null);
+  useEffect(() => setToday(todayLocal()), []);
 
-  if (news.length === 0) return null;
+  if (items.length === 0) return null;
 
-  const future = (n: Item) => now !== null && n.date.getTime() > now;
-  const upcoming = news.filter(future).slice().reverse(); // 近い順
-  const past = news.filter((n) => !future(n));
+  // yyyy-mm-dd 同士の辞書順比較で前後関係が決まる。
+  const future = (n: NewsItem) => today !== null && n.date > today;
+  const upcoming = items.filter(future).slice().reverse(); // 近い順
+  const past = items.filter((n) => !future(n));
 
   return (
     <>
@@ -55,7 +57,7 @@ export const NewsBoard: FC = () => {
           </h2>
           <ul className="space-y-3">
             {upcoming.map((item) => (
-              <NewsCard key={item.date.toISOString() + item.title} item={item} />
+              <NewsCard key={item.date + item.title} item={item} />
             ))}
           </ul>
         </section>
@@ -71,7 +73,7 @@ export const NewsBoard: FC = () => {
             </summary>
             <ul className="space-y-3">
               {past.map((item) => (
-                <NewsCard key={item.date.toISOString() + item.title} item={item} />
+                <NewsCard key={item.date + item.title} item={item} />
               ))}
             </ul>
           </details>
