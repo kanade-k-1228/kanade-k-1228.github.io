@@ -1,7 +1,7 @@
 ---
 title: TinyFPGA BX の使い方
 date: 2022-03-26
-keywords:
+words:
   - TinyFPGA
   - TinyFPGA BX
   - FPGA

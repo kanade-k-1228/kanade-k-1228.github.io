@@ -8,11 +8,11 @@ import type { ImageMetadata } from "astro";
 interface Props {
   title?: string;
   description?: string;
-  ogp?: ImageMetadata | string;
+  cover?: ImageMetadata | string;
   noindex?: boolean;
 }
 
-const { title, description, ogp, noindex } = Astro.props;
+const { title, description, cover, noindex } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 
@@ -28,7 +28,7 @@ const pathname = Astro.url.pathname;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
     />
-    <Meta pathname={pathname} title={title} description={description} ogImage={ogp} noindex={noindex} />
+    <Meta pathname={pathname} title={title} description={description} ogImage={cover} noindex={noindex} />
     <script is:inline>
       const stored = localStorage.getItem("theme");
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

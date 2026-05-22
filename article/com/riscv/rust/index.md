@@ -1,6 +1,6 @@
 ---
 title: 自作 RISC-V マイコンを Rust で動かす
-keywords:
+words:
   - rust
   - riscv
   - picorv32

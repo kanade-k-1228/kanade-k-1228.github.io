@@ -1,6 +1,6 @@
 ---
 title: TLA+ 入門
-keywords:
+words:
   - TLA+
   - TLA
   - 検証言語

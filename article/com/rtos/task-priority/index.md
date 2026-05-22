@@ -1,6 +1,6 @@
 ---
 title: タスクの優先度
-keywords:
+words:
   - Arduino
   - マルチタスク
   - RTOS

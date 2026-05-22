@@ -1,7 +1,7 @@
 ---
 title: TangNano9k の使い方
 date: 2023-07-01
-keywords:
+words:
   - TangNano
   - tangnano
   - FPGA

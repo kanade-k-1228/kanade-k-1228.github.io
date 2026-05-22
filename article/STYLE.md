@@ -9,27 +9,23 @@
 article/<category>/<series>/<slug>/index.md
 ```
 
-- `<category>` : `com` / `blog` / `math` / `phys` / `elec` / `mech` / `ctrl` …
-- `<series>` : 連作の親。単発記事は `*` を使う（例: `article/com/*/blog-site/`）
-- 記事に紐づくアセット（画像/SVG/PDF/動画）は同ディレクトリにコロケート。図は慣例的に `./img/` 配下
-- 記事を書いたら `article/<category>/index.yaml` の `articles:` に slug を追加する。追加しないとトップから辿れない
+- 単発記事の場合は `<series>` を `*` にする
+- 画像や動画などの各種アセットは記事のディレクトリ内に配置。図は `./img/` 以下に置くのが慣習。
+- 記事を書いたら `article/<category>/index.yaml` の `articles:` に `<slug>` を追加する。追加しない場合は下書き状態でトップページには表示されない。パスを知っていたら直接アクセスして読める。
 
-## フロントマター
+## プロパティ
 
 ```yaml
 ---
-title: 記事タイトル        # 必須
-date: 2024-01-15           # 任意。新着順に効く
-description: 一行説明      # 任意。OGP の <meta description> に入る
-keywords: [自作CPU, ISA]   # 任意
-ogp: ./img/cover.png       # 任意。colocated 画像可
-toc: true                  # 既定 true
-draft: true                # production では除外、dev では見える
+title: article        # 必須
+date: YYYY-MM-DD      # 任意
+abst: any             # 任意
+words: [kw]           # 任意
+cover: ./img/ogp.png  # 任意 存在しなければ title / abst から生成
 ---
 ```
 
 - 本文は `##` から始める。`#` は書かない（`title` が H1 になる）
-- `date` は ISO `YYYY-MM-DD`
 
 ## 系統 1 : 技術記事（`com` / `phys` / `math` / `elec` …）
 

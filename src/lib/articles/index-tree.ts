@@ -60,8 +60,10 @@ export const buildIndex = async (): Promise<IndexSection[]> => {
 
     for (const [seriesKey, entry] of Object.entries(series)) {
       const slugs = entry.articles ?? [];
+      const lookupKey =
+        seriesKey === ROOT_KEY ? (slug: string) => `${cat}/${slug}` : (slug: string) => `${cat}/${seriesKey}/${slug}`;
       const links = slugs
-        .map((slug) => byId.get(`${cat}/${slug}`))
+        .map((slug) => byId.get(lookupKey(slug)))
         .filter((a): a is ArticleEntry => a !== undefined)
         .map(linkOf);
 

@@ -1,24 +1,4 @@
-riscv:
-  name: RISC-V
-  articles: []
-rk16:
-  name: "自作マイコン: RK16"
-  articles: []
-rk32:
-  name: "自作マイコン: RK16"
-  articles: []
-rk8:
-  name: "自作 CPU: RK8"
-  articles: []
-relay-computer:
-  name: リレーコンピュータ
-  articles: []
-rtos:
-  name: RTOS
-  articles: []
-web:
-  name: Web
-  articles: []
-other:
+'*':
   name: その他
-  articles: []
+  articles: 
+    - claude-farm

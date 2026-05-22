@@ -3,11 +3,11 @@ import type { FeaturedItem } from "../lib/articles/featured";
 
 export const FeaturedList: FC<{ items: FeaturedItem[] }> = ({ items }) => (
   <section className="mb-12">
-    <h2 className="mb-4 rounded bg-sky-200 px-3 py-2 text-2xl font-bold leading-tight text-sky-800 dark:bg-sky-950 dark:text-sky-200">
+    <h2 className="mb-4 rounded bg-sky-100 px-3 py-2 text-2xl font-bold leading-tight text-sky-900 dark:bg-sky-900/40 dark:text-sky-100">
       新着記事
     </h2>
     {items.length === 0 ? (
-      <p className="text-neutral-900/60 dark:text-zinc-100/60">
+      <p className="text-slate-700 dark:text-slate-400">
         (<code>data/featured.yaml</code> に手書きで追記)
       </p>
     ) : (
@@ -18,7 +18,7 @@ export const FeaturedList: FC<{ items: FeaturedItem[] }> = ({ items }) => (
               {item.title}
             </a>
             {item.description && (
-              <span className="ml-2 text-sm text-neutral-900/70 dark:text-zinc-100/70">{item.description}</span>
+              <span className="ml-2 text-sm text-slate-700 dark:text-slate-400">{item.description}</span>
             )}
           </li>
         ))}
