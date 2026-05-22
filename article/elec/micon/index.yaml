@@ -1,0 +1,10 @@
+adc: ADC
+cpu: CPU
+dac: DAC
+i2-c: I2C
+interrupt: 割り込み
+memory: メモリ
+micon: マイコン
+pwm: PWM
+spi: SPI
+uart: UART

@@ -1,0 +1,24 @@
+arithmetic-circuit: 演算回路
+cpuintroduction: CPU入門
+day-about-relay: なぜリレーなのか
+day1-introduction: リレーから始める CPU 自作
+day10-components: 回路まとめ
+day11-cpu: CPUになりきる
+day12-computer-system: コンピュータのしくみ
+day13-relay-cpu: リレーコンピュータの仕様
+day14-memory-map: メモリマップ
+day15-mov: MOV 命令
+day16-load: LOAD 命令
+day17-jmpif: JMPIF 命令
+day18-alu: 演算回路
+day2-switch-logic: スイッチで作る組合回路
+day25-computer: 異世界でコンピュータを作って無双する
+day3-relay-logic: リレーで作る組合回路
+day4-latch: 早押しボタンを作ってみる
+day5-dff: D フリップフロップ回路
+day6-counter: カウンタ回路
+day7-clock: クロック回路
+day8-illumination: 点滅するイルミネーションを作ってみる
+day9-rom: プログラマブルなイルミネーションを作る
+krpu: リレーコンピュータ
+moduler-architecture: モジュラーアーキテクチャ

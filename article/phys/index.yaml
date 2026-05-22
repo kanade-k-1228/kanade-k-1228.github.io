@@ -1,0 +1,18 @@
+physics-mathmatics:
+  name: 物理数学
+  articles: []
+mechanics:
+  name: 力学
+  articles: []
+relativity:
+  name: 相対論
+  articles: []
+quantum:
+  name: 量子論
+  articles: []
+thermo:
+  name: 熱・統計
+  articles: []
+other:
+  name: その他
+  articles: []

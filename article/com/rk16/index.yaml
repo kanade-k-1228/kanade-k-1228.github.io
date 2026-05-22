@@ -1,0 +1,11 @@
+about: マイコンを作りたい！
+architecture: 自作マイコンのアーキテクチャ RK16
+assembler: アセンブラ
+compiler: 自作コンパイラ
+tasm: 自作言語:tasm
+emulator: エミュレータ
+hardware: ロジックICで組む
+parts: 使用する部品
+pheripheral: 周辺回路を作る
+rkasm: エミュレータで遊ぼう
+rtos: RTOS

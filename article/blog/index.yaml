@@ -1,0 +1,13 @@
+"*":
+  name: 雑記
+  articles:
+    - essay
+    - kanameshi
+diary:
+  name: 日記
+  articles:
+    - diary
+    - 2025-09
+plan:
+  name: 計画
+  articles: []
