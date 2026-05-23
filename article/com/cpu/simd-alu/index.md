@@ -11,7 +11,7 @@ CPU の SIMD (Single Instruction Multiple Data) 命令とは、一つの命令�
 以下は、AVX 命令を使った C 言語のプログラムの例です。
 256 ビット幅のレジスタを使って、8 つの 32 ビット整数を一度に処理する命令です。
 
-```c:
+```c
 #include <immintrin.h>
 #include <stdio.h>
 

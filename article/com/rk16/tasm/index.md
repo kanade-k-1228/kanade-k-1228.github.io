@@ -16,7 +16,7 @@ words:
 
 ## サンプルコード
 
-```tasm
+```text
 type Vec2 = {x: int, y: int};
 
 var origin: Vec2 = {x: 0, y: 0};

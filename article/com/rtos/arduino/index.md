@@ -10,7 +10,7 @@ C:\Users\Kanade\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\core
 
 にありました。（Arduino IDE 2.0）
 
-```C:
+```c
 // main.cpp
 
 #include <Arduino.h>
@@ -49,7 +49,7 @@ int main(void)
 
 ### setup と loop
 
-```C:
+```c
 main(){
     setup();
     for(;;){
@@ -74,7 +74,7 @@ Arduino のスケッチで定義した、 `setup()` と `loop()` が `main()` �
 
 基本的に前処理は `setup()` に書けばいいのですが、Arduino の記法を維持したまま、処理を書き換えたい場合に使えるみたい。
 
-```C:
+```c
 // FreeRTOS variantHooks.cpp
 void initVariant(void) __attribute__ ((OS_main));
 
@@ -95,7 +95,7 @@ void initVariant(void)
 
 ### init
 
-```C:
+```c
 void init()
 {
     sei();

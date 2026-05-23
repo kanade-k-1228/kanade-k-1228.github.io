@@ -1,5 +1,5 @@
 ---
-title: エージェント牧場の作り方
+title: Claude 牧場の作り方
 date: 2026-05-22
 words: [tmux, git, worktree, vibe coding, Claude Code]
 ---
@@ -42,9 +42,7 @@ words: [tmux, git, worktree, vibe coding, Claude Code]
 | `tmux a -t claude`   | セッションに戻る                 |
 | `tmux a`             | 直近のセッションに戻る           |
 
-
-
-| CMD                     | 操作                           |
+| CMD                      | 操作                           |
 | ------------------------ | ------------------------------ |
 | ウィンドウを新しく作る   | `C-b c`                        |
 | ウィンドウを切り替える   | `C-b n` / `C-b p` / `C-b 0..9` |
@@ -125,19 +123,19 @@ GitHub の操作を git と同じ感覚で。エージェントに PR まで任�
 3. `gh pr view --web` でブラウザ確認
 4. レビュー後 `gh pr merge --squash` で取り込む
 
-| cmd                            |                                |
-| ------------------------------ | ------------------------------ |
-| `gh auth login`                | 認証                           |
-| `gh repo clone owner/repo`     | クローン                       |
-| `gh pr create`                 | 現在ブランチから PR 作成       |
-| `gh pr create --fill`          | コミットから本文を自動入力     |
-| `gh pr list`                   | PR 一覧                        |
-| `gh pr view 123` / `--web`     | PR 詳細 / ブラウザで開く       |
-| `gh pr checkout 123`           | PR のブランチを引っ張る        |
-| `gh pr merge 123 --squash`     | squash マージ                  |
-| `gh issue list` / `view`       | issue 一覧 / 詳細              |
-| `gh run list` / `gh run watch` | Actions の状態確認             |
-| `gh release create v1.0.0`     | リリース作成                   |
+| cmd                            |                            |
+| ------------------------------ | -------------------------- |
+| `gh auth login`                | 認証                       |
+| `gh repo clone owner/repo`     | クローン                   |
+| `gh pr create`                 | 現在ブランチから PR 作成   |
+| `gh pr create --fill`          | コミットから本文を自動入力 |
+| `gh pr list`                   | PR 一覧                    |
+| `gh pr view 123` / `--web`     | PR 詳細 / ブラウザで開く   |
+| `gh pr checkout 123`           | PR のブランチを引っ張る    |
+| `gh pr merge 123 --squash`     | squash マージ              |
+| `gh issue list` / `view`       | issue 一覧 / 詳細          |
+| `gh run list` / `gh run watch` | Actions の状態確認         |
+| `gh release create v1.0.0`     | リリース作成               |
 
 - **`gh pr create --fill` がエージェントと相性◎**: コミットメッセージを丁寧に書かせておけば、PR 本文を考えさせる手間が省けます。
 - **エージェントに `gh` を渡すと PR まで完結**: `git push` → `gh pr create` までやらせて、自分はレビューだけ。
@@ -168,17 +166,19 @@ RestartSec=5s
 WantedBy=default.target
 ```
 
-| cmd                                            |                            |
-| ---------------------------------------------- | -------------------------- |
-| `systemctl --user daemon-reload`               | ユニットを再読み込み       |
-| `systemctl --user enable --now foo`            | 自動起動を有効化して起動   |
-| `systemctl --user start` / `stop` / `restart`  | 起動 / 停止 / 再起動       |
-| `systemctl --user status foo`                  | 状態確認                   |
-| `systemctl --user list-units --type=service`   | 動いているサービス一覧     |
-| `journalctl --user -u foo -f`                  | ログを追う                 |
-| `journalctl --user -u foo --since '10min ago'` | 直近のログ                 |
+| cmd                                            |                              |
+| ---------------------------------------------- | ---------------------------- |
+| `systemctl --user daemon-reload`               | ユニットを再読み込み         |
+| `systemctl --user enable --now foo`            | 自動起動を有効化して起動     |
+| `systemctl --user start` / `stop` / `restart`  | 起動 / 停止 / 再起動         |
+| `systemctl --user status foo`                  | 状態確認                     |
+| `systemctl --user list-units --type=service`   | 動いているサービス一覧       |
+| `journalctl --user -u foo -f`                  | ログを追う                   |
+| `journalctl --user -u foo --since '10min ago'` | 直近のログ                   |
 | `loginctl enable-linger $USER`                 | ログアウト後も `--user` 維持 |
 
 - **開発機での常駐は `--user` 一択**: システム全体に影響しないし、ユニットも `~/.config/systemd/user/` に置けば自己完結。dotfiles で持ち運べます。
 - **ログアウトすると死ぬ**: デフォルトでは `--user` セッションはログアウトで終了。SSH 越しに常駐させたいなら `loginctl enable-linger` を忘れずに。
 - **`Restart=on-failure` を入れておく**: 雑に書いたサーバが落ちても勝手に復活。`RestartSec` で間隔を空けないと暴走ループになります。
+
+## github actions

@@ -279,7 +279,7 @@ struct Hoge{
 
 リンカは GCC の ld を使用できるため、今まで通りのリンカスクリプトを使用できます。
 
-```lds:
+```text
 MEMORY
 {
     RAM   (rw) : ORIGIN = 0x00000000, LENGTH = 0x00002000 /* 8 KiB */
@@ -303,7 +303,7 @@ SECTIONS {
 
 リンカスクリプト中で定義したシンボルを Rust 中で使用するには `static` 変数として宣言します。
 
-```rs:
+```rs
 extern "C" {
     static mut _sbss: u32;
     static mut _ebss: u32;
@@ -312,14 +312,14 @@ extern "C" {
 
 たとえば BSS 領域を 0 で初期化するには `ptr::write_bytes` (C の`memset`) を使用し以下のようにします。
 
-```rs:
+```rs
 let count = &_ebss as *const u8 as usize - &_sbss as *const u8 as usize;
 ptr::write_bytes(&mut _sbss as *mut u8, 0, count);
 ```
 
 Attribute としてシンボル名とセッションを指定できます。
 
-```rs:
+```rs
 #[export_name = "foo"]
 ```
 
@@ -338,7 +338,7 @@ TODO ビルドスクリプトを書く
 
 インラインアセンブラは以下のように書きます。
 
-```rs:
+```rs
 asm!(
     "mov {tmp}, {x}",
     x = inout(reg) x,

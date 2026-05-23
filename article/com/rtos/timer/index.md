@@ -14,7 +14,7 @@ title: Arduinoでタイマ割り込み！
 
 Arduino を使ったことがある人なら、ほぼ全ての人がタイマ割り込みを使ってるはずです。
 
-```C:
+```c
 analogWrite(pin,duty);
 ```
 

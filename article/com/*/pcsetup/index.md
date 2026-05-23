@@ -114,7 +114,7 @@ VSCode 拡張 [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vsc
 
 ### OpenGL
 
-```s
+```bash
 $ sudo apt-get update
 $ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
 ```

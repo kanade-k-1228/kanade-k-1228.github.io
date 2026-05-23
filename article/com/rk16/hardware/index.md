@@ -219,7 +219,7 @@ ALUは36入力16出力の組み合わせ回路。2^36パターンを全検査す
 <details>
 <summary>Verilog</summary>
 
-```{.language-verilog}
+```verilog
 `define CALC  4'b0000
 `define CALCI 4'b0001
 `define LOAD  4'b0011

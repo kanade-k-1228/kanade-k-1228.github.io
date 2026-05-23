@@ -3,7 +3,7 @@ import type { FeaturedItem } from "../lib/articles/featured";
 
 export const FeaturedList: FC<{ items: FeaturedItem[] }> = ({ items }) => (
   <section className="mb-12">
-    <h2 className="mb-4 rounded bg-sky-100 px-3 py-2 text-2xl font-bold leading-tight text-sky-900 dark:bg-sky-900/40 dark:text-sky-100">
+    <h2 className="mb-4 rounded bg-sky-100 px-3 py-2 text-2xl leading-tight font-bold text-sky-900 dark:bg-sky-900/40 dark:text-sky-100">
       新着記事
     </h2>
     {items.length === 0 ? (
