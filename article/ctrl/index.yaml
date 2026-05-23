@@ -1,3 +1,15 @@
 "*":
   name: 制御工学
-  articles: []
+  items: []
+jpcm:
+  name: 結合モデル制御を試す
+  abst: シンプルで強力な「自己位置推定制御結合モデル」を実際に手を動かしながら理解する
+  items:
+    - about
+    - gtsam
+    - model
+    - pos
+    - ctrl
+    - simu
+    - train
+    - exp

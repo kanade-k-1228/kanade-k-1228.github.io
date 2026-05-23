@@ -1,7 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, type SchemaContext, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-const articleSchema = ({ image }: { image: () => z.ZodType }) =>
+const articleSchema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
     date: z.coerce.date().optional(),
@@ -12,7 +12,7 @@ const articleSchema = ({ image }: { image: () => z.ZodType }) =>
 
 const article = defineCollection({
   loader: glob({ pattern: "**/index.{md,mdx}", base: "./article" }),
-  schema: ({ image }) => articleSchema({ image }),
+  schema: articleSchema,
 });
 
 export const collections = { article };

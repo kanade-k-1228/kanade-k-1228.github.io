@@ -9,6 +9,7 @@ export interface IndexLink {
 
 export interface IndexSubsection {
   title: string;
+  abst?: string;
   items: IndexLink[];
 }
 
@@ -20,7 +21,8 @@ export interface IndexSection {
 
 interface SeriesEntry {
   name?: string;
-  articles?: string[];
+  abst?: string;
+  items?: string[];
 }
 
 const ROOT_KEY = "*";
@@ -56,10 +58,10 @@ export const buildIndex = async (): Promise<IndexSection[]> => {
   for (const [cat, catName] of Object.entries(categories)) {
     const series = indices[cat] ?? {};
     const directItems: IndexLink[] = [];
-    const subBuckets = new Map<string, IndexLink[]>();
+    const subBuckets = new Map<string, { abst?: string; items: IndexLink[] }>();
 
     for (const [seriesKey, entry] of Object.entries(series)) {
-      const slugs = entry.articles ?? [];
+      const slugs = entry.items ?? [];
       const lookupKey =
         seriesKey === ROOT_KEY ? (slug: string) => `${cat}/${slug}` : (slug: string) => `${cat}/${seriesKey}/${slug}`;
       const links = slugs
@@ -73,13 +75,17 @@ export const buildIndex = async (): Promise<IndexSection[]> => {
       }
       const title = entry.name ?? seriesKey;
       const existing = subBuckets.get(title);
-      if (existing) existing.push(...links);
-      else subBuckets.set(title, links);
+      if (existing) {
+        existing.items.push(...links);
+        if (!existing.abst && entry.abst) existing.abst = entry.abst;
+      } else {
+        subBuckets.set(title, { abst: entry.abst, items: links });
+      }
     }
 
     const subsections: IndexSubsection[] = [];
-    for (const [title, items] of subBuckets) {
-      if (items.length > 0) subsections.push({ title, items });
+    for (const [title, { abst, items }] of subBuckets) {
+      if (items.length > 0) subsections.push({ title, abst, items });
     }
 
     if (directItems.length === 0 && subsections.length === 0) continue;

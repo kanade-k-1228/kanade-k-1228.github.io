@@ -1,6 +1,6 @@
 import type { ImageMetadata } from "astro";
-import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, TWITTER } from "../consts";
 import type { FC } from "react";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, TWITTER } from "../consts";
 
 const absoluteUrl = (input: string): string => {
   return new URL(input, SITE_URL).toString();

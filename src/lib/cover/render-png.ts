@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { renderCoverSvg, type CoverInputs } from "./render-svg";
+import { type CoverInputs, renderCoverSvg } from "./render-svg";
 
 export const renderCoverPng = async (input: CoverInputs): Promise<Buffer> => {
   const svg = renderCoverSvg(input);
