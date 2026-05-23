@@ -112,7 +112,7 @@ Actionsの設定は、リポジトリの `.github/workflows` 以下に記述し�
 
 本サイトのActioinsの[ソースコード](https://github.com/kanade-k-1228/kanade-k-1228.github.io/blob/main/.github/workflows/main.yml)です。
 
-```yml:
+```yml
 name: Convert and Deploy
 
 # main にプッシュされたときに、以下のコマンドを実行します

@@ -26,7 +26,7 @@ title: Arduino の番犬？ウォッチドッグ使ってみた
 
 ただ、撫でられるとカウンタをリセットします。
 
-```C:
+```c
 #include <avr/wdt.h>
 
 wdt_enable(/*カウント時間*/);
@@ -42,7 +42,7 @@ wdt_reset();
 
 ## ワザップ
 
-```C:
+```c
 #include <avr/sleep.h>
 #include <avr/wdt.h>
 

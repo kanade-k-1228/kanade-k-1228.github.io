@@ -50,7 +50,7 @@ Geo → ECEF は三角関数を用いた単純な座標変換である。
 
 https://github.com/geospace-code/pymap3d
 
-```python:
+```python
 import pymap3d as pm
 x,y,z = pm.geodetic2ecef(lat, lng, alt)
 ```
@@ -61,7 +61,7 @@ x,y,z = pm.geodetic2ecef(lat, lng, alt)
 
 https://github.com/ClancyWalters/cppmap3d
 
-```cpp:
+```cpp
 #include "cppmap3d.hh"
 
 double x, y, z;
@@ -94,6 +94,6 @@ NED 座標における速度である。NED → ECEF の変換式にそのまま
 
 #### Python
 
-```python:
+```python
 enu2uvw(e,n,-d,lat,lon)
 ```
