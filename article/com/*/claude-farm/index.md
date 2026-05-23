@@ -1,5 +1,5 @@
 ---
-title: エージェント牧場の作り方
+title: Claude 牧場の作り方
 date: 2026-05-22
 words: [tmux, git, worktree, vibe coding, Claude Code]
 ---
@@ -41,8 +41,6 @@ words: [tmux, git, worktree, vibe coding, Claude Code]
 | `tmux ls`            | セッション一覧                   |
 | `tmux a -t claude`   | セッションに戻る                 |
 | `tmux a`             | 直近のセッションに戻る           |
-
-
 
 | CMD                     | 操作                           |
 | ------------------------ | ------------------------------ |
@@ -182,3 +180,5 @@ WantedBy=default.target
 - **開発機での常駐は `--user` 一択**: システム全体に影響しないし、ユニットも `~/.config/systemd/user/` に置けば自己完結。dotfiles で持ち運べます。
 - **ログアウトすると死ぬ**: デフォルトでは `--user` セッションはログアウトで終了。SSH 越しに常駐させたいなら `loginctl enable-linger` を忘れずに。
 - **`Restart=on-failure` を入れておく**: 雑に書いたサーバが落ちても勝手に復活。`RestartSec` で間隔を空けないと暴走ループになります。
+
+## github actions

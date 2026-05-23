@@ -162,49 +162,49 @@
     height: auto;
   }
 
-  /* Inverted (dark) variant — applied via `dark:prose-invert` */
-  .prose-invert {
+  /* dark theme */
+  html.dark .prose {
     color: var(--color-slate-100);
   }
-  .prose-invert a {
+  html.dark .prose a {
     color: var(--color-sky-300);
   }
-  .prose-invert h1 {
+  html.dark .prose h1 {
     background-color: rgba(112, 26, 117, 0.35);
     color: var(--color-fuchsia-100);
   }
-  .prose-invert h2 {
+  html.dark .prose h2 {
     background-color: rgba(7, 89, 133, 0.45);
     color: var(--color-sky-100);
   }
-  .prose-invert h3,
-  .prose-invert h4 {
+  html.dark .prose h3,
+  html.dark .prose h4 {
     color: var(--color-slate-50);
   }
-  .prose-invert thead {
+  html.dark .prose thead {
     background-color: var(--color-slate-800);
   }
-  .prose-invert thead th {
+  html.dark .prose thead th {
     background-color: var(--color-slate-800);
     color: var(--color-slate-100);
   }
-  .prose-invert tbody td {
+  html.dark .prose tbody td {
     background-color: transparent;
     color: var(--color-slate-100);
   }
-  .prose-invert tbody tr {
+  html.dark .prose tbody tr {
     border-bottom-color: var(--color-slate-700);
   }
-  .prose-invert :where(th, td) {
+  html.dark .prose :where(th, td) {
     border-color: var(--color-slate-700);
   }
-  .prose-invert blockquote {
+  html.dark .prose blockquote {
     background-color: var(--color-slate-800);
     border: 1px solid var(--color-slate-700);
     border-left: 3px solid var(--color-sky-500);
     color: var(--color-slate-100);
   }
-  .prose-invert code {
+  html.dark .prose code {
     background-color: rgba(71, 85, 105, 0.45);
     color: var(--color-slate-100);
   }
