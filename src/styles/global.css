@@ -28,7 +28,7 @@
     @apply font-sans;
   }
   a {
-    @apply text-sky-700 underline-offset-2 hover:underline hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-200;
+    @apply text-sky-700 underline-offset-2 hover:text-sky-800 hover:underline dark:text-sky-300 dark:hover:text-sky-200;
   }
 }
 

@@ -102,9 +102,7 @@ export const coverImages = (): AstroIntegration => ({
           await write(article.route, articleToInputs(article));
           generated++;
         } catch (err) {
-          logger.warn(
-            `failed to render cover for ${article.route}: ${err instanceof Error ? err.message : err}`,
-          );
+          logger.warn(`failed to render cover for ${article.route}: ${err instanceof Error ? err.message : err}`);
         }
       }
       logger.info(`Generated ${generated} cover image(s), skipped ${skipped} with manual cover`);

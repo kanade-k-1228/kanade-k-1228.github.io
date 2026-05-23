@@ -79,12 +79,7 @@ const chooseTitleSize = (title: string, maxLines = 3): number => {
 };
 
 const escapeXml = (s: string): string =>
-  s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
 
 const formatDate = (d?: string | Date): string => {
   if (!d) return "";
@@ -96,15 +91,7 @@ const formatDate = (d?: string | Date): string => {
   return `${y}-${m}-${day}`;
 };
 
-const text = (
-  x: number,
-  y: number,
-  size: number,
-  weight: number,
-  fill: string,
-  content: string,
-  extra = "",
-): string =>
+const text = (x: number, y: number, size: number, weight: number, fill: string, content: string, extra = ""): string =>
   `<text x="${x}" y="${y}" font-family="${FONT_STACK}" font-size="${size}" font-weight="${weight}" fill="${fill}"${extra ? ` ${extra}` : ""}>${escapeXml(content)}</text>`;
 
 export const renderCoverSvg = (input: CoverInputs): string => {
@@ -138,9 +125,7 @@ export const renderCoverSvg = (input: CoverInputs): string => {
   const siteText = text(PAD_X, metaY, 28, 700, "#0f172a", SITE_TITLE);
   const authorX = PAD_X + Math.round(measure(SITE_TITLE, 28)) + 28;
   const authorText = text(authorX, metaY, 24, 400, "#475569", `@${AUTHOR}`);
-  const dateBlock = dateText
-    ? text(W - PAD_X, metaY, 24, 400, "#475569", dateText, 'text-anchor="end"')
-    : "";
+  const dateBlock = dateText ? text(W - PAD_X, metaY, 24, 400, "#475569", dateText, 'text-anchor="end"') : "";
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>

@@ -122,25 +122,25 @@ on:
 
 jobs:
   convert_via_pandoc:
-  # 最新のubuntu環境上で実行します
+    # 最新のubuntu環境上で実行します
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-    # pandoc をインストールします
+      # pandoc をインストールします
       - name: Install Pandoc
         run: |
           sudo apt-get update
           sudo apt-get -y install pandoc
           pandoc --version
-    # RSS を生成します
+      # RSS を生成します
       - name: Generate RSS
         run: pandoc feed.yml --template .common/template.rss >> feed.rss
-    # Markdown を HTML に変換します
+      # Markdown を HTML に変換します
       - name: Convert MD to HTML
         # index.md を全て index.html に変換します
         run: find . -name "*index.md" | while read i; do pandoc -f markdown -t html --template=.common/template.html --toc --no-highlight --mathjax "${i}" >> "${i%.md}.html"; done
-    # GitHub Pages 上に公開します
+      # GitHub Pages 上に公開します
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -107,14 +107,14 @@ export const Toc: FC<{
       data-toc
       className="rounded-md border border-sky-200/60 bg-white/85 p-4 text-sm shadow-sm backdrop-blur dark:border-slate-700/70 dark:bg-slate-800/85 dark:shadow-none"
     >
-      <p className="mb-2 text-xs font-bold uppercase tracking-wide text-sky-700 dark:text-sky-200">目次</p>
+      <p className="mb-2 text-xs font-bold tracking-wide text-sky-700 uppercase dark:text-sky-200">目次</p>
       <ul className="space-y-1">
         {visible.map((h) => (
           <li key={h.slug} className="leading-snug" style={{ paddingLeft: `${(h.depth - minDepth) * 10}px` }}>
             <a
               href={`#${h.slug}`}
               data-toc-link={h.slug}
-              className="toc-link block border-l-2 border-transparent py-0.5 pl-2 !no-underline text-slate-700 transition-colors hover:!text-sky-700 dark:text-slate-300 dark:hover:!text-sky-200"
+              className="toc-link block border-l-2 border-transparent py-0.5 pl-2 text-slate-700 !no-underline transition-colors hover:!text-sky-700 dark:text-slate-300 dark:hover:!text-sky-200"
             >
               {h.text}
             </a>

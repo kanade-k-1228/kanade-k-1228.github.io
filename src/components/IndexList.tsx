@@ -1,14 +1,11 @@
-import type { FC } from 'react';
-import type { IndexLink, IndexSection } from '../lib/articles/index-tree';
+import type { FC } from "react";
+import type { IndexLink, IndexSection } from "../lib/articles/index-tree";
 
 const ItemLink: FC<{ item: IndexLink }> = ({ item }) => {
-  const isLink = typeof item.url === 'string';
+  const isLink = typeof item.url === "string";
   if (isLink) {
     return (
-      <a
-        href={item.url ?? '#'}
-        className="group inline-flex items-baseline gap-1 !no-underline hover:!underline"
-      >
+      <a href={item.url ?? "#"} className="group inline-flex items-baseline gap-1 !no-underline hover:!underline">
         <span
           aria-hidden="true"
           className="text-sky-700/40 transition group-hover:translate-x-0.5 group-hover:text-sky-700 dark:text-sky-300/40 dark:group-hover:text-sky-300"
@@ -20,7 +17,7 @@ const ItemLink: FC<{ item: IndexLink }> = ({ item }) => {
     );
   }
   return <span className="text-slate-500 dark:text-slate-500">{item.label}</span>;
-}
+};
 
 export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
   return (
@@ -28,13 +25,13 @@ export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
       {sections.map((section, i) => {
         const accent = i % 2 === 0;
         const sectionClass = [
-          'rounded-lg border-l-4 bg-white/60 py-3 pl-5 pr-3 shadow-sm dark:bg-slate-800/40 dark:shadow-none',
-          accent ? 'border-sky-400 dark:border-sky-500/70' : 'border-fuchsia-400 dark:border-fuchsia-500/70',
-        ].join(' ');
+          "rounded-lg border-l-4 bg-white/60 py-3 pl-5 pr-3 shadow-sm dark:bg-slate-800/40 dark:shadow-none",
+          accent ? "border-sky-400 dark:border-sky-500/70" : "border-fuchsia-400 dark:border-fuchsia-500/70",
+        ].join(" ");
         const titleClass = [
-          'mb-4 text-xl font-bold tracking-tight',
-          accent ? 'text-sky-800 dark:text-sky-200' : 'text-fuchsia-800 dark:text-fuchsia-200',
-        ].join(' ');
+          "mb-4 text-xl font-bold tracking-tight",
+          accent ? "text-sky-800 dark:text-sky-200" : "text-fuchsia-800 dark:text-fuchsia-200",
+        ].join(" ");
 
         return (
           <section key={i} className={sectionClass}>
@@ -54,7 +51,7 @@ export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
               <div className="grid grid-cols-1 gap-x-8 gap-y-5 md:grid-cols-2">
                 {section.subsections.map((sub, k) => (
                   <div key={k}>
-                    <h3 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                    <h3 className="mb-1.5 text-xs font-bold tracking-wider text-slate-600 uppercase dark:text-slate-400">
                       {sub.title}
                     </h3>
                     <ul className="space-y-1">
@@ -73,4 +70,4 @@ export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
       })}
     </div>
   );
-}
+};

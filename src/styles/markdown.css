@@ -9,7 +9,7 @@
     @apply mx-auto my-4 text-center;
   }
   figure.inline-svg svg {
-    @apply mx-auto max-w-full h-auto;
+    @apply mx-auto h-auto max-w-full;
   }
 
   /* Typst math rendered as SVG by rehype-typst-safe.
@@ -18,7 +18,7 @@
     @apply inline-block;
   }
   svg.typst-display {
-    @apply block mx-auto my-2;
+    @apply mx-auto my-2 block;
   }
   /* Dark mode: typst emits fill="#000" on glyph groups. Re-route to currentColor
      so the math inherits the page text color (slate-100). */

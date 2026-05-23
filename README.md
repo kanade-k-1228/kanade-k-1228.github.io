@@ -26,11 +26,11 @@ pnpm image --write
 
 ```yaml
 ---
-title: article        # ！記事タイトル
-date: YYYY-MM-DD      # ？日付
-abst: any             # ？概要
-words: [kw]           # ？キーワード
-cover: ./img/ogp.png  # ？カバー画像（存在しなければ title / abst から生成）
+title: article # ！記事タイトル
+date: YYYY-MM-DD # ？日付
+abst: any # ？概要
+words: [kw] # ？キーワード
+cover: ./img/ogp.png # ？カバー画像（存在しなければ title / abst から生成）
 ---
 ```
 
@@ -41,11 +41,13 @@ cover: ./img/ogp.png  # ？カバー画像（存在しなければ title / abst 
 Typst 記法で数式を記述できます。
 
 インライン数式：
+
 ```
 $sum_(i=1)^n i$
 ```
 
 ブロック数式：
+
 ```
 $$ integral_0^1 x^2 dif x $$
 ```

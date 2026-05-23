@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-20 border-b border-sky-200/60 bg-sky-50/85 backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/85">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
-        <a href="/" className="text-fuchsia-800 !no-underline hover:opacity-80 dark:text-fuchsia-200 font-bold">
+        <a href="/" className="font-bold text-fuchsia-800 !no-underline hover:opacity-80 dark:text-fuchsia-200">
           {SITE_TITLE}
         </a>
         <nav className="flex items-center gap-1">

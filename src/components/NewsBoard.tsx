@@ -52,7 +52,7 @@ export const NewsBoard: FC<{ items: NewsItem[] }> = ({ items }) => {
     <>
       {upcoming.length > 0 && (
         <section className="mb-12">
-          <h2 className="mb-4 rounded bg-sky-100 px-3 py-2 text-2xl font-bold leading-tight text-sky-900 dark:bg-sky-900/40 dark:text-sky-100">
+          <h2 className="mb-4 rounded bg-sky-100 px-3 py-2 text-2xl leading-tight font-bold text-sky-900 dark:bg-sky-900/40 dark:text-sky-100">
             おしらせ
           </h2>
           <ul className="space-y-3">
@@ -65,7 +65,7 @@ export const NewsBoard: FC<{ items: NewsItem[] }> = ({ items }) => {
       {past.length > 0 && (
         <section className="mb-12">
           <details className="group">
-            <summary className="mb-4 flex cursor-pointer list-none items-center gap-2 rounded bg-sky-100 px-3 py-2 text-2xl font-bold leading-tight text-sky-900 marker:hidden dark:bg-sky-900/40 dark:text-sky-100">
+            <summary className="mb-4 flex cursor-pointer list-none items-center gap-2 rounded bg-sky-100 px-3 py-2 text-2xl leading-tight font-bold text-sky-900 marker:hidden dark:bg-sky-900/40 dark:text-sky-100">
               <span className="inline-block text-[0.5rem] leading-none text-sky-900/60 transition-transform group-open:rotate-90 dark:text-sky-100/60">
                 ▶
               </span>
