@@ -8,10 +8,9 @@ import { markdownConfig } from "./src/lib/markdown/config";
 
 export default defineConfig({
   site: "https://kanade-k-1228.github.io",
-  trailingSlash: "never",
-  build: { format: "file" },
+  trailingSlash: "always",
+  build: { format: "directory" },
   integrations: [mdx(), react(), sitemap(), contentAssets()],
-  // @ts-expect-error — @tailwindcss/vite ships Vite 7 types; Astro 5 still uses Vite 6
   vite: { plugins: [tailwindcss()] },
   markdown: markdownConfig,
 });
