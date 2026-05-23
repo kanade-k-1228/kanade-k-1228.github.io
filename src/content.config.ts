@@ -6,9 +6,8 @@ const articleSchema = ({ image }: { image: () => z.ZodType }) =>
     title: z.string(),
     date: z.coerce.date().optional(),
     abst: z.string().optional(),
-    ogp: image().optional(),
-    toc: z.boolean().default(true),
-    draft: z.boolean().default(false),
+    words: z.array(z.string()).optional(),
+    cover: image().optional(),
   });
 
 const article = defineCollection({

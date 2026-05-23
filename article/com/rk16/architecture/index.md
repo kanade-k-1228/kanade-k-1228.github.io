@@ -2,7 +2,7 @@
 title: 自作マイコンのアーキテクチャ RK16
 date: 2023-03-26
 abst: ロジックICを使った自作マイコンのアーキテクチャです。
-keywords:
+words:
   - 自作CPU
   - ISA
   - ABI

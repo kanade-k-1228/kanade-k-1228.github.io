@@ -1,6 +1,6 @@
 ---
 title: GPSデータの座標系と変換
-keywords:
+words:
   - GPS
   - GNSS
   - 座標系

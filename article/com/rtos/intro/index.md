@@ -1,6 +1,6 @@
 ---
 title: "Arduinoで自作OS!"
-keywords:
+words:
   - Arduino
   - マルチタスク
   - RTOS

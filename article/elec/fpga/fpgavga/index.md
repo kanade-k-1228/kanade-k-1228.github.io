@@ -1,6 +1,6 @@
 ---
 title: FPGA で VGA 映像出力
-keywords:
+words:
   - FPGA
   - VGA
 ---

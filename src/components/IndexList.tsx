@@ -11,7 +11,7 @@ const ItemLink: FC<{ item: IndexLink }> = ({ item }) => {
       >
         <span
           aria-hidden="true"
-          className="text-sky-700/40 transition group-hover:translate-x-0.5 group-hover:text-sky-700 dark:text-sky-400/40 dark:group-hover:text-sky-400"
+          className="text-sky-700/40 transition group-hover:translate-x-0.5 group-hover:text-sky-700 dark:text-sky-300/40 dark:group-hover:text-sky-300"
         >
           ›
         </span>
@@ -19,7 +19,7 @@ const ItemLink: FC<{ item: IndexLink }> = ({ item }) => {
       </a>
     );
   }
-  return <span className="text-neutral-900/50 dark:text-zinc-100/50">{item.label}</span>;
+  return <span className="text-slate-500 dark:text-slate-500">{item.label}</span>;
 }
 
 export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
@@ -28,8 +28,8 @@ export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
       {sections.map((section, i) => {
         const accent = i % 2 === 0;
         const sectionClass = [
-          'rounded-lg border-l-4 bg-white/40 py-3 pl-5 pr-3 dark:bg-zinc-800/30',
-          accent ? 'border-sky-400 dark:border-sky-700' : 'border-fuchsia-400 dark:border-fuchsia-800',
+          'rounded-lg border-l-4 bg-white/60 py-3 pl-5 pr-3 shadow-sm dark:bg-slate-800/40 dark:shadow-none',
+          accent ? 'border-sky-400 dark:border-sky-500/70' : 'border-fuchsia-400 dark:border-fuchsia-500/70',
         ].join(' ');
         const titleClass = [
           'mb-4 text-xl font-bold tracking-tight',
@@ -54,7 +54,7 @@ export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
               <div className="grid grid-cols-1 gap-x-8 gap-y-5 md:grid-cols-2">
                 {section.subsections.map((sub, k) => (
                   <div key={k}>
-                    <h3 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-neutral-900/60 dark:text-zinc-100/60">
+                    <h3 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
                       {sub.title}
                     </h3>
                     <ul className="space-y-1">

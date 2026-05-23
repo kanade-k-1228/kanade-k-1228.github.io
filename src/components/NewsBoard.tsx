@@ -29,9 +29,9 @@ const renderInlineLinks = (s: string): ReactNode[] => {
 };
 
 const NewsCard: FC<{ item: NewsItem }> = ({ item }) => (
-  <li className="rounded-md border border-sky-200/60 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-800">
+  <li className="rounded-md border border-sky-200/60 bg-white p-4 shadow-sm dark:border-slate-700/70 dark:bg-slate-800 dark:shadow-none">
     <p className="font-bold">{item.title}</p>
-    <p className="mt-1 text-sm text-neutral-900/70 dark:text-zinc-100/70">{renderInlineLinks(item.body)}</p>
+    <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{renderInlineLinks(item.body)}</p>
   </li>
 );
 
@@ -52,7 +52,7 @@ export const NewsBoard: FC<{ items: NewsItem[] }> = ({ items }) => {
     <>
       {upcoming.length > 0 && (
         <section className="mb-12">
-          <h2 className="mb-4 rounded bg-sky-200 px-3 py-2 text-2xl font-bold leading-tight text-sky-800 dark:bg-sky-950 dark:text-sky-200">
+          <h2 className="mb-4 rounded bg-sky-100 px-3 py-2 text-2xl font-bold leading-tight text-sky-900 dark:bg-sky-900/40 dark:text-sky-100">
             おしらせ
           </h2>
           <ul className="space-y-3">
@@ -65,8 +65,8 @@ export const NewsBoard: FC<{ items: NewsItem[] }> = ({ items }) => {
       {past.length > 0 && (
         <section className="mb-12">
           <details className="group">
-            <summary className="mb-4 flex cursor-pointer list-none items-center gap-2 rounded bg-sky-200 px-3 py-2 text-2xl font-bold leading-tight text-sky-800 marker:hidden dark:bg-sky-950 dark:text-sky-200">
-              <span className="inline-block text-[0.5rem] leading-none text-sky-800/60 transition-transform group-open:rotate-90 dark:text-sky-200/60">
+            <summary className="mb-4 flex cursor-pointer list-none items-center gap-2 rounded bg-sky-100 px-3 py-2 text-2xl font-bold leading-tight text-sky-900 marker:hidden dark:bg-sky-900/40 dark:text-sky-100">
+              <span className="inline-block text-[0.5rem] leading-none text-sky-900/60 transition-transform group-open:rotate-90 dark:text-sky-100/60">
                 ▶
               </span>
               <span>これまで</span>

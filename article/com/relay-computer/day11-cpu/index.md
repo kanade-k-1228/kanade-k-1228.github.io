@@ -2,7 +2,7 @@
 title: CPUになりきる
 date: 2021-12-11
 abst: CPUが実行するプログラムを手で実行します。
-keywords:
+words:
   - リレーコンピュータ
   - 自作CPU
   - 論理回路

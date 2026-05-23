@@ -1,6 +1,6 @@
 ---
 title: "自作言語:tasm"
-keywords:
+words:
   - 自作言語
   - 自作コンパイラ
   - 自作CPU
