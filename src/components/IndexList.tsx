@@ -54,6 +54,9 @@ export const IndexList: FC<{ sections: IndexSection[] }> = ({ sections }) => {
                     <h3 className="mb-1.5 text-xs font-bold tracking-wider text-slate-600 uppercase dark:text-slate-400">
                       {sub.title}
                     </h3>
+                    {sub.abst && (
+                      <p className="mb-2 text-sm leading-snug text-slate-600 dark:text-slate-400">{sub.abst}</p>
+                    )}
                     <ul className="space-y-1">
                       {sub.items.map((item, l) => (
                         <li key={l} className="leading-snug">

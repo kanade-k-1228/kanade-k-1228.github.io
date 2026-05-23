@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier --write .",
+    "fix": "biome check --write .",
     "image": "tsx scripts/image.ts",
     "cover": "tsx scripts/cover.ts"
   },

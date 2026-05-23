@@ -3,7 +3,7 @@ import { dirname, join, resolve } from "node:path";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../src/consts";
 import { renderCoverPng } from "../src/lib/cover/render-png";
 import type { CoverInputs } from "../src/lib/cover/render-svg";
-import { findArticleByRoute, scanArticles, type ScannedArticle } from "../src/lib/cover/scan-articles";
+import { findArticleByRoute, type ScannedArticle, scanArticles } from "../src/lib/cover/scan-articles";
 
 type Args = { outDir: string; slug?: string; force: boolean };
 

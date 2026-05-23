@@ -48,7 +48,14 @@ const parseFrontmatter = (raw: string): ArticleFrontmatter | null => {
   }
 };
 
-const deriveLocation = (rel: string): { route: string; category: string; series?: string; slug: string } | null => {
+const deriveLocation = (
+  rel: string,
+): {
+  route: string;
+  category: string;
+  series?: string;
+  slug: string;
+} | null => {
   const parts = rel.split(sep);
   if (parts.length !== 4) return null;
   if (parts[3] !== "index.md" && parts[3] !== "index.mdx") return null;

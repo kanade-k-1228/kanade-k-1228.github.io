@@ -1,21 +1,21 @@
 misc:
   name: 電子工作
-  articles: []
+  items: []
 circuit:
   name: 電子回路
-  articles: []
+  items: []
 micon:
   name: マイコン
-  articles: []
+  items: []
 power:
   name: 動力系
-  articles: []
+  items: []
 radio:
   name: 電波
-  articles: []
+  items: []
 fpga:
   name: FPGA
-  articles: []
+  items: []
 lsi:
   name: LSI
-  articles: []
+  items: []

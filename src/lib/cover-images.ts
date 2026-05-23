@@ -7,14 +7,15 @@
  *
  * The output URL prefix matches Meta.tsx's fallback in `resolveOgImage`.
  */
-import type { AstroIntegration } from "astro";
+
 import { promises as fs } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { AstroIntegration } from "astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { renderCoverPng } from "./cover/render-png";
 import type { CoverInputs } from "./cover/render-svg";
-import { findArticleByRoute, scanArticles, type ScannedArticle } from "./cover/scan-articles";
+import { findArticleByRoute, type ScannedArticle, scanArticles } from "./cover/scan-articles";
 
 const URL_PREFIX = "/cover";
 const FILE_NAME = "cover.png";
