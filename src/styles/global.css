@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "./markdown.css";
+@import "./prose.css";
+
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -14,216 +17,22 @@
   html {
     @apply bg-sky-50 text-slate-900;
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-sky-300) transparent;
   }
   html.dark {
     @apply bg-slate-900 text-slate-100;
+    scrollbar-color: var(--color-slate-600) transparent;
   }
   body {
     @apply font-sans;
   }
-
-  /* Offset jump targets so the sticky header doesn't cover them. */
-  .prose :where(h1, h2, h3, h4, h5, h6)[id] {
-    scroll-margin-top: 5rem;
-  }
-
   a {
     @apply text-sky-700 underline-offset-2 hover:underline hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-200;
   }
-
-  /* inline-svg figures rendered by remark-inline-svg */
-  figure.inline-svg {
-    @apply mx-auto my-4 text-center;
-  }
-  figure.inline-svg svg {
-    @apply mx-auto max-w-full h-auto;
-  }
-
-  /* Typst math rendered as SVG by rehype-typst-safe.
-     Tailwind preflight forces svg { display: block }, which breaks inline math. */
-  svg.typst-inline {
-    @apply inline-block;
-  }
-  svg.typst-display {
-    @apply block mx-auto my-2;
-  }
-  /* Dark mode: typst emits fill="#000" on glyph groups. Re-route to currentColor
-     so the math inherits the page text color (slate-100). */
-  html.dark svg.typst-doc [fill="#000"] {
-    fill: currentColor;
-  }
-
-  /* Shiki dual-theme switch: Astro 5 emits both --shiki-light and --shiki-dark
-     CSS variables on each span. By default the *light* theme is inlined as
-     background-color / color, so dark mode needs an explicit override. */
-  html.dark .astro-code,
-  html.dark .astro-code span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
-
-  .toc-link.is-active {
-    @apply border-sky-500 font-bold !text-sky-700 dark:border-sky-300 dark:!text-sky-200;
-  }
 }
 
-/* ------------------------------------------------------------------ */
-/* Typography (prose) overrides — ported from src/styles/typography.ts */
-/* ------------------------------------------------------------------ */
-@layer components {
-  .prose {
-    color: var(--color-slate-900);
-    max-width: none;
-  }
-  .prose a {
-    color: var(--color-sky-700);
-  }
-  .prose h1 {
-    background-color: var(--color-fuchsia-100);
-    color: var(--color-fuchsia-900);
-    padding: 0.4em 0.6em;
-    border-radius: 0.25rem;
-  }
-  .prose h2 {
-    background-color: var(--color-sky-100);
-    color: var(--color-sky-900);
-    padding: 0.4em 0.6em;
-    border-radius: 0.25rem;
-  }
-  .prose h3,
-  .prose h4 {
-    color: var(--color-slate-900);
-  }
-  .prose thead {
-    background-color: var(--color-lime-100);
-  }
-  .prose thead th {
-    background-color: var(--color-lime-100);
-    color: var(--color-slate-900);
-    text-align: center;
-  }
-  .prose tbody td {
-    background-color: var(--color-indigo-50);
-    text-align: center;
-  }
-  .prose tbody tr {
-    border-bottom-color: rgba(15, 23, 42, 0.15);
-  }
-  .prose table {
-    border-collapse: collapse;
-  }
-  .prose :where(th, td) {
-    border: 1px solid rgba(15, 23, 42, 0.2);
-    padding: 0.3em;
-  }
-  .prose code {
-    background-color: rgba(148, 163, 184, 0.22);
-    color: var(--color-slate-900);
-    padding: 1px 4px;
-    border-radius: 5px;
-    font-weight: 400;
-  }
-  .prose code::before,
-  .prose code::after {
-    content: "";
-  }
-  .prose blockquote {
-    background-color: #fff;
-    border: 1px solid var(--color-slate-200);
-    border-left: 3px solid var(--color-sky-400);
-    border-radius: 4px;
-    padding: 0.5em 1em;
-    font-style: normal;
-    font-weight: 400;
-    color: var(--color-slate-800);
-    quotes: none;
-  }
-  .prose blockquote p:first-of-type::before,
-  .prose blockquote p:last-of-type::after {
-    content: none;
-  }
-  .prose pre {
-    border-radius: 0.375rem;
-  }
-  .prose .katex-display {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .prose figure.inline-svg {
-    margin: 1em auto;
-    text-align: center;
-  }
-  .prose figure.inline-svg svg {
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* dark theme */
-  html.dark .prose {
-    color: var(--color-slate-100);
-  }
-  html.dark .prose a {
-    color: var(--color-sky-300);
-  }
-  html.dark .prose h1 {
-    background-color: rgba(112, 26, 117, 0.35);
-    color: var(--color-fuchsia-100);
-  }
-  html.dark .prose h2 {
-    background-color: rgba(7, 89, 133, 0.45);
-    color: var(--color-sky-100);
-  }
-  html.dark .prose h3,
-  html.dark .prose h4 {
-    color: var(--color-slate-50);
-  }
-  html.dark .prose thead {
-    background-color: var(--color-slate-800);
-  }
-  html.dark .prose thead th {
-    background-color: var(--color-slate-800);
-    color: var(--color-slate-100);
-  }
-  html.dark .prose tbody td {
-    background-color: transparent;
-    color: var(--color-slate-100);
-  }
-  html.dark .prose tbody tr {
-    border-bottom-color: var(--color-slate-700);
-  }
-  html.dark .prose :where(th, td) {
-    border-color: var(--color-slate-700);
-  }
-  html.dark .prose blockquote {
-    background-color: var(--color-slate-800);
-    border: 1px solid var(--color-slate-700);
-    border-left: 3px solid var(--color-sky-500);
-    color: var(--color-slate-100);
-  }
-  html.dark .prose code {
-    background-color: rgba(71, 85, 105, 0.45);
-    color: var(--color-slate-100);
-  }
-}
-
-/* ------------------------------------------------------------------ */
-/* Custom scrollbar                                                    */
-/* Firefox / modern browsers use scrollbar-* properties;               */
-/* WebKit (Chrome / Safari / Edge) uses ::-webkit-scrollbar.           */
-/* Track は透明にして body 背景を透かし、thumb のみ色を持たせる。       */
-/* ------------------------------------------------------------------ */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-sky-300) transparent;
-}
-html.dark {
-  scrollbar-color: var(--color-slate-600) transparent;
-}
-
+/* Custom scrollbar (WebKit). Track は透明にして body 背景を透かし、thumb のみ色を持たせる。 */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

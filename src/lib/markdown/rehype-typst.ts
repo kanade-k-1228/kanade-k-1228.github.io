@@ -377,9 +377,9 @@ export const rehypeTypstSafe = () => {
         if (!svgEl.properties) svgEl.properties = {};
         svgEl.properties.height = `${height / defaultEm}em`;
         svgEl.properties.width = `${width / defaultEm}em`;
-        // display:inline-block / block is set via CSS in global.css using
-        // .typst-inline / .typst-display classes (with enough specificity to
-        // override Tailwind preflight's `svg { display: block }`).
+        // display:inline-block / block is set via CSS in styles/markdown.css
+        // using .typst-inline / .typst-display classes (with enough specificity
+        // to override Tailwind preflight's `svg { display: block }`).
         svgEl.properties.style = `vertical-align:-${shiftEm}em;`;
         const cls = Array.isArray(svgEl.properties.className) ? svgEl.properties.className : [];
         if (!displayMode) cls.push("typst-inline");

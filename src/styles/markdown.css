@@ -1,0 +1,44 @@
+@layer base {
+  /* Offset jump targets so the sticky header doesn't cover them. */
+  .prose :where(h1, h2, h3, h4, h5, h6)[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  /* inline-svg figures rendered by remark-inline-svg */
+  figure.inline-svg {
+    @apply mx-auto my-4 text-center;
+  }
+  figure.inline-svg svg {
+    @apply mx-auto max-w-full h-auto;
+  }
+
+  /* Typst math rendered as SVG by rehype-typst-safe.
+     Tailwind preflight forces svg { display: block }, which breaks inline math. */
+  svg.typst-inline {
+    @apply inline-block;
+  }
+  svg.typst-display {
+    @apply block mx-auto my-2;
+  }
+  /* Dark mode: typst emits fill="#000" on glyph groups. Re-route to currentColor
+     so the math inherits the page text color (slate-100). */
+  html.dark svg.typst-doc [fill="#000"] {
+    fill: currentColor;
+  }
+
+  /* Shiki dual-theme switch: Astro 5 emits both --shiki-light and --shiki-dark
+     CSS variables on each span. By default the *light* theme is inlined as
+     background-color / color, so dark mode needs an explicit override. */
+  html.dark .astro-code,
+  html.dark .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+
+  .toc-link.is-active {
+    @apply border-sky-500 font-bold !text-sky-700 dark:border-sky-300 dark:!text-sky-200;
+  }
+}

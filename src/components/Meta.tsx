@@ -6,10 +6,11 @@ const absoluteUrl = (input: string): string => {
   return new URL(input, SITE_URL).toString();
 };
 
-const resolveOgImage = (ogImage: ImageMetadata | string | undefined): string => {
+const resolveOgImage = (pathname: string, ogImage: ImageMetadata | string | undefined): string => {
   if (typeof ogImage === "string") return absoluteUrl(ogImage);
   if (ogImage && "src" in ogImage) return absoluteUrl(ogImage.src);
-  return absoluteUrl("/ogp-default.png");
+  const normalized = pathname.endsWith("/") ? pathname : `${pathname}/`;
+  return absoluteUrl(`/cover${normalized}cover.png`);
 };
 
 export const Meta: FC<{
@@ -23,7 +24,7 @@ export const Meta: FC<{
   const fullTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
   const pageTitle = title ?? SITE_TITLE;
   const canonicalUrl = canonical ?? absoluteUrl(pathname);
-  const ogImageUrl = resolveOgImage(ogImage);
+  const ogImageUrl = resolveOgImage(pathname, ogImage);
   const ogType = title ? "article" : "website";
 
   return (

@@ -56,3 +56,7 @@ $$ integral_0^1 x^2 dif x $$
 
 - data/featured.yaml : トップページの新着記事
 - news.yaml : トップページのおしらせ
+
+## デプロイ
+
+- PR が main にマージされると自動でデプロイします。

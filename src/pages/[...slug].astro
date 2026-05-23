@@ -3,7 +3,7 @@ import { render } from "astro:content";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import Base from "./_base.astro";
 import { Toc } from "../components/Toc";
-import { formatJaDate } from "../lib/format-date";
+import { formatJaDate } from "../lib/util";
 import { articleId, getPublishedArticles } from "../lib/articles/collections";
 
 export const getStaticPaths = (async () => {
@@ -20,7 +20,6 @@ const { Content, headings } = await render(entry);
 
 const { title, abst, date, cover } = entry.data;
 const dateLabel = formatJaDate(date);
-const showToc = true;
 ---
 
 <Base title={title} description={abst} cover={cover}>
@@ -38,27 +37,19 @@ const showToc = true;
         {abst && <span class="truncate">{abst}</span>}
       </div>
     </header>
-
-    {
-      showToc && (
-        <div class="mb-8 xl:hidden">
-          <Toc client:load headings={headings} />
-        </div>
-      )
-    }
+    <div class="mb-8 xl:hidden">
+      <Toc client:load headings={headings} />
+    </div>
+    
 
     <div class="prose max-w-none dark:prose-invert">
       <Content />
     </div>
   </article>
 
-  {
-    showToc && (
-      <aside class="pointer-events-none fixed inset-y-0 left-[calc(50%+28rem)] z-10 hidden w-48 items-start xl:flex 2xl:w-56">
-        <div class="pointer-events-auto mt-24 max-h-[calc(100vh-7rem)] w-full overflow-y-auto px-2">
-          <Toc client:load headings={headings} />
-        </div>
-      </aside>
-    )
-  }
+  <aside class="pointer-events-none fixed inset-y-0 left-[calc(50%+28rem)] z-10 hidden w-48 items-start xl:flex 2xl:w-56">
+    <div class="pointer-events-auto mt-24 max-h-[calc(100vh-7rem)] w-full overflow-y-auto px-2">
+      <Toc client:load headings={headings} />
+    </div>
+  </aside>
 </Base>
