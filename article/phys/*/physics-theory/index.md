@@ -1,5 +1,7 @@
 ---
 title: 物理学
+icon: atom_symbol
+abst: ""
 ---
 
 ## 物理と数学

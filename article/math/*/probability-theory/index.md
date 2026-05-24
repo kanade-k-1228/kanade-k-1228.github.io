@@ -1,5 +1,7 @@
 ---
 title: 確率論
+icon: game_die
+abst: ""
 ---
 
 $$

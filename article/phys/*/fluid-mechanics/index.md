@@ -1,5 +1,7 @@
 ---
 title: 流体力学
+icon: ocean
+abst: ""
 ---
 
 ## 流体

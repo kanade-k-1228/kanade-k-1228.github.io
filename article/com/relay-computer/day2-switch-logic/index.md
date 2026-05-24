@@ -1,5 +1,6 @@
 ---
 title: スイッチで作る組合回路
+icon: wrench
 date: 2021-12-02
 abst: 半導体なしで論理回路を作ります。
 words:

@@ -1,5 +1,7 @@
 ---
 title: Verilog超入門
+icon: scroll
+abst: ""
 ---
 
 最近、Verilogに関する質問を受けることが多くなってきたので、まとめておきます。

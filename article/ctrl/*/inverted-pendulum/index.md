@@ -1,5 +1,7 @@
 ---
 title: 倒立振子
+icon: balance_scale
+abst: ""
 ---
 
 ## 運動方程式

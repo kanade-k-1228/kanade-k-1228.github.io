@@ -1,5 +1,7 @@
 ---
 title: 高性能なプロセッサ
+icon: rocket
+abst: ""
 ---
 
 ## プロセッサとは

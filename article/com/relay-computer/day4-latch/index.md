@@ -1,5 +1,6 @@
 ---
 title: 早押しボタンを作ってみる
+icon: bell
 date: 2021-12-04
 abst: 状態を記憶する回路を作ります。
 words:

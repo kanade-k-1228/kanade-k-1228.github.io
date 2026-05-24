@@ -1,5 +1,7 @@
 ---
 title: Arduino Pro Micro
+icon: gear
+abst: ""
 ---
 
 ## 設定

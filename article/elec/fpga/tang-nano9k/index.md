@@ -1,11 +1,13 @@
 ---
 title: TangNano9k の使い方
+icon: nut_and_bolt
 date: 2023-07-01
 words:
   - TangNano
   - tangnano
   - FPGA
   - gowin
+abst: ""
 ---
 
 今さらですがTangNanoを触ります。

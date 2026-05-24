@@ -1,5 +1,7 @@
 ---
 title: 解析力学
+icon: scroll
+abst: ""
 ---
 
 ## ラグランジュの力学

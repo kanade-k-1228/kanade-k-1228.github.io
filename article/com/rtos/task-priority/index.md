@@ -1,5 +1,7 @@
 ---
 title: タスクの優先度
+icon: medal_sports
+abst: ""
 words:
   - Arduino
   - マルチタスク

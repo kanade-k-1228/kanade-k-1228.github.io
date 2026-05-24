@@ -1,5 +1,7 @@
 ---
 title: 自作コンパイラ
+icon: gear
+abst: ""
 ---
 
 ## トークン化
@@ -204,10 +206,10 @@ compound = "{" stmt* "}"
 
 ## 参考
 
-https://github.com/DoctorWkt/acwj
+::card[https://github.com/DoctorWkt/acwj]
 
-https://github.com/rui314/chibicc
+::card[https://github.com/rui314/chibicc]
 
-https://www.sigbus.info/compilerbook
+::card[https://www.sigbus.info/compilerbook]
 
-https://github.com/season1618/books/blob/main/c-compiler/index.md
+::card[https://github.com/season1618/books/blob/main/c-compiler/index.md]

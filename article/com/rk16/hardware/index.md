@@ -1,5 +1,7 @@
 ---
 title: ロジックICで組む
+icon: wrench
+abst: ""
 ---
 
 <!-- broken image:  ../1_Architecture/img/arch.dio.svg -->

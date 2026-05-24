@@ -1,5 +1,7 @@
 ---
 title: 音の鳴るキーホルダを作る
+icon: key
+abst: ""
 ---
 
 ## 音声再生 SOC

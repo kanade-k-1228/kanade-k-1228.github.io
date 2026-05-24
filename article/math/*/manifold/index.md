@@ -1,5 +1,7 @@
 ---
 title: 多様体
+icon: globe_with_meridians
+abst: ""
 ---
 
 $$

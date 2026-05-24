@@ -1,5 +1,7 @@
 ---
 title: 熱力学
+icon: fire
+abst: ""
 ---
 
 ## 基本法則

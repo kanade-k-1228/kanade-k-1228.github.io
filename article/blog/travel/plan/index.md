@@ -1,5 +1,7 @@
 ---
 title: 旅程計画メモ
+icon: memo
+abst: ""
 ---
 
 ## 西行

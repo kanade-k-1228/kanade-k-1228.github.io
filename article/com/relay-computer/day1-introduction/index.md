@@ -1,5 +1,6 @@
 ---
 title: リレーから始める CPU 自作
+icon: electric_plug
 date: 2021-12-01
 abst: トランジスタを使わずにコンピュータを作ります。
 words:

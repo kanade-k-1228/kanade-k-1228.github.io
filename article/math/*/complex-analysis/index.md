@@ -1,5 +1,7 @@
 ---
 title: 複素解析
+icon: ocean
+abst: ""
 ---
 
 $$

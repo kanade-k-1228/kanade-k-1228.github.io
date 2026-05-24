@@ -1,5 +1,7 @@
 ---
 title: 移動現象論
+icon: truck
+abst: ""
 ---
 
 非定常系

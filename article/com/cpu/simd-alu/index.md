@@ -1,5 +1,7 @@
 ---
 title: 74181 で SIMD ALU を作る
+icon: heavy_plus_sign
+abst: ""
 ---
 
 ## SIMD

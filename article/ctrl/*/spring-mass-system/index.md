@@ -1,5 +1,7 @@
 ---
 title: バネ・マス系
+icon: curly_loop
+abst: ""
 ---
 
 ## 1. 離散系

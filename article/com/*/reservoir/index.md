@@ -1,5 +1,7 @@
 ---
 title: レザバー計算のまとめ
+icon: droplet
+abst: ""
 ---
 
 - 京大 土屋研究室 (https://www.nms.me.kyoto-u.ac.jp/tag/reservoir-computing/)

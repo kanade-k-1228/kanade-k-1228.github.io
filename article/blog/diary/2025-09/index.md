@@ -1,5 +1,7 @@
 ---
 title: 2025-09 日記
+icon: notebook
+abst: ""
 date: 2025-09-01
 ---
 

@@ -58,3 +58,10 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

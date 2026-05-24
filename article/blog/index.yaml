@@ -1,13 +1,16 @@
 "*":
   name: 雑記
+  icon: memo
   items:
     - essay
     - kanameshi
 diary:
   name: 日記
+  icon: calendar
   items:
     - diary
     - 2025-09
 plan:
   name: 計画
+  icon: dart
   items: []

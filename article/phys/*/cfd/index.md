@@ -1,5 +1,7 @@
 ---
 title: 数値流体解析
+icon: ocean
+abst: ""
 ---
 
 ## 解析の手法

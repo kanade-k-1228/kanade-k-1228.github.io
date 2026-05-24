@@ -1,5 +1,7 @@
 ---
 title: 自作 RISC-V マイコンを Rust で動かす
+icon: crab
+abst: ""
 words:
   - rust
   - riscv

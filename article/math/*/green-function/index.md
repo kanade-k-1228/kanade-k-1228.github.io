@@ -1,5 +1,7 @@
 ---
 title: グリーン関数
+icon: green_book
+abst: ""
 ---
 
 ## 線形微分方程式

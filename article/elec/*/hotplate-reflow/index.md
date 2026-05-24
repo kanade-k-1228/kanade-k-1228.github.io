@@ -1,5 +1,7 @@
 ---
 title: 5000 円で作るリフロー装置
+icon: fire
+abst: ""
 date: 2022-08-23
 words:
   - リフロー

@@ -1,5 +1,7 @@
 ---
 title: 自作 CPU RK8
+icon: gear
+abst: ""
 ---
 
 RK8 は RK16 を 8bit 化した CPU です。

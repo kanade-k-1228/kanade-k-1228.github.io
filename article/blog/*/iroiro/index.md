@@ -1,5 +1,7 @@
 ---
 title: いろいろ
+icon: sparkles
+abst: ""
 ---
 
 ## 人体の設計思想

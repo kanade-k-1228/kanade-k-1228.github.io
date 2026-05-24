@@ -1,5 +1,7 @@
 ---
 title: 熱工学
+icon: fire
+abst: ""
 ---
 
 ## 熱力学

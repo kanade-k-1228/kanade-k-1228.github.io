@@ -1,5 +1,7 @@
 ---
 title: data science
+icon: bar_chart
+abst: ""
 ---
 
 # データサイエンス

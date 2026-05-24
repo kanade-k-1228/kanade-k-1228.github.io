@@ -1,5 +1,7 @@
 ---
 title: Claude 牧場の作り方
+icon: cow
+abst: ""
 date: 2026-05-22
 words: [tmux, git, worktree, vibe coding, Claude Code]
 ---

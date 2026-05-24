@@ -1,5 +1,7 @@
 ---
 title: "#remind_for_mech21"
+icon: pushpin
+abst: ""
 ---
 
 <div id="maintable"></div>

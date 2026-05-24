@@ -1,5 +1,7 @@
 ---
 title: Arduinoでタイマ割り込み！
+icon: hourglass
+abst: ""
 ---
 
 前回、Arduino で外部割り込みを実装しました。

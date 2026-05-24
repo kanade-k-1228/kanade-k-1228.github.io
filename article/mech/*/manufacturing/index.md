@@ -1,5 +1,7 @@
 ---
 title: 生産技術
+icon: factory
+abst: ""
 ---
 
 ## 金属材料

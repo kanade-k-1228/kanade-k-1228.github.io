@@ -1,5 +1,7 @@
 ---
 title: 雑感
+icon: pencil2
+abst: ""
 ---
 
 ## 血管

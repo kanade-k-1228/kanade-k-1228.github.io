@@ -1,5 +1,7 @@
 ---
 title: 周辺回路を作る
+icon: electric_plug
+abst: ""
 ---
 
 ## GPIO

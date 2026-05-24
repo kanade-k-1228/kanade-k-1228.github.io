@@ -1,5 +1,7 @@
 ---
 title: PC 覚書
+icon: computer
+abst: ""
 date: 2021-10-11
 ---
 

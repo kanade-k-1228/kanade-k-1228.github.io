@@ -1,5 +1,7 @@
 ---
 title: 熱力学
+icon: fire
+abst: ""
 ---
 
 [熱力学の基礎（清水明）](http://www.utp.or.jp/book/b555767.html) の輪読会メモ

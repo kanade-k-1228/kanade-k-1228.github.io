@@ -1,5 +1,7 @@
 ---
 title: 音楽理論について
+icon: musical_note
+abst: ""
 ---
 
 ## 現象論的音楽理論

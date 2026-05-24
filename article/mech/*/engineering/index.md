@@ -1,5 +1,7 @@
 ---
 title: 現代工学の考え方
+icon: building_construction
+abst: ""
 ---
 
 ゼミまとめ

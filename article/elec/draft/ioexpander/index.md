@@ -1,5 +1,7 @@
 ---
 title: I2C IOエクスパンダ MCP23017 の使い方
+icon: outbox_tray
+abst: ""
 ---
 
 ## MCP23017

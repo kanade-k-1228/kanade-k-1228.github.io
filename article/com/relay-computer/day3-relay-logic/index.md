@@ -1,5 +1,6 @@
 ---
 title: リレーで作る組合回路
+icon: electric_plug
 date: 2021-12-03
 abst: 半導体なしで論理回路を作ります。
 words:

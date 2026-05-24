@@ -1,4 +1,6 @@
 "*":
   name: その他
+  icon: file_folder
   items:
+    - pages
     - claude-farm

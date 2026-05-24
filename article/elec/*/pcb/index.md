@@ -1,5 +1,7 @@
 ---
 title: プリント基板の作り方
+icon: triangular_ruler
+abst: ""
 ---
 
 EAGLE で回路設計して、JLCPCB に発注する方法を解説します。

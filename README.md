@@ -26,11 +26,11 @@ pnpm image --write
 
 ```yaml
 ---
-title: article # ！記事タイトル
-date: YYYY-MM-DD # ？日付
-abst: any # ？概要
-words: [kw] # ？キーワード
-cover: ./img/ogp.png # ？カバー画像（存在しなければ title / abst から生成）
+title: 記事タイトル
+icon: 絵文字
+abst: 概要文
+date: YYYY-MM-DD
+words: [キーワード]
 ---
 ```
 
@@ -53,6 +53,16 @@ $$ integral_0^1 x^2 dif x $$
 ```
 
 > `remark-math` + `lib/markdown/rehype-typst.ts`（自前 wrapper）で Typst を SSR コンパイルし SVG 画像化して埋め込みます。
+
+### リンクカード
+
+URL の OGP を取得してカード表示します。`remark-directive` の leaf block directive で書きます：
+
+```
+::card[https://example.com]
+```
+
+ビルド時に OGP を取得し `.cache/ogp.json` にキャッシュします（コミット対象）。失敗もキャッシュされるので再ビルド時に再 fetch しません。再取得したいときは該当エントリを削除してください。
 
 ## おしらせ・新着記事
 

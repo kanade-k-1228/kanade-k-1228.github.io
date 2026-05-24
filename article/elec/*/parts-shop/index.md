@@ -1,5 +1,7 @@
 ---
 title: 電子部品の買える店
+icon: shopping_cart
+abst: ""
 words:
   - 電子部品
   - 電子工作

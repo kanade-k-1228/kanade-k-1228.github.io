@@ -1,5 +1,7 @@
 ---
 title: "自作言語:tasm"
+icon: scroll
+abst: ""
 words:
   - 自作言語
   - 自作コンパイラ

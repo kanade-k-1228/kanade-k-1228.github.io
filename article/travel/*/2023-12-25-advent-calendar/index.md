@@ -1,5 +1,7 @@
 ---
 title: 自作 CPU と半導体の未来
+icon: christmas_tree
+abst: ""
 ---
 
 これは [自作 CPU Advent Calendar 2023](https://adventar.org/calendars/8916) 25 日目の記事です。

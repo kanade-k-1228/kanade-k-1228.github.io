@@ -1,5 +1,7 @@
 ---
 title: 雲取山
+icon: mountain
+abst: ""
 ---
 
 |          |     |     |

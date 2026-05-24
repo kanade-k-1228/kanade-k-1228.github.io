@@ -1,5 +1,7 @@
 ---
 title: オペアンプ
+icon: triangular_ruler
+abst: ""
 ---
 
 ## オペアンプは電気的なテコ

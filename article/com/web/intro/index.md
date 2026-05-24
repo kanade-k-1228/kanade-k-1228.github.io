@@ -1,5 +1,7 @@
 ---
 title: Webプログラミング入門
+icon: spider_web
+abst: ""
 date: 2022-02-12
 ---
 

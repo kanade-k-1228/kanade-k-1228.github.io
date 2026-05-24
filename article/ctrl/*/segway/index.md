@@ -1,5 +1,7 @@
 ---
 title: 車輪型倒立振子の状態方程式
+icon: motor_scooter
+abst: ""
 ---
 
 ![](./img/fig.dio.svg)

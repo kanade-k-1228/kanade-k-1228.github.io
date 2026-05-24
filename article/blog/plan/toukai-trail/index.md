@@ -1,5 +1,7 @@
 ---
 title: 東京から名古屋まで山道を行く
+icon: mountain
+abst: ""
 ---
 
 [東海自然歩道](http://ranger-k.eco.coocan.jp/longtrail_webmap/tokai_trail/route/webmap.html)

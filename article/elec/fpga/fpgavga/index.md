@@ -1,8 +1,10 @@
 ---
 title: FPGA で VGA 映像出力
+icon: tv
 words:
   - FPGA
   - VGA
+abst: ""
 ---
 
 ## VGA 信号

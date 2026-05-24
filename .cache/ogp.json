@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "entries": {
+    "https://tokaido-hiroshige.jp/": {
+      "url": "https://tokaido-hiroshige.jp/",
+      "title": "静岡市東海道広重美術館",
+      "description": "東海道広重美術館は、江戸時代の浮世絵師・歌川広重の名を冠した、日本で最初の美術館です。常に新しい視点で、浮世絵芸術の素晴らしさを満喫していただけるよう、毎月展示替えを行い、所蔵品を中心にバラエティーに富んだ企画展を開催しています。",
+      "siteName": "静岡市東海道広重美術館",
+      "favicon": "https://tokaido-hiroshige.jp/favicon.ico",
+      "fetchedAt": "2026-05-23T10:14:59.047Z"
+    },
+    "https://arxiv.org/abs/2404.14724": {
+      "url": "https://arxiv.org/abs/2404.14724",
+      "title": "Tightly Joined Positioning and Control Model for Unmanned Aerial Vehicles Based on Factor Graph Optimization",
+      "description": "The execution of flight missions by unmanned aerial vehicles (UAV) primarily relies on navigation. In particular, the navigation pipeline has traditionally been divided into positioning and control, operating in a sequential loop. However, the existing navigation pipeline, where the positioning and control are decoupled, struggles to adapt to ubiquitous uncertainties arising from measurement noise, abrupt disturbances, and nonlinear dynamics. As a result, the navigation reliability of the UAV is significantly challenged in complex dynamic areas. For example, the ubiquitous global navigation satellite system (GNSS) positioning can be degraded by the signal reflections from surrounding high-rising buildings in complex urban areas, leading to significantly increased positioning uncertainty. An additional challenge is introduced to the control algorithm due to the complex wind disturbances in urban canyons. Given the fact that the system positioning and control are highly correlated with each other, this research proposes a **tightly joined positioning and control model (JPCM) based on factor graph optimization (FGO)**. In particular, the proposed JPCM combines sensor measurements from positioning and control constraints into a unified probabilistic factor graph. Specifically, the positioning measurements are formulated as the factors in the factor graph. In addition, the model predictive control (MPC) is also formulated as the additional factors in the factor graph. By solving the factor graph contributed by both the positioning-related factors and the MPC-based factors, the complementariness of positioning and control can be deeply exploited. Finally, we validate the effectiveness and resilience of the proposed method using a simulated quadrotor system which shows significantly improved trajectory following performance.",
+      "image": "https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png",
+      "siteName": "arXiv.org",
+      "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png",
+      "fetchedAt": "2026-05-23T10:15:01.800Z"
+    },
+    "https://github.com/season1618/books/blob/main/c-compiler/index.md": {
+      "error": "HTTP 404",
+      "fetchedAt": "2026-05-23T10:15:02.343Z"
+    },
+    "https://github.com/rui314/chibicc": {
+      "url": "https://github.com/rui314/chibicc",
+      "title": "GitHub - rui314/chibicc: A small C compiler",
+      "description": "A small C compiler. Contribute to rui314/chibicc development by creating an account on GitHub.",
+      "image": "https://opengraph.githubassets.com/453239d318d9ea068dbd51a34fdd6ea0efd97f9d8eb0d123685a7b1f51212f8c/rui314/chibicc",
+      "siteName": "GitHub",
+      "favicon": "https://github.githubassets.com/favicons/favicon.png",
+      "fetchedAt": "2026-05-23T10:15:15.851Z"
+    },
+    "https://github.com/DoctorWkt/acwj": {
+      "url": "https://github.com/DoctorWkt/acwj",
+      "title": "GitHub - DoctorWkt/acwj: A Compiler Writing Journey",
+      "description": "A Compiler Writing Journey. Contribute to DoctorWkt/acwj development by creating an account on GitHub.",
+      "image": "https://opengraph.githubassets.com/cef5c29a4332198a3136283c18b86cecf522c3cc04228eafbd3999cc560b7272/DoctorWkt/acwj",
+      "siteName": "GitHub",
+      "favicon": "https://github.githubassets.com/favicons/favicon.png",
+      "fetchedAt": "2026-05-23T10:15:15.870Z"
+    },
+    "https://github.com/ClancyWalters/cppmap3d": {
+      "url": "https://github.com/ClancyWalters/cppmap3d",
+      "title": "GitHub - ClancyWalters/cppmap3d",
+      "description": "Contribute to ClancyWalters/cppmap3d development by creating an account on GitHub.",
+      "image": "https://opengraph.githubassets.com/90be568b1f3c3949ecd3d6c65b436f1054244977379a0089f70f3797a3924a8d/ClancyWalters/cppmap3d",
+      "siteName": "GitHub",
+      "favicon": "https://github.githubassets.com/favicons/favicon.png",
+      "fetchedAt": "2026-05-23T10:15:15.890Z"
+    },
+    "https://github.com/planet36/ecef-geodetic": {
+      "url": "https://github.com/planet36/ecef-geodetic",
+      "title": "GitHub - planet36/ecef-geodetic: A test suite of ECEF-to-geodetic coordinate conversion functions",
+      "description": "A test suite of ECEF-to-geodetic coordinate conversion functions - planet36/ecef-geodetic",
+      "image": "https://opengraph.githubassets.com/43a352e4fde0a6fa5eaa996dff09bb395a60fdbd7d9bd4e1e284d6bb54b21a4b/planet36/ecef-geodetic",
+      "siteName": "GitHub",
+      "favicon": "https://github.githubassets.com/favicons/favicon.png",
+      "fetchedAt": "2026-05-23T10:15:15.905Z"
+    },
+    "https://github.com/geospace-code/pymap3d": {
+      "url": "https://github.com/geospace-code/pymap3d",
+      "title": "GitHub - geospace-code/pymap3d: pure-Python (Numpy optional) 3D coordinate conversions for geospace ecef enu eci",
+      "description": "pure-Python (Numpy optional) 3D coordinate conversions for geospace ecef enu eci - geospace-code/pymap3d",
+      "image": "https://opengraph.githubassets.com/dbd7eaab072857341db4c6892d5fa640d868373d6b855bea2dde1d9aeeaa6424/geospace-code/pymap3d",
+      "siteName": "GitHub",
+      "favicon": "https://github.githubassets.com/favicons/favicon.png",
+      "fetchedAt": "2026-05-23T10:15:15.927Z"
+    },
+    "https://www.sigbus.info/compilerbook": {
+      "url": "https://www.sigbus.info/compilerbook",
+      "title": "低レイヤを知りたい人のためのCコンパイラ作成入門",
+      "favicon": "data:image/png;base64,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",
+      "fetchedAt": "2026-05-23T10:15:16.126Z"
+    },
+    "http://www.kogen-rail.com/511_5.htm": {
+      "url": "http://www.kogen-rail.com/511_5.htm",
+      "title": "���C�u�X�`�[���̐���i�뉀�S���j����/����",
+      "favicon": "http://www.kogen-rail.com/favicon.ico",
+      "fetchedAt": "2026-05-23T10:15:16.281Z"
+    }
+  }
+}

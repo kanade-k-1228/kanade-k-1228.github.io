@@ -9,6 +9,6 @@
     "enabled": false
   },
   "files": {
-    "includes": ["**", "!**/dist/**", "!**/.astro/**", "!**/node_modules/**"]
+    "includes": ["**", "!**/dist", "!**/.astro", "!**/node_modules"]
   }
 }

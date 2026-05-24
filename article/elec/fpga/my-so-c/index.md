@@ -1,5 +1,7 @@
 ---
 title: PicoRV32で自作マイコン
+icon: gear
+abst: ""
 ---
 
 RISC-V を使って ArduinoUno と同程度のマイコンを作ります。

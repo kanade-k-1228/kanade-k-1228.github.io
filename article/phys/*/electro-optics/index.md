@@ -1,5 +1,7 @@
 ---
 title: 電気光学効果
+icon: bulb
+abst: ""
 ---
 
 物質の電気的特性は、分極 (Polarization) であらわされる。

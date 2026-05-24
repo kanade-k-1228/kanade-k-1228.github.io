@@ -1,5 +1,7 @@
 ---
 title: Arduinoの内側を見る
+icon: microscope
+abst: ""
 ---
 
 ## main 関数はどこ？

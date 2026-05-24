@@ -1,5 +1,7 @@
 ---
 title: Azoteq IQS127D （静電容量タッチセンサIC）の使い方
+icon: point_up
+abst: ""
 ---
 
 [メーカーのページ](https://www.azoteq.com/product/iqs127d/)
