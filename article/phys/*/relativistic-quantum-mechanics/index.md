@@ -1,5 +1,7 @@
 ---
 title: 相対論的量子力学
+icon: atom_symbol
+abst: ""
 ---
 
 - 特殊相対性原理に従う

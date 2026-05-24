@@ -10,7 +10,7 @@ export const Theme = () => {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-600 hover:bg-sky-100 dark:text-slate-300 dark:hover:bg-slate-800"
+      className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-slate-600 hover:bg-sky-100 dark:text-slate-300 dark:hover:bg-slate-800"
       aria-label="ダーク/ライト切替"
     >
       <svg className="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

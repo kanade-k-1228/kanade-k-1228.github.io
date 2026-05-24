@@ -1,5 +1,7 @@
 ---
 title: 伝熱工学
+icon: fire
+abst: ""
 ---
 
 熱工学第二のノート

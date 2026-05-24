@@ -1,5 +1,7 @@
 ---
 title: 動画投稿はじめました。
+icon: movie_camera
+abst: ""
 ---
 
 CeVIO AI 買っちゃいましたー

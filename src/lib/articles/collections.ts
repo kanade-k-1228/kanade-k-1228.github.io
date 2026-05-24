@@ -1,12 +1,6 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 export type ArticleEntry = CollectionEntry<"article">;
-
-export const articleId = (entry: ArticleEntry): string =>
-  entry.id
-    .split("/")
-    .filter((seg) => seg !== "" && seg !== "*")
-    .join("/");
 
 export const getPublishedArticles = async (): Promise<ArticleEntry[]> => {
   const entries = await getCollection("article");
@@ -18,3 +12,10 @@ export const getPublishedArticles = async (): Promise<ArticleEntry[]> => {
 };
 
 export const entryUrl = (entry: ArticleEntry): string => `/${articleId(entry)}/`;
+
+// `*` は series 無しを示すプレースホルダ。URL からは畳む。
+export const articleId = (entry: ArticleEntry): string =>
+  entry.id
+    .split("/")
+    .filter((seg) => seg !== "" && seg !== "*")
+    .join("/");

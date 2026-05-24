@@ -1,26 +1,11 @@
-/**
- * Remark plugin: inline local SVG images into the HTML output.
- *
- * Markdown `![alt](./img/foo.svg)` referring to a colocated SVG file is
- * replaced with an HTML node containing the raw SVG source. This sidesteps
- * Astro's `astro:assets` pipeline, which can fail on third-party SVGs
- * (notably draw.io exports) with `NoImageMetadata`, while keeping the
- * editorial convenience of colocating assets with the article.
- *
- * Runs as a remark plugin BEFORE Astro's `remark-collect-images` so that
- * collected `localImagePaths` no longer references the inlined SVG.
- */
+// colocate された SVG をインライン化する。Astro の `astro:assets` pipeline は
+// 一部の SVG (draw.io export 等) で `NoImageMetadata` で失敗するため、これを回避する。
+// Astro 組み込みの `remark-collect-images` より前に走らせる必要がある。
 import { promises as fs } from "node:fs";
 import { dirname, resolve } from "node:path";
 import type { Html, Image, Root } from "mdast";
-import type { VFile } from "vfile";
 import { visit } from "unist-util-visit";
-
-interface Replacement {
-  parent: { children: unknown[] };
-  index: number;
-  html: Html;
-}
+import type { VFile } from "vfile";
 
 export const remarkInlineSvg = () => {
   return async (tree: Root, file: VFile): Promise<void> => {
@@ -38,7 +23,6 @@ export const remarkInlineSvg = () => {
       const url = node.url;
       if (typeof url !== "string") return;
       if (!url.toLowerCase().endsWith(".svg")) return;
-      // skip remote / public-absolute / data URIs
       if (URL.canParse(url) || url.startsWith("/") || url.startsWith("data:")) return;
       targets.push({ node, parent: parent as { children: unknown[] }, index });
     });
@@ -51,7 +35,7 @@ export const remarkInlineSvg = () => {
         try {
           raw = await fs.readFile(svgAbs, "utf8");
         } catch {
-          return; // missing files are handled by migrate-time broken-image comments
+          return;
         }
         if (raw.length === 0) return;
         const html: Html = {
@@ -62,18 +46,21 @@ export const remarkInlineSvg = () => {
       }),
     );
 
-    // Replace from highest index to lowest to keep earlier indices stable.
+    // 高 index から置換することで低 index 側のずれを防ぐ。
     for (const { parent, index, html } of replacements.sort((a, b) => b.index - a.index)) {
       parent.children[index] = html;
     }
   };
 };
 
-/** Wrap the raw SVG in a centered figure; preserves alt as accessible label. */
+interface Replacement {
+  parent: { children: unknown[] };
+  index: number;
+  html: Html;
+}
+
 const wrapSvg = (svg: string, alt: string): string => {
-  // Strip BOM / XML prolog so the SVG embeds cleanly inline.
   let body = svg.replace(/^﻿/, "").replace(/^\s*<\?xml[^?]*\?>\s*/, "");
-  // Ensure the root <svg> has role/aria-label for a11y.
   if (alt) {
     body = body.replace(/<svg\b([^>]*?)>/, (m, attrs) =>
       /role=/.test(attrs) ? m : `<svg${attrs} role="img" aria-label="${escapeAttr(alt)}">`,

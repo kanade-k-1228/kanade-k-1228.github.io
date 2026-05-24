@@ -1,5 +1,7 @@
 ---
 title: サーバーセットアップメモ
+icon: file_cabinet
+abst: ""
 ---
 
 - ターミナルの文字がおかしい

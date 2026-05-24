@@ -1,5 +1,7 @@
 ---
 title: アセンブラ
+icon: hammer_and_wrench
+abst: ""
 ---
 
 ## 設計思想

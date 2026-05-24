@@ -1,5 +1,7 @@
 ---
 title: 統計力学
+icon: bar_chart
+abst: ""
 ---
 
 ## 位相空間

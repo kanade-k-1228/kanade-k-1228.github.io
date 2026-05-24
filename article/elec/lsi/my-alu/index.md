@@ -1,5 +1,7 @@
 ---
 title: 自作CPU向けALU
+icon: heavy_plus_sign
+abst: ""
 ---
 
 自作CPUをやったり布教する上で、74HC181が枯渇しつつあるのが厳しい。。。ということでALU用のLSIを作りたいなと。

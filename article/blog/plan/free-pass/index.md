@@ -1,5 +1,7 @@
 ---
 title: フリーパスまとめ
+icon: ticket
+abst: ""
 words:
   - 青春18きっぷ
   - 18きっぷ

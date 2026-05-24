@@ -1,5 +1,7 @@
 ---
 title: ダイオード
+icon: small_red_triangle
+abst: ""
 ---
 
 ## PN接合

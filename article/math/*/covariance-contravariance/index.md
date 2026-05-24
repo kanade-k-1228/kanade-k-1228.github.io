@@ -1,5 +1,7 @@
 ---
 title: 共変・反変
+icon: arrows_clockwise
+abst: ""
 ---
 
 座標変換に対して二通りのふるまいがあるということ．

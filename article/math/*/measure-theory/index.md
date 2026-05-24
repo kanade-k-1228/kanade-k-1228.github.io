@@ -1,5 +1,7 @@
 ---
 title: 測度論
+icon: balance_scale
+abst: ""
 ---
 
 $$

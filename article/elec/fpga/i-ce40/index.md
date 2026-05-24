@@ -1,5 +1,7 @@
 ---
 title: iCE40 で始める FPGA
+icon: snowflake
+abst: ""
 ---
 
 iCE40 は、SiliconBlue（Lattice が買収）が開発した、組み込み向けの FPGA シリーズです。

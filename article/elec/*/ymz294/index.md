@@ -1,5 +1,7 @@
 ---
 title: ヤマハ製の音源 IC YMZ294 を使ってみた
+icon: musical_note
+abst: ""
 ---
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">YMZ294でロックマン <a href="https://t.co/W3yztZKuT6">pic.twitter.com/W3yztZKuT6</a></p>&mdash; Канадэ (@kanade_k_1228) <a href="https://twitter.com/kanade_k_1228/status/1464302691882967043?ref_src=twsrc%5Etfw">November 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -1,5 +1,6 @@
 ---
 title: GitHubを使ったブログサイトの作り方
+icon: memo
 date: 2023-07-05
 abst: Twitterが終わった今こそ、各々がWebサイトを持っていた昔のインターネットに回帰しよう。
 ---

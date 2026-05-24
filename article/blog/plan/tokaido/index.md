@@ -1,5 +1,7 @@
 ---
 title: 東海道を歩き通す
+icon: footprints
+abst: ""
 ---
 
 京都まで 3 週間を想定
@@ -22,7 +24,7 @@ title: 東海道を歩き通す
 
 ## 4 日目
 
-https://tokaido-hiroshige.jp/
+::card[https://tokaido-hiroshige.jp/]
 
 由比
 

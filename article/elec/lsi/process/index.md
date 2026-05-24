@@ -1,5 +1,7 @@
 ---
 title: 半導体プロセス
+icon: microscope
+abst: ""
 ---
 
 ## 成膜

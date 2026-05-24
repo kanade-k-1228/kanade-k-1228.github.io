@@ -1,5 +1,7 @@
 ---
 title: 2023 12 01 advent calendar
+icon: calendar
+abst: ""
 ---
 
 ---

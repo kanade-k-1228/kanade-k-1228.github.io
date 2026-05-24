@@ -1,5 +1,7 @@
 ---
 title: 旅行記
+icon: airplane
+abst: ""
 ---
 
 ## 東京下町 (2021-09-07)

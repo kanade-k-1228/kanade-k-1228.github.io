@@ -1,5 +1,7 @@
 ---
 title: 連続体力学
+icon: ocean
+abst: ""
 ---
 
 [Book](https://ocw.kyoto-u.ac.jp/course/9/)

@@ -1,5 +1,7 @@
 ---
 title: プリント基板
+icon: triangular_ruler
+abst: ""
 ---
 
 ## メーカー比較

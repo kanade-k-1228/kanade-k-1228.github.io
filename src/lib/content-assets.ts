@@ -1,35 +1,10 @@
-/**
- * Astro integration: serve and emit non-image binary assets that live
- * colocated with markdown articles under `article/<slug>/...`.
- *
- * Markdown links like `[label](./doc/foo.pdf)` resolve in the browser
- * against the article URL (`/computer/foo/`), so the browser fetches
- * `/computer/foo/doc/foo.pdf`. This integration makes that path actually serve
- * the file:
- *
- *   - dev: a middleware streams the colocated file from article/
- *   - build: every matching asset is copied into dist/ at the same path
- *
- * Images (jpg/png/gif/webp) are handled by Astro's asset pipeline, and SVGs
- * are inlined by `remark-inline-svg`, so they are intentionally excluded
- * here. Add new extensions to ASSET_EXTS if you start linking other binary
- * formats (e.g. .stl, .step, .tar.gz).
- */
-import type { AstroIntegration } from "astro";
-import { promises as fs, createReadStream } from "node:fs";
+// 記事と colocate された非画像バイナリ (.pdf/.mp4 等) を dev では middleware で配信し、
+// build では dist/ に同じパスでコピーする。画像は Astro の asset pipeline、SVG は
+// remark-inline-svg が扱うので除外。新しい拡張子は ASSET_EXTS に追加する。
+import { createReadStream, promises as fs } from "node:fs";
 import { dirname, extname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-
-const ASSET_EXTS = new Set([".pdf", ".mp4", ".webm", ".mov", ".zip"]);
-const MIME: Record<string, string> = {
-  ".pdf": "application/pdf",
-  ".mp4": "video/mp4",
-  ".webm": "video/webm",
-  ".mov": "video/quicktime",
-  ".zip": "application/zip",
-};
-
-const isAssetExt = (ext: string): boolean => ASSET_EXTS.has(ext.toLowerCase());
+import type { AstroIntegration } from "astro";
 
 export const contentAssets = (): AstroIntegration => {
   const articleRoot = resolve("article");
@@ -74,6 +49,17 @@ export const contentAssets = (): AstroIntegration => {
     },
   };
 };
+
+const ASSET_EXTS = new Set([".pdf", ".mp4", ".webm", ".mov", ".zip"]);
+const MIME: Record<string, string> = {
+  ".pdf": "application/pdf",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
+  ".mov": "video/quicktime",
+  ".zip": "application/zip",
+};
+
+const isAssetExt = (ext: string): boolean => ASSET_EXTS.has(ext.toLowerCase());
 
 const walk = async function* (dir: string): AsyncGenerator<string> {
   let entries: import("node:fs").Dirent[];

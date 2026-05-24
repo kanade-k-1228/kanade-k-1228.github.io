@@ -1,5 +1,7 @@
 ---
 title: 2021 09 touhoku
+icon: ear_of_rice
+abst: ""
 ---
 
 ## 東北 (2021-09-09 ~ 2021-09-10)

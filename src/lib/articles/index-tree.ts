@@ -1,10 +1,13 @@
 import { parse } from "yaml";
-import { categories } from "./categories";
-import { articleId, getPublishedArticles, entryUrl, type ArticleEntry } from "./collections";
+import categoriesSource from "../../../article/index.yaml?raw";
+import { resolveIcon, type ResolvedIcon } from "../emoji";
+import { type ArticleEntry, articleId, entryUrl, getPublishedArticles } from "./collections";
 
 export interface IndexLink {
   label: string;
   url?: string;
+  abst?: string;
+  icon?: ResolvedIcon;
 }
 
 export interface IndexSubsection {
@@ -19,35 +22,21 @@ export interface IndexSection {
   subsections?: IndexSubsection[];
 }
 
-interface SeriesEntry {
-  name?: string;
-  abst?: string;
-  items?: string[];
+export interface SeriesChapter {
+  label: string;
+  url: string;
+  isCurrent: boolean;
 }
 
-const ROOT_KEY = "*";
-
-const seriesSources = import.meta.glob<string>("/article/*/index.yaml", {
-  eager: true,
-  query: "?raw",
-  import: "default",
-});
-
-const seriesByCategory = (): Record<string, Record<string, SeriesEntry>> => {
-  const out: Record<string, Record<string, SeriesEntry>> = {};
-  for (const [filePath, source] of Object.entries(seriesSources)) {
-    const m = filePath.match(/^\/article\/([^/]+)\/index\.yaml$/);
-    if (!m) continue;
-    const parsed = parse(source) as Record<string, SeriesEntry> | null;
-    if (parsed) out[m[1]] = parsed;
-  }
-  return out;
-};
-
-const linkOf = (entry: ArticleEntry): IndexLink => ({
-  label: entry.data.title,
-  url: entryUrl(entry),
-});
+export interface SeriesContext {
+  categoryId: string;
+  categoryName: string;
+  seriesKey: string;
+  name: string;
+  abst?: string;
+  chapters: SeriesChapter[];
+  currentIndex: number;
+}
 
 export const buildIndex = async (): Promise<IndexSection[]> => {
   const articles = await getPublishedArticles();
@@ -98,3 +87,115 @@ export const buildIndex = async (): Promise<IndexSection[]> => {
 
   return sections;
 };
+
+export const getSeriesForArticle = async (entry: ArticleEntry): Promise<SeriesContext | null> => {
+  const id = articleId(entry);
+  const parts = id.split("/");
+  if (parts.length < 2) return null;
+
+  const cat = parts[0];
+  const categoryName = categories[cat];
+  if (!categoryName) return null;
+
+  const series = seriesByCategory()[cat];
+  if (!series) return null;
+
+  let foundKey: string | null = null;
+  let foundSeries: SeriesEntry | null = null;
+  let currentSlug: string | null = null;
+
+  if (parts.length >= 3) {
+    const candidateKey = parts[1];
+    const candidateSlug = parts.slice(2).join("/");
+    const s = series[candidateKey];
+    if (s && (s.items ?? []).includes(candidateSlug)) {
+      foundKey = candidateKey;
+      foundSeries = s;
+      currentSlug = candidateSlug;
+    }
+  }
+
+  if (!foundSeries) {
+    const rootSlug = parts.slice(1).join("/");
+    const s = series[ROOT_KEY];
+    if (s && (s.items ?? []).includes(rootSlug)) {
+      foundKey = ROOT_KEY;
+      foundSeries = s;
+      currentSlug = rootSlug;
+    }
+  }
+
+  if (!foundSeries || foundKey === null || currentSlug === null) return null;
+
+  const slugs = foundSeries.items ?? [];
+  if (slugs.length < 2) return null;
+
+  const seriesKey = foundKey;
+  const articles = await getPublishedArticles();
+  const byId = new Map(articles.map((a) => [articleId(a), a]));
+  const lookupKey = seriesKey === ROOT_KEY ? (s: string) => `${cat}/${s}` : (s: string) => `${cat}/${seriesKey}/${s}`;
+
+  let currentIndex = -1;
+  const chapters: SeriesChapter[] = [];
+  for (const slug of slugs) {
+    const article = byId.get(lookupKey(slug));
+    if (!article) continue;
+    const isCurrent = slug === currentSlug;
+    if (isCurrent) currentIndex = chapters.length;
+    chapters.push({
+      label: article.data.title,
+      url: entryUrl(article),
+      isCurrent,
+    });
+  }
+
+  if (chapters.length < 2 || currentIndex < 0) return null;
+
+  return {
+    categoryId: cat,
+    categoryName,
+    seriesKey,
+    name: foundSeries.name ?? seriesKey,
+    abst: foundSeries.abst,
+    chapters,
+    currentIndex,
+  };
+};
+
+// article/index.yaml の記述順がそのままカテゴリ表示順になる。
+const categories: Record<string, string> = (parse(categoriesSource) as Record<string, string> | null) ?? {};
+
+interface SeriesEntry {
+  name?: string;
+  abst?: string;
+  items?: string[];
+}
+
+const ROOT_KEY = "*";
+
+const seriesSources = import.meta.glob<string>("/article/*/index.yaml", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
+
+let seriesCache: Record<string, Record<string, SeriesEntry>> | null = null;
+const seriesByCategory = (): Record<string, Record<string, SeriesEntry>> => {
+  if (seriesCache) return seriesCache;
+  const out: Record<string, Record<string, SeriesEntry>> = {};
+  for (const [filePath, source] of Object.entries(seriesSources)) {
+    const m = filePath.match(/^\/article\/([^/]+)\/index\.yaml$/);
+    if (!m) continue;
+    const parsed = parse(source) as Record<string, SeriesEntry> | null;
+    if (parsed) out[m[1]] = parsed;
+  }
+  seriesCache = out;
+  return out;
+};
+
+const linkOf = (entry: ArticleEntry): IndexLink => ({
+  label: entry.data.title,
+  url: entryUrl(entry),
+  abst: entry.data.abst,
+  icon: resolveIcon(entry.data.icon) ?? undefined,
+});

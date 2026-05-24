@@ -1,10 +1,12 @@
 ---
 title: 結合モデル制御のコンセプト
+icon: link
+abst: ""
 ---
 
 おもしろそうな論文を見つけました。
 
-https://arxiv.org/abs/2404.14724
+::card[https://arxiv.org/abs/2404.14724]
 
 Tightly Joined Positioning and Control Model for Unmanned Aerial Vehicles Based on Factor Graph Optimization
 b

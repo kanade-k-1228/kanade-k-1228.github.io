@@ -1,5 +1,7 @@
 ---
 title: 分光法
+icon: rainbow
+abst: ""
 ---
 
 物質に光を

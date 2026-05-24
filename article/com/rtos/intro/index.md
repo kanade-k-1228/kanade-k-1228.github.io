@@ -1,5 +1,7 @@
 ---
 title: "Arduinoで自作OS!"
+icon: seedling
+abst: ""
 words:
   - Arduino
   - マルチタスク

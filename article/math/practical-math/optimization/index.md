@@ -1,5 +1,7 @@
 ---
 title: optimization
+icon: dart
+abst: ""
 ---
 
 # 数理最適化

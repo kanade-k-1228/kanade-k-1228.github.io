@@ -1,5 +1,7 @@
 ---
 title: 日記
+icon: notebook
+abst: ""
 ---
 
 ## 2021-09

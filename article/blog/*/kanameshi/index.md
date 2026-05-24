@@ -1,5 +1,6 @@
 ---
 title: かな飯
+icon: rice
 abst: 自炊メモと日記
 ---
 

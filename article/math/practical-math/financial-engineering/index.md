@@ -1,5 +1,7 @@
 ---
 title: 金融工学
+icon: moneybag
+abst: ""
 ---
 
 $$

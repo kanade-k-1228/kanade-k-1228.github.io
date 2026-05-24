@@ -1,5 +1,7 @@
 ---
 title: マイコンを作りたい！
+icon: sparkles
+abst: ""
 date: 2022-09-23
 ---
 

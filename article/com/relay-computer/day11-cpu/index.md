@@ -1,5 +1,6 @@
 ---
 title: CPUになりきる
+icon: performing_arts
 date: 2021-12-11
 abst: CPUが実行するプログラムを手で実行します。
 words:

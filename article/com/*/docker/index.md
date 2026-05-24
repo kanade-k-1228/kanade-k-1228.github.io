@@ -1,5 +1,7 @@
 ---
 title: Dockerはじめました
+icon: whale
+abst: ""
 ---
 
 お仕事でちゃんとDockerを使わないといけなくなったので勉強し始めました．

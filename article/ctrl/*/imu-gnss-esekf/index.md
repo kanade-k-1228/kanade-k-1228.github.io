@@ -1,5 +1,7 @@
 ---
 title: カルマンフィルタ
+icon: compass
+abst: ""
 ---
 
 Joan Solà の論文を参考に、ドローンの自己位置推定を実装する。

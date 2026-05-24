@@ -1,5 +1,7 @@
 ---
 title: 麻雀
+icon: mahjong
+abst: ""
 ---
 
 ## 麻雀のフローチャート

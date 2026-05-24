@@ -1,5 +1,7 @@
 ---
 title: ソフトマター
+icon: droplet
+abst: ""
 ---
 
 ## ソフトマターとは

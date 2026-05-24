@@ -1,5 +1,7 @@
 ---
 title: 材料力学
+icon: gem
+abst: ""
 ---
 
 ## 引張・圧縮

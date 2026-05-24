@@ -1,5 +1,7 @@
 ---
 title: 超小型 Arduino 互換ボード Coinduino の製作
+icon: money_with_wings
+abst: ""
 ---
 
 - ATMEGA 32U4 搭載

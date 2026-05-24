@@ -1,30 +1,18 @@
-import type { ImageMetadata } from "astro";
 import type { FC } from "react";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, TWITTER } from "../consts";
-
-const absoluteUrl = (input: string): string => {
-  return new URL(input, SITE_URL).toString();
-};
-
-const resolveOgImage = (pathname: string, ogImage: ImageMetadata | string | undefined): string => {
-  if (typeof ogImage === "string") return absoluteUrl(ogImage);
-  if (ogImage && "src" in ogImage) return absoluteUrl(ogImage.src);
-  const normalized = pathname.endsWith("/") ? pathname : `${pathname}/`;
-  return absoluteUrl(`/cover${normalized}cover.png`);
-};
 
 export const Meta: FC<{
   pathname: string;
   title?: string;
   description?: string;
   canonical?: string;
-  ogImage?: ImageMetadata | string;
   noindex?: boolean;
-}> = ({ pathname, title, description = SITE_DESCRIPTION, canonical, ogImage, noindex }) => {
+}> = ({ pathname, title, description = SITE_DESCRIPTION, canonical, noindex }) => {
   const fullTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
   const pageTitle = title ?? SITE_TITLE;
-  const canonicalUrl = canonical ?? absoluteUrl(pathname);
-  const ogImageUrl = resolveOgImage(pathname, ogImage);
+  const canonicalUrl = canonical ?? new URL(pathname, SITE_URL).toString();
+  const normalizedPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
+  const ogImageUrl = new URL(`/cover${normalizedPath}cover.png`, SITE_URL).toString();
   const ogType = title ? "article" : "website";
 
   return (

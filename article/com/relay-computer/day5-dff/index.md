@@ -1,5 +1,6 @@
 ---
 title: D フリップフロップ回路
+icon: repeat
 date: 2021-12-05
 abst: 1ビットのデータを記憶する回路をリレーで作ります。
 words:

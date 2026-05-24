@@ -1,5 +1,7 @@
 ---
 title: タスクスケジューラ
+icon: calendar
+abst: ""
 ---
 
 - initVariant

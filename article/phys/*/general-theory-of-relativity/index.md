@@ -1,5 +1,7 @@
 ---
 title: 一般相対性理論
+icon: milky_way
+abst: ""
 ---
 
 ## 空間の記述

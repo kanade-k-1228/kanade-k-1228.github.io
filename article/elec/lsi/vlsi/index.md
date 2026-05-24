@@ -1,5 +1,7 @@
 ---
 title: 半導体
+icon: microscope
+abst: ""
 ---
 
 ## VLSI 設計

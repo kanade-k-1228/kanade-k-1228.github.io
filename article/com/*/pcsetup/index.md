@@ -1,5 +1,7 @@
 ---
 title: 環境構築まとめ
+icon: wrench
+abst: ""
 ---
 
 ## Windows

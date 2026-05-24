@@ -1,5 +1,7 @@
 ---
 title: エミュレータで遊ぼう
+icon: video_game
+abst: ""
 ---
 
 ## 関数呼び出し

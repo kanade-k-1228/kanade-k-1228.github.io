@@ -1,5 +1,6 @@
 ---
 title: TinyFPGA BX の使い方
+icon: ant
 date: 2022-03-26
 words:
   - TinyFPGA
@@ -8,6 +9,7 @@ words:
   - Lattice
   - ice40
   - Icestudio
+abst: ""
 ---
 
 TinyFPGA BX は Lattice 社製の FPGA、iCE40LP8K を搭載した開発ボードです。iCE40 は一連の開発ツールが完全にオープンソース化されている数少ない FPGA です。

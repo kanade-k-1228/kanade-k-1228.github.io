@@ -1,5 +1,7 @@
 ---
 title: ラプラス変換
+icon: arrows_counterclockwise
+abst: ""
 ---
 
 ## ラプラス変換

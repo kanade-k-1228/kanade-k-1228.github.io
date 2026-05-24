@@ -1,5 +1,7 @@
 ---
 title: なぜリレーなのか
+icon: thinking
+abst: 量子力学が顔を出すトランジスタをブラックボックス扱いせずに済むよう、電磁石とスイッチだけで完結するリレーを使う動機を語ります。
 ---
 
 これは [リレーから始める CPU 自作 Advent Calendar 2021](https://adventar.org/calendars/7052) 2 日目の記事です。

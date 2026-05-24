@@ -1,5 +1,7 @@
 ---
 title: ロジック IC リスト
+icon: clipboard
+abst: ""
 ---
 
 [各シリーズの違い](https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/faq/logic_common/logic_common_01.html)

@@ -1,5 +1,7 @@
 ---
 title: 速習 多様体
+icon: rocket
+abst: ""
 ---
 
 $$

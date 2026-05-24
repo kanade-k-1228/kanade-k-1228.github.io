@@ -1,5 +1,7 @@
 ---
 title: RISC-V の ISA
+icon: scroll
+abst: ""
 ---
 
 ## RV32I

@@ -1,5 +1,7 @@
 ---
 title: TLA+ 入門
+icon: scroll
+abst: ""
 words:
   - TLA+
   - TLA

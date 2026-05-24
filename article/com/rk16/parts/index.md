@@ -1,5 +1,7 @@
 ---
 title: 使用する部品
+icon: package
+abst: ""
 ---
 
 ## μPD 431016

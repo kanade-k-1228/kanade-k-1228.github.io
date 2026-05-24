@@ -1,5 +1,6 @@
 ---
 title: 自作マイコンのアーキテクチャ RK16
+icon: building_construction
 date: 2023-03-26
 abst: ロジックICを使った自作マイコンのアーキテクチャです。
 words:

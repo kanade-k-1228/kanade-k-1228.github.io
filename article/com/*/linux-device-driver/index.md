@@ -1,5 +1,7 @@
 ---
 title: Linux デバイスドライバ
+icon: penguin
+abst: ""
 ---
 
 [参考](https://qiita.com/iwatake2222/items/1fdd2e0faaaa868a2db2)

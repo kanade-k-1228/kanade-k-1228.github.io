@@ -1,5 +1,7 @@
 ---
 title: 波動方程式
+icon: ocean
+abst: ""
 ---
 
 $$

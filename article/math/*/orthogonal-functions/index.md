@@ -1,5 +1,7 @@
 ---
 title: 直交関数系
+icon: heavy_plus_sign
+abst: ""
 ---
 
 ## 関数空間

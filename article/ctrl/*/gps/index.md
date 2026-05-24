@@ -1,9 +1,11 @@
 ---
 title: GPSデータの座標系と変換
+icon: satellite
 words:
   - GPS
   - GNSS
   - 座標系
+abst: ""
 ---
 
 GPSから取得された緯度・経度をそのままXY座標として扱ってしまった場合、あなたは地球平面論者とみなされても仕方がない。測地データの正しい扱い方を知り、世界の中から世界の形状を理解する多様体の喜びを享受しよう。
@@ -48,7 +50,7 @@ Geo → ECEF は三角関数を用いた単純な座標変換である。
 
 `pymap3d` というパッケージを使用する。
 
-https://github.com/geospace-code/pymap3d
+::card[https://github.com/geospace-code/pymap3d]
 
 ```python
 import pymap3d as pm
@@ -59,7 +61,7 @@ x,y,z = pm.geodetic2ecef(lat, lng, alt)
 
 `pymap3d` の C++ 版である `cppmap3d` というライブラリを使用する。
 
-https://github.com/ClancyWalters/cppmap3d
+::card[https://github.com/ClancyWalters/cppmap3d]
 
 ```cpp
 #include "cppmap3d.hh"
@@ -70,7 +72,7 @@ cppmap3d::geodetic2ecef(lat, lon, alt, x, y, z);
 
 ECEF → Geodetic の変換アルゴリズムをまとめたリポジトリが存在している。
 
-https://github.com/planet36/ecef-geodetic
+::card[https://github.com/planet36/ecef-geodetic]
 
 ### NED ⇄ ECEF
 

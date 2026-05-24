@@ -1,5 +1,7 @@
 ---
 title: SoftEther VPN で共用ルーターを突破する
+icon: lock
+abst: ""
 ---
 
 ![](./img/network.drawio.svg)

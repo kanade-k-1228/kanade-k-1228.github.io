@@ -1,5 +1,7 @@
 ---
 title: 2048 on リレーコンピュータ
+icon: video_game
+abst: ""
 ---
 
 ![](./algo.drawio.svg)

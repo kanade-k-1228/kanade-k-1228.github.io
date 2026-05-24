@@ -1,5 +1,7 @@
 ---
 title: 解析学
+icon: infinity
+abst: ""
 ---
 
 ## 極限

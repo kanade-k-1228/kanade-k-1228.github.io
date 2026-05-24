@@ -1,5 +1,7 @@
 ---
 title: リレー
+icon: electric_plug
+abst: ""
 ---
 
 $$
