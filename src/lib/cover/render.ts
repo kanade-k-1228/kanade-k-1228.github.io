@@ -1,5 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
 import sharp from "sharp";
-import { AUTHOR, SITE_TITLE } from "../../consts";
 import { type CoverIcon, resolveCoverIcon } from "./icon";
 
 export type CoverInputs = {
@@ -11,78 +12,83 @@ export type CoverInputs = {
   icon?: string;
 };
 
+const BASE_COVER_PATH = resolve(process.cwd(), "public/cover.png");
+let baseCoverCache: Buffer | null = null;
+const loadBaseCover = async (): Promise<Buffer> => {
+  if (!baseCoverCache) baseCoverCache = await readFile(BASE_COVER_PATH);
+  return baseCoverCache;
+};
+
 export const renderCoverPng = async (input: CoverInputs): Promise<Buffer> => {
   const icon = await resolveCoverIcon(input.icon);
-  const svg = renderCoverSvg(input, icon);
-  return await sharp(Buffer.from(svg, "utf8")).png({ compressionLevel: 9 }).toBuffer();
+  const overlaySvg = renderCoverSvg(input, icon);
+  const base = await loadBaseCover();
+  return await sharp(base)
+    .composite([{ input: Buffer.from(overlaySvg, "utf8"), top: 0, left: 0 }])
+    .png({ compressionLevel: 9 })
+    .toBuffer();
 };
 
 export const renderCoverSvg = (input: CoverInputs, icon: CoverIcon | null = null): string => {
   const { title, abst, date, category, series } = input;
 
   const labelText = [category, series].filter(Boolean).join(" / ").toUpperCase();
-  const titleSize = chooseTitleSize(title);
+  const hasIcon = icon !== null;
+  // アイコンを右上に置く場合、タイトル領域は左寄せで幅を狭める
+  const titleWidth = hasIcon ? CONTENT_W - ICON_SIZE - 24 : CONTENT_W;
+  const titleSize = chooseTitleSize(title, titleWidth);
   const titleLineHeight = Math.round(titleSize * 1.3);
-  const { lines: titleLines } = wrap(title, titleSize, CONTENT_W, 3);
-  const { lines: abstLines } = abst ? wrap(abst, 30, CONTENT_W, 2) : { lines: [] as string[] };
+  const { lines: titleLines } = wrap(title, titleSize, titleWidth, 3);
+  const { lines: abstLines } = abst ? wrap(abst, 28, CONTENT_W, 2) : { lines: [] as string[] };
   const dateText = formatDate(date);
 
-  const labelY = 110;
-  const titleTop = 170;
+  const labelY = CONTENT_TOP + 30;
+  const titleTop = CONTENT_TOP + 70;
   const titleBlocks = titleLines
     .map((line, i) => {
       const y = titleTop + (i + 1) * titleLineHeight - Math.round(titleLineHeight * 0.25);
-      return text(PAD_X, y, titleSize, 800, "#701a75", line);
+      return text(CONTENT_LEFT, y, titleSize, 800, "#701a75", line);
     })
     .join("\n  ");
-  const abstTop = titleTop + titleLines.length * titleLineHeight + 28;
+  const abstTop = titleTop + titleLines.length * titleLineHeight + 24;
   const abstBlocks = abstLines
     .map((line, i) => {
-      const y = abstTop + (i + 1) * 42;
-      return text(PAD_X, y, 30, 400, "#334155", line);
+      const y = abstTop + (i + 1) * 40;
+      return text(CONTENT_LEFT, y, 28, 400, "#0f172a", line);
     })
     .join("\n  ");
 
-  const dividerY = H - 96;
-  const metaY = H - 52;
-  const siteText = text(PAD_X, metaY, 28, 700, "#0f172a", SITE_TITLE);
-  const authorX = PAD_X + Math.round(measure(SITE_TITLE, 28)) + 28;
-  const authorText = text(authorX, metaY, 24, 400, "#475569", `@${AUTHOR}`);
-  const dateBlock = dateText ? text(W - PAD_X, metaY, 24, 400, "#475569", dateText, 'text-anchor="end"') : "";
+  const dateBlock = dateText
+    ? text(CONTENT_RIGHT, labelY, 24, 400, "#0f172a", dateText, 'text-anchor="end"')
+    : "";
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f0f9ff"/>
-      <stop offset="1" stop-color="#fdf2f8"/>
-    </linearGradient>
-  </defs>
-  <rect width="${W}" height="${H}" fill="url(#bg)"/>
-  <rect x="0" y="0" width="${W}" height="10" fill="#7c3aed"/>
-  ${labelText ? text(PAD_X, labelY, 26, 700, "#0c4a6e", labelText, 'letter-spacing="3"') : ""}
+  ${labelText ? text(CONTENT_LEFT, labelY, 24, 700, "#0c4a6e", labelText, 'letter-spacing="2"') : ""}
+  ${dateBlock}
   ${renderIcon(icon)}
   ${titleBlocks}
   ${abstBlocks}
-  <line x1="${PAD_X}" y1="${dividerY}" x2="${W - PAD_X}" y2="${dividerY}" stroke="#cbd5e1" stroke-width="2"/>
-  ${siteText}
-  ${authorText}
-  ${dateBlock}
 </svg>`;
 };
 
-const ICON_SIZE = 110;
+const ICON_SIZE = 96;
 
 const renderIcon = (icon: CoverIcon | null): string => {
   if (!icon) return "";
-  const x = W - PAD_X - ICON_SIZE;
-  const y = 50;
+  const x = CONTENT_RIGHT - ICON_SIZE;
+  const y = CONTENT_TOP + 60;
   return `<image x="${x}" y="${y}" width="${ICON_SIZE}" height="${ICON_SIZE}" preserveAspectRatio="xMidYMid meet" href="data:${icon.mime};base64,${icon.base64}"/>`;
 };
 
 const W = 1200;
 const H = 630;
-const PAD_X = 80;
-const CONTENT_W = W - PAD_X * 2;
+// 中央の角丸パネル内側に収まるレイアウト矩形。
+// 左辺 ~140 / 右辺 ~1080 / 上辺 ~30 / 下辺 ~580 のうち、
+// 左下にアバター、右に IC チップがあるため安全領域を狭めに取る。
+const CONTENT_LEFT = 180;
+const CONTENT_RIGHT = 1050;
+const CONTENT_TOP = 60;
+const CONTENT_W = CONTENT_RIGHT - CONTENT_LEFT;
 const FONT_STACK = "&quot;Noto Sans JP&quot;, &quot;Hiragino Sans&quot;, &quot;Yu Gothic&quot;, sans-serif";
 
 const text = (x: number, y: number, size: number, weight: number, fill: string, content: string, extra = ""): string =>
@@ -144,12 +150,12 @@ const wrap = (text: string, size: number, maxWidth: number, maxLines: number): W
   return { lines, overflowed };
 };
 
-const chooseTitleSize = (title: string, maxLines = 3): number => {
-  for (const size of [96, 80, 68, 58, 50]) {
-    const { overflowed } = wrap(title, size, CONTENT_W, maxLines);
+const chooseTitleSize = (title: string, maxWidth: number = CONTENT_W, maxLines = 3): number => {
+  for (const size of [88, 76, 64, 54, 46]) {
+    const { overflowed } = wrap(title, size, maxWidth, maxLines);
     if (!overflowed) return size;
   }
-  return 50;
+  return 46;
 };
 
 const escapeXml = (s: string): string =>

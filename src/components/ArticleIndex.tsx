@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { IndexLink, IndexSection, IndexSubsection } from "../lib/articles/index-tree";
-import { ArticleCard } from "./ArticleCard";
+import { ArticleCard, ArticleIcon } from "./ArticleCard";
 
 export const ArticleIndex: FC<{ sections: IndexSection[] }> = ({ sections }) => (
   <section className="mb-8">
@@ -45,7 +45,10 @@ const SectionBlock: FC<{ section: IndexSection }> = ({ section }) => (
 
 const SeriesCard: FC<{ sub: IndexSubsection }> = ({ sub }) => (
   <article className="rounded-md border border-sky-200/70 bg-white/80 px-3 py-2 dark:border-sky-700/40 dark:bg-slate-800/60">
-    <h4 className="mb-1 text-sm font-bold tracking-wide text-sky-800 dark:text-sky-200">{sub.title}</h4>
+    <h4 className="mb-1 flex items-center gap-2 text-sm font-bold tracking-wide text-sky-800 dark:text-sky-200">
+      {sub.icon && <ArticleIcon icon={sub.icon} className="text-lg leading-none" imgClass="h-5 w-5" />}
+      <span>{sub.title}</span>
+    </h4>
     {sub.abst && <p className="mb-1.5 text-sm leading-snug text-slate-600 dark:text-slate-400">{sub.abst}</p>}
     <ol className="space-y-0.5 text-sm">
       {sub.items.map((item, l) => (

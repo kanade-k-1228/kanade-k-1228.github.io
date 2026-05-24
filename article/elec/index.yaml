@@ -1,21 +1,28 @@
 misc:
   name: 電子工作
+  icon: electric_plug
   items: []
 circuit:
   name: 電子回路
+  icon: zap
   items: []
 micon:
   name: マイコン
+  icon: computer
   items: []
 power:
   name: 動力系
+  icon: battery
   items: []
 radio:
   name: 電波
+  icon: satellite
   items: []
 fpga:
   name: FPGA
+  icon: jigsaw
   items: []
 lsi:
   name: LSI
+  icon: gem
   items: []

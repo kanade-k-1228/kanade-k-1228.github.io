@@ -1,21 +1,25 @@
 import type { FC } from "react";
 import type { SeriesChapter, SeriesContext } from "../lib/articles/index-tree";
+import { ArticleIcon } from "./ArticleCard";
 
 export const SeriesNav: FC<{ series: SeriesContext }> = ({ series }) => (
   <nav
     aria-label={`シリーズ: ${series.name}`}
     className="mb-4 rounded-lg border border-emerald-200/70 bg-emerald-50/50 px-3 py-2 dark:border-emerald-700/40 dark:bg-emerald-900/15"
   >
-    <div className="mb-1 flex items-baseline gap-2">
-      <span className="text-xs font-bold tracking-wider text-emerald-700 uppercase dark:text-emerald-300">
-        シリーズ
-      </span>
-      <span className="text-base font-bold text-emerald-900 dark:text-emerald-100">{series.name}</span>
-      <span className="ml-auto text-xs text-slate-500 tabular-nums dark:text-slate-400">
+    <div className="mb-1 flex items-center justify-between gap-2 text-xs font-bold tracking-wider text-emerald-700 uppercase dark:text-emerald-300">
+      <span>シリーズ</span>
+      <span className="tabular-nums text-slate-500 dark:text-slate-400">
         {series.currentIndex + 1} / {series.chapters.length}
       </span>
     </div>
-    {series.abst && <p className="mb-2 text-sm leading-snug text-slate-600 dark:text-slate-400">{series.abst}</p>}
+    <div className="mb-1.5 flex items-center gap-1.5">
+      {series.icon && <ArticleIcon icon={series.icon} className="shrink-0 text-lg leading-none" imgClass="h-5 w-5" />}
+      <span className="text-sm leading-snug font-bold text-emerald-900 dark:text-emerald-100">{series.name}</span>
+    </div>
+    {series.abst && (
+      <p className="mb-2 text-xs leading-snug text-slate-600 dark:text-slate-400">{series.abst}</p>
+    )}
     <ol className="space-y-0.5 text-sm">
       {series.chapters.map((ch, i) => (
         <ChapterItem key={i} index={i} chapter={ch} />

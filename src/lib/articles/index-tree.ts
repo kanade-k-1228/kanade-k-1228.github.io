@@ -13,6 +13,7 @@ export interface IndexLink {
 export interface IndexSubsection {
   title: string;
   abst?: string;
+  icon?: ResolvedIcon;
   items: IndexLink[];
 }
 
@@ -34,6 +35,7 @@ export interface SeriesContext {
   seriesKey: string;
   name: string;
   abst?: string;
+  icon?: ResolvedIcon;
   chapters: SeriesChapter[];
   currentIndex: number;
 }
@@ -47,7 +49,7 @@ export const buildIndex = async (): Promise<IndexSection[]> => {
   for (const [cat, catName] of Object.entries(categories)) {
     const series = indices[cat] ?? {};
     const directItems: IndexLink[] = [];
-    const subBuckets = new Map<string, { abst?: string; items: IndexLink[] }>();
+    const subBuckets = new Map<string, { abst?: string; icon?: ResolvedIcon; items: IndexLink[] }>();
 
     for (const [seriesKey, entry] of Object.entries(series)) {
       const slugs = entry.items ?? [];
@@ -63,18 +65,20 @@ export const buildIndex = async (): Promise<IndexSection[]> => {
         continue;
       }
       const title = entry.name ?? seriesKey;
+      const icon = resolveIcon(entry.icon) ?? undefined;
       const existing = subBuckets.get(title);
       if (existing) {
         existing.items.push(...links);
         if (!existing.abst && entry.abst) existing.abst = entry.abst;
+        if (!existing.icon && icon) existing.icon = icon;
       } else {
-        subBuckets.set(title, { abst: entry.abst, items: links });
+        subBuckets.set(title, { abst: entry.abst, icon, items: links });
       }
     }
 
     const subsections: IndexSubsection[] = [];
-    for (const [title, { abst, items }] of subBuckets) {
-      if (items.length > 0) subsections.push({ title, abst, items });
+    for (const [title, { abst, icon, items }] of subBuckets) {
+      if (items.length > 0) subsections.push({ title, abst, icon, items });
     }
 
     if (directItems.length === 0 && subsections.length === 0) continue;
@@ -157,6 +161,7 @@ export const getSeriesForArticle = async (entry: ArticleEntry): Promise<SeriesCo
     seriesKey,
     name: foundSeries.name ?? seriesKey,
     abst: foundSeries.abst,
+    icon: resolveIcon(foundSeries.icon) ?? undefined,
     chapters,
     currentIndex,
   };
@@ -168,6 +173,7 @@ const categories: Record<string, string> = (parse(categoriesSource) as Record<st
 interface SeriesEntry {
   name?: string;
   abst?: string;
+  icon: string;
   items?: string[];
 }
 
@@ -186,8 +192,16 @@ const seriesByCategory = (): Record<string, Record<string, SeriesEntry>> => {
   for (const [filePath, source] of Object.entries(seriesSources)) {
     const m = filePath.match(/^\/article\/([^/]+)\/index\.yaml$/);
     if (!m) continue;
-    const parsed = parse(source) as Record<string, SeriesEntry> | null;
-    if (parsed) out[m[1]] = parsed;
+    const parsed = parse(source) as Record<string, Partial<SeriesEntry>> | null;
+    if (!parsed) continue;
+    const validated: Record<string, SeriesEntry> = {};
+    for (const [key, entry] of Object.entries(parsed)) {
+      if (typeof entry?.icon !== "string" || entry.icon.trim() === "") {
+        throw new Error(`Series "${m[1]}/${key}" in ${filePath} is missing required "icon" field`);
+      }
+      validated[key] = entry as SeriesEntry;
+    }
+    out[m[1]] = validated;
   }
   seriesCache = out;
   return out;
