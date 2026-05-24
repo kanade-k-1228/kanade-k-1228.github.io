@@ -119,17 +119,7 @@ export const getSeriesForArticle = async (entry: ArticleEntry): Promise<SeriesCo
     }
   }
 
-  if (!foundSeries) {
-    const rootSlug = parts.slice(1).join("/");
-    const s = series[ROOT_KEY];
-    if (s && (s.items ?? []).includes(rootSlug)) {
-      foundKey = ROOT_KEY;
-      foundSeries = s;
-      currentSlug = rootSlug;
-    }
-  }
-
-  if (!foundSeries || foundKey === null || currentSlug === null) return null;
+  if (!foundSeries || foundKey === null || foundKey === ROOT_KEY || currentSlug === null) return null;
 
   const slugs = foundSeries.items ?? [];
   if (slugs.length < 2) return null;

@@ -1,5 +1,5 @@
 ---
-title: 最適制御部分
+title: 最適制御
 icon: level_slider
 abst: ""
 ---

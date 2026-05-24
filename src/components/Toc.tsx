@@ -28,7 +28,6 @@ export const Toc: FC<{
       data-toc
       className="rounded-md border border-sky-200/60 bg-white/85 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-slate-700/70 dark:bg-slate-800/85 dark:shadow-none"
     >
-      <p className="mb-1 text-xs font-bold tracking-wide text-sky-700 uppercase dark:text-sky-200">目次</p>
       <ul className="space-y-1">
         {visible.map((h) => (
           <li key={h.slug} className="leading-snug" style={{ paddingLeft: `${(h.depth - minDepth) * 10}px` }}>

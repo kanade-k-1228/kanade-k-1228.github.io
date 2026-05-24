@@ -43,25 +43,45 @@ const SectionBlock: FC<{ section: IndexSection }> = ({ section }) => (
   </section>
 );
 
-const SeriesCard: FC<{ sub: IndexSubsection }> = ({ sub }) => (
-  <article className="rounded-md border border-sky-200/70 bg-white/80 px-3 py-2 dark:border-sky-700/40 dark:bg-slate-800/60">
-    <h4 className="mb-1 flex items-center gap-2 text-sm font-bold tracking-wide text-sky-800 dark:text-sky-200">
-      {sub.icon && <ArticleIcon icon={sub.icon} className="text-lg leading-none" imgClass="h-5 w-5" />}
-      <span>{sub.title}</span>
-    </h4>
-    {sub.abst && <p className="mb-1.5 text-sm leading-snug text-slate-600 dark:text-slate-400">{sub.abst}</p>}
-    <ol className="space-y-0.5 text-sm">
-      {sub.items.map((item, l) => (
-        <li key={l} className="flex items-baseline gap-2 leading-snug">
-          <span className="w-6 shrink-0 text-right text-xs text-slate-400 tabular-nums dark:text-slate-500">
-            {l + 1}.
-          </span>
-          <SeriesItemLink item={item} />
-        </li>
-      ))}
-    </ol>
-  </article>
-);
+const SeriesCard: FC<{ sub: IndexSubsection }> = ({ sub }) => {
+  const firstUrl = sub.items.find((item) => typeof item.url === "string")?.url;
+  const HeaderTag = firstUrl ? "a" : "div";
+  const headerProps = firstUrl
+    ? {
+        href: firstUrl,
+        className:
+          "group flex items-center gap-3 px-3 py-1.5 !no-underline transition-colors hover:bg-sky-50/60 dark:hover:bg-sky-900/20",
+      }
+    : { className: "flex items-center gap-3 px-3 py-1.5" };
+  return (
+    <article className="overflow-hidden rounded-md border border-sky-200/70 bg-white/80 transition-colors hover:border-sky-400 dark:border-sky-700/40 dark:bg-slate-800/60 dark:hover:border-sky-500">
+      <HeaderTag {...headerProps}>
+        {sub.icon && <ArticleIcon icon={sub.icon} className="shrink-0 text-3xl leading-none" imgClass="h-9 w-9" />}
+        <div className="min-w-0 flex-1">
+          <p className="line-clamp-1 font-bold text-sky-900 group-hover:text-sky-700 dark:text-sky-100 dark:group-hover:text-sky-300">
+            {sub.title}
+            <span className="ml-2 text-xs font-normal text-slate-500 dark:text-slate-400">
+              全 {sub.items.length} 章
+            </span>
+          </p>
+          {sub.abst && (
+            <p className="mt-0.5 line-clamp-2 text-sm leading-snug text-slate-600 dark:text-slate-400">{sub.abst}</p>
+          )}
+        </div>
+      </HeaderTag>
+      <ol className="space-y-0.5 border-t border-sky-200/70 px-3 py-2 text-sm dark:border-sky-700/40">
+        {sub.items.map((item, l) => (
+          <li key={item.url ?? item.label} className="flex items-baseline gap-2 leading-snug">
+            <span className="w-6 shrink-0 text-right text-xs text-slate-400 tabular-nums dark:text-slate-500">
+              {l + 1}.
+            </span>
+            <SeriesItemLink item={item} />
+          </li>
+        ))}
+      </ol>
+    </article>
+  );
+};
 
 const ItemCard: FC<{ item: IndexLink }> = ({ item }) => {
   if (typeof item.url !== "string") {

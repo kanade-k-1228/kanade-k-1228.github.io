@@ -3,8 +3,8 @@
   icon: control_knobs
   items: []
 jpcm:
-  name: 結合モデル制御を試す
-  abst: シンプルで強力な「自己位置推定制御結合モデル」を実際に手を動かしながら理解する
+  name: 統合モデル制御
+  abst: シンプルで強力な「推定制御統合モデル」を実際に動かしながら理解する
   icon: robot
   items:
     - about

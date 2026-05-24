@@ -78,6 +78,24 @@
       "title": "���C�u�X�`�[���̐���i�뉀�S���j����/����",
       "favicon": "http://www.kogen-rail.com/favicon.ico",
       "fetchedAt": "2026-05-23T10:15:16.281Z"
+    },
+    "https://astro.build/": {
+      "url": "https://astro.build/",
+      "title": "Astro",
+      "description": "Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.",
+      "image": "https://astro.build/og/astro.jpg",
+      "siteName": "Astro",
+      "favicon": "https://astro.build/favicon.svg",
+      "fetchedAt": "2026-05-24T16:44:04.982Z"
+    },
+    "https://typst.app/": {
+      "url": "https://typst.app/",
+      "title": "Typst: The new foundation for documents",
+      "description": "Typst is the new foundation for documents. Sign up now and experience limitless power to write, create, and automate anything that you can fit on a page.",
+      "image": "https://typst.app/assets/social.png",
+      "siteName": "Typst",
+      "favicon": "https://typst.app/assets/favicon-32x32.png",
+      "fetchedAt": "2026-05-24T16:44:08.056Z"
     }
   }
 }
